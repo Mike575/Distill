@@ -30,3 +30,4 @@ Public zbs As Integer
 Public k As Integer  '循环作用
 Public i2 As Integer  'form2循环作用
 Dim i3 As Integer  'form3循环作用
+'# To see what will happen
