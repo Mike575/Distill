@@ -25,3 +25,6 @@ C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\
 C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Form1.resources
 C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Resources.resources
 C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbproj.GenerateResource.Cache
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Form2.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Form3.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Form4.resources

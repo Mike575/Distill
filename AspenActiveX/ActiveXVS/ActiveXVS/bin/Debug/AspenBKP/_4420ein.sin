@@ -1,0 +1,68 @@
+ >>ORIGINAL RUN                           APRIL 10, 2017      
+   1:44:39 P.M.                           MONDAY      
+   INPUT FILE: _4420ein.inm
+   RUN ID : _4420ein
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 13:44:38 Mon Apr 10, 2017
+          3    ;Directory   Runid DISTILR
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    SIM-OPTIONS MASS-BAL-CHE=YES OLD-DATABANK=YES
+         16
+         17    MODEL-OPTION
+         18
+         19    DATABANKS PURE28  / AQUEOUS  / SOLIDS  / INORGANIC  /  &
+         20            NOASPENPCD
+         21
+         22    PROP-SOURCES PURE28  / AQUEOUS  / SOLIDS  / INORGANIC
+         23
+         24    COMPONENTS
+         25        BENYIXI C8H8 /
+         26        YIBEN C8H10-4
+         27
+         28    SOLVE
+         29        RUN-MODE MODE=SIM
+         30
+         31    FLOWSHEET
+         32        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         33
+         34    PROPERTIES NRTL
+         35
+         36    PROP-DATA NRTL-1
+         37        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         38            INVERSE-PRES='1/bar'
+         39        PROP-LIST NRTL
+         40        BPVAL BENYIXI YIBEN -.9750000000 37.64040000 .3000000000  &
+         41            0.0 0.0 0.0 57.67000000 97.00000000
+         42        BPVAL YIBEN BENYIXI 1.385000000 -56.00440000 .3000000000  &
+         43            0.0 0.0 0.0 57.67000000 97.00000000
+         44
+         45    STREAM FEED
+         46        SUBSTREAM MIXED TEMP=30. PRES=1.2 MASS-FLOW=1000.
+         47        MASS-FRAC BENYIXI 0.7 / YIBEN 0.3
+         48
+         49    BLOCK B1 DSTWU
+         50        PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         51            RECOVH=0.001 PTOP=0.18 PBOT=0.2 RR=-1.5 PLOT=YES
+         52        PLOT LOWER=90 UPPER=200 INCR=1
+         53
+         54    EO-CONV-OPTI
+         55
+         56    STREAM-REPOR MOLEFLOW
+         57    ;
+         58    ;
+         59    ;
+         60    ;
+         61    ;
+
+   SIMULATION STARTED     MODULE USED: apmain  
+   LOCATED IN:C:\PROGRA~2\ASPENT~1\ASPENP~1.4\Engine\\xeq
