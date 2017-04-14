@@ -1,0 +1,33 @@
+ ? SETUP UNITS-SET SET1 ? \ UNITSET BASESET = MET (3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 5 3 4 3 3 3 3 3 3 3 3 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 5 3 3 3 3 3 3 5 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3) \                                                                       
+ ? BLOCK DSTWU B1 ? ; SET1 ; \ PARAM HEAVYKEY = BENYIXI RECOVH = .0010 <0> <0>  
+ LIGHTKEY = YIBEN RECOVL = .9980 <0> <0> PTOP = .180 <20> <5> PBOT =            
+ .20 <20> <5> RR = -1.50 <0> <0> PLOT = YES \ \ PLOT INCR = 1 LOWER = 90 UPPER  
+ = 200 \ "\@"                                                                   
+ ? BLOCK DSTWU B1 ? ; SET1 ; \ PARAM HEAVYKEY = BENYIXI RECOVH = .0010 <0> <0>  
+ LIGHTKEY = YIBEN RECOVL = .9980 <0> <0> PTOP = .180 <20> <5> PBOT =            
+ .20 <20> <5> RR = -1.50 <0> <0> PLOT = YES \ \ PLOT INCR = 1 LOWER = 5 UPPER = 
+ 200 \ "\@"                                                                     
+ ? BLOCK DSTWU B1 ? ; SET1 ; \ PARAM HEAVYKEY = BENYIXI RECOVH = .0010 <0> <0>  
+ LIGHTKEY = YIBEN RECOVL = .9980 <0> <0> PTOP = .180 <20> <5> PBOT =            
+ .20 <20> <5> RR = -1.50 <0> <0> PLOT = YES \ \ PLOT INCR = 1 LOWER = 90 UPPER  
+ = 200 \ "\@"                                                                   
+ ? BLOCK DSTWU B1 ? ; SET1 ; \ PARAM HEAVYKEY = BENYIXI RECOVH = .0010 <0> <0>  
+ LIGHTKEY = YIBEN RECOVL = .9980 <0> <0> PTOP = .180 <20> <5> PBOT =            
+ .20 <20> <5> RR = -1.50 <0> <0> PLOT = YES \ \ PLOT INCR = 1 LOWER = 82 UPPER  
+ = 200 \ "\@"                                                                   
+ ? BLOCK DSTWU B1 ? ; SET1 ; \ PARAM HEAVYKEY = BENYIXI RECOVH = .0010 <0> <0>  
+ LIGHTKEY = YIBEN RECOVL = .9980 <0> <0> PTOP = .180 <20> <5> PBOT =            
+ .20 <20> <5> RR = -1.50 <0> <0> PLOT = YES \ \ PLOT INCR = 1 LOWER = 90 UPPER  
+ = 200 \ "\@"                                                                   
+ ? BLOCK DSTWU B1 ? ; SET1 ; \ PARAM HEAVYKEY = BENYIXI RECOVH = .0010 <0> <0>  
+ LIGHTKEY = YIBEN RECOVL = .9980 <0> <0> PTOP = .180 <20> <5> PBOT =            
+ .20 <20> <5> RR = -1.50 <0> <0> PLOT = YES \ \ PLOT INCR = 1 LOWER = 80 UPPER  
+ = 200 \ "\@"                                                                   
+ ? BLOCK DSTWU B1 ? ; SET1 ; \ PARAM HEAVYKEY = BENYIXI RECOVH = .0010 <0> <0>  
+ LIGHTKEY = YIBEN RECOVL = .9980 <0> <0> PTOP = .180 <20> <5> PBOT =            
+ .20 <20> <5> RR = -1.50 <0> <0> PLOT = YES \ \ PLOT INCR = 1 LOWER = 80 UPPER  
+ = 200 \ "\@"                                                                   

@@ -1,13 +1,14 @@
 # node name
-Application.Tree.Data.Blocks.B1.Input.LOWER     '80     
+Application.Tree.Data.Blocks.B1.Input.LOWER     '90  
 Application.Tree.Data.Blocks.B1.Input.NSTAGE    '200
+Application.Tree.Data.Blocks.B1.Input.UPPER     '200
 Application.Tree.Data.Blocks.B1.Input.HEAVYKEY  'BENYIXI
 Application.Tree.Data.Blocks.B1.Input.LIGHTKEY  'YIBEN
 Application.Tree.Data.Blocks.B1.Input.RECOVH    '0.001
 Application.Tree.Data.Blocks.B1.Input.RECOVL    '0.998
 Application.Tree.Data.Blocks.B1.Input.RR        '-1.5
 Application.Tree.Data.Blocks.B1.Input.SIM_LEVEL '4
-Application.Tree.Data.Blocks.B1.Input.UPPER     '200
+
 
 Application.Tree.Data.Blocks.B1.Input.Unit Set  'METCBAR    
 'Metric units with temperature in degrees Centigrade and pressure in bars       

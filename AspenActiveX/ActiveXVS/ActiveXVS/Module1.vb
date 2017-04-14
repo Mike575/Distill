@@ -13,4 +13,12 @@
         AxisInterval = 10 ^ (Scale - 1)
         Return AxisInterval
     End Function
+
+
+
+
+
+
+
+
 End Module

@@ -1,4 +1,4 @@
-MM "30.0" FLAVOR "NO" VERSION "30.0" DATETIME "Wed Apr 12 16:32:50 2017" 
+MM "30.0" FLAVOR "NO" VERSION "30.0" DATETIME "Fri Apr 14 11:05:10 2017" 
 MACHINE "WIN-NT/VC"  ; 
 startlibrary
 version1
@@ -90,8 +90,8 @@ DEF-SUBS-CLA SUBSTREAMS = NCPSD \ \ DEF-SUBS-CLA SUBSTREAMS = CIPSD \ ?
 <0> /  SSID1 = MIXED CID = YIBEN FLOW = 0.3 <-3> <0> \ ? BLOCK DSTWU B1 ? ; 
 "METCBAR_MOLE" ; ; ICON1 ; \ PARAM LIGHTKEY = YIBEN RECOVL = 0.998 <0> <0> 
 HEAVYKEY = BENYIXI RECOVH = 0.001 <0> <0> PTOP = 0.18 <20> <5> PBOT = 0.2 
-<20> <5> NSTAGE = 200 RR = -1.5 <0> <0> PLOT = YES OPT-NTRR = RR OPT-CALHETP
- = NO \ \ PLOT LOWER = 90 UPPER = 200 INCR = 1 OPT-SZNO = SIZE \ ? COSTING 
+<20> <5> NSTAGE = 250 RR = -1.5 <0> <0> PLOT = YES OPT-NTRR = RR OPT-CALHETP
+ = NO \ \ PLOT LOWER = 50 UPPER = 250 INCR = 1 OPT-SZNO = SIZE \ ? COSTING 
 OPTIONS ? ; "METCBAR_MOLE" ; ? COSTING "LABOR-COST" ? ; "METCBAR_MOLE" ; ? 
 COSTING "CAPITAL-COST" ? ; "METCBAR_MOLE" ; ? COSTING OPERATING ? ; 
 "METCBAR_MOLE" ; ? COSTING PROFIT ? ; "METCBAR_MOLE" ; ? CURRENCY ? ? 
@@ -230,106 +230,6 @@ customglobaldatapropset6 0 | Custom6 | * | %.2f | 6 | 11
 economics_active 0
 ignoreEOVarNameFixupsOnImport 1
 #
-$_APWNSHELL_SETTINGS
-<CommonShellSettings xmlns="http://schemas.aspentech.com/xaml/presentation/visualisation/commonshell" xmlns:atapmaa="clr-namespace:AspenTech.AspenPlus.Modules.ApwnApplication;assembly=ApwnShell" xmlns:atapie="clr-namespace:AspenTech.AspenPlus.Infrastructure.Events;assembly=AspenTech.AspenPlus.Infrastructure" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:apmab="clr-namespace:AspenPlus.Modules.ApwnBrowser;assembly=ApwnShell" xmlns:cxv="http://schemas.aspentech.com/xaml/presentation/cxsviewmodel" xmlns:atapi="clr-namespace:AspenTech.AspenPlus.Infrastructure;assembly=AspenTech.AspenPlus.Infrastructure" xmlns:atdi="clr-namespace:AspenTech.Dashboard.Infrastructure;assembly=AspenTech.Dashboard.Infrastructure">
-  <CommonShellSettings.CurrentWorkspace>
-    <ShellWorkspace Layout="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;xamDockManager version=&quot;13.1.20131.2073&quot;&gt;&#xD;&#xA;  &lt;contentPanes&gt;&#xD;&#xA;    &lt;contentPane name=&quot;ControlPanelScreenFactory&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-10T02:07:40.6819096Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen2&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-10T02:07:40.0238642Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen3&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-10T02:07:26.2349264Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;FlowsheetScreenFactory&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-10T02:07:24.8286836Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen1&quot; location=&quot;DockedTop&quot; lastActivatedTime=&quot;2017-04-10T02:07:11.5521618Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;ModelLibraryScreenFactoryKey&quot; location=&quot;DockedBottom&quot; lastActivatedTime=&quot;2017-04-10T02:06:52.8132527Z&quot; /&gt;&#xD;&#xA;  &lt;/contentPanes&gt;&#xD;&#xA;  &lt;panes&gt;&#xD;&#xA;    &lt;splitPane splitterOrientation=&quot;Vertical&quot; location=&quot;DockedBottom&quot;&gt;&#xD;&#xA;      &lt;contentPane name=&quot;ModelLibraryScreenFactoryKey&quot; /&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;    &lt;splitPane splitterOrientation=&quot;Vertical&quot; location=&quot;DockedTop&quot;&gt;&#xD;&#xA;      &lt;contentPane name=&quot;_AnonymousScreen1&quot; /&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;  &lt;/panes&gt;&#xD;&#xA;  &lt;documents splitterOrientation=&quot;Vertical&quot;&gt;&#xD;&#xA;    &lt;splitPane splitterOrientation=&quot;Vertical&quot;&gt;&#xD;&#xA;      &lt;tabGroup selectedIndex=&quot;3&quot;&gt;&#xD;&#xA;        &lt;contentPane name=&quot;FlowsheetScreenFactory&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;_AnonymousScreen2&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;_AnonymousScreen3&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;ControlPanelScreenFactory&quot; /&gt;&#xD;&#xA;      &lt;/tabGroup&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;  &lt;/documents&gt;&#xD;&#xA;&lt;/xamDockManager&gt;" NavigationGroupToSelect="Simulation" IsNavigationPaneMinimized="False" IsRibbonMinimized="False">
-      <ShellWorkspace.Screens>
-        <WorkspaceScreenData PaneName="ControlPanelScreenFactory" ScreenFactoryKey="ControlPanelScreenFactory">
-          <WorkspaceScreenData.ScreenState>
-            <ScreenState />
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="_AnonymousScreen2" ScreenFactoryKey="ApwnFormContentFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapmaa:ApwnFormScreenSubject Key="Blocks.B1" NavigationGroupKey="Simulation">
-              <atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-                <atapie:ShowFormEventArgs FormProgId="MMDSTWU.MMDSTWU_INPUT" FormKey="Blocks.B1" Header="B1 (DSTWU)" ResultsOnly="False" PathKey="Top.appModelV8.Blocks.B1">
-                  <atapie:ShowFormEventArgs.Parameters>
-                    <s:String assembly:Key="id">B1</s:String>
-                    <s:String assembly:Key="main">Top.appModelV8.Blocks.B1</s:String>
-                  </atapie:ShowFormEventArgs.Parameters>
-                </atapie:ShowFormEventArgs>
-              </atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-              <atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-                <apmab:ApwnPlotwizardRule ContextPath="Top.appModelV8.Blocks.B1" />
-              </atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-            </atapmaa:ApwnFormScreenSubject>
-          </WorkspaceScreenData.ScreenSubject>
-          <WorkspaceScreenData.ScreenState>
-            <atapmaa:ApwnFormScreenState>
-              <atapmaa:ApwnFormScreenState.Parameters>
-                <cxv:CxvParameter Name="main" Value="Top.appModelV8.Blocks.B1" />
-                <cxv:CxvParameter Name="id" Value="B1" />
-                <cxv:CxvParameter Name="extraComments_path" Value="Comments" />
-                <cxv:CxvParameter Name="extraDescription_path" Value="Input.DESCRIPTION" />
-                <cxv:CxvParameter Name="extraUnits_path" Value="Input.Unit Set" />
-                <cxv:CxvParameter Name="selected_tab" Value="tab1" />
-              </atapmaa:ApwnFormScreenState.Parameters>
-            </atapmaa:ApwnFormScreenState>
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="_AnonymousScreen3" ScreenFactoryKey="ApwnFormContentFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapmaa:ApwnFormScreenSubject Key="Utilities" NavigationGroupKey="Simulation">
-              <atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-                <atapie:ShowFormEventArgs FormProgId="MMGENUTL.MMGENUTL_OBJMAN" FormKey="Utilities" Header="Utilities" ResultsOnly="False" PathKey="Top.appModelV8.Utilities">
-                  <atapie:ShowFormEventArgs.Parameters>
-                    <s:String assembly:Key="id">Utilities</s:String>
-                    <s:String assembly:Key="main">Top.appModelV8.Utilities</s:String>
-                  </atapie:ShowFormEventArgs.Parameters>
-                </atapie:ShowFormEventArgs>
-              </atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-              <atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-                <apmab:ApwnPlotwizardRule ContextPath="Top.appModelV8.Utilities" />
-              </atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-            </atapmaa:ApwnFormScreenSubject>
-          </WorkspaceScreenData.ScreenSubject>
-          <WorkspaceScreenData.ScreenState>
-            <atapmaa:ApwnFormScreenState>
-              <atapmaa:ApwnFormScreenState.Parameters>
-                <cxv:CxvParameter Name="main" Value="Top.appModelV8.Utilities" />
-                <cxv:CxvParameter Name="id" Value="Utilities" />
-                <cxv:CxvParameter Name="extraComments_path" Value="Comments" />
-                <cxv:CxvParameter Name="extraDescription_path" Value="Input.DESCRIPTION" />
-                <cxv:CxvParameter Name="extraUnits_path" Value="Input.Unit Set" />
-              </atapmaa:ApwnFormScreenState.Parameters>
-            </atapmaa:ApwnFormScreenState>
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="FlowsheetScreenFactory" ScreenFactoryKey="FlowsheetScreenFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapi:StringScreenSubject subject="{assembly:Null}" fatherNodePath="{assembly:Null}" NavigationGroupKey="Simulation" />
-          </WorkspaceScreenData.ScreenSubject>
-          <WorkspaceScreenData.ScreenState>
-            <ScreenState Zoom="1.230001" />
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="_AnonymousScreen1" ScreenFactoryKey="DashboardScreenFactoryKey">
-          <WorkspaceScreenData.ScreenState>
-            <atdi:DashboardScreenState>
-              <atdi:DashboardScreenState.ItemStates>
-                <atdi:DashboardItemState Key="EnergyAnalysisDashboardItem" State="&lt;CDI State=&quot;Inactive&quot; /&gt;" />
-                <atdi:DashboardItemState Key="EconomicsAnalysisDashboardItem" State="&lt;CDI State=&quot;Inactive&quot; /&gt;" />
-                <atdi:DashboardItemState Key="EdrActivationDashboardItem" State="&lt;CDI State=&quot;Inactive&quot; /&gt;" />
-              </atdi:DashboardScreenState.ItemStates>
-            </atdi:DashboardScreenState>
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="ModelLibraryScreenFactoryKey" ScreenFactoryKey="ModelLibraryScreenFactoryKey">
-          <WorkspaceScreenData.ScreenState>
-            <ScreenState />
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-      </ShellWorkspace.Screens>
-    </ShellWorkspace>
-  </CommonShellSettings.CurrentWorkspace>
-  <CommonShellSettings.SavedWorkspaces>
-    <ShellWorkspaceFolder />
-  </CommonShellSettings.SavedWorkspaces>
-</CommonShellSettings>
-$_END_APWNSHELL_SETTINGS
-#
 PFSVData
 # of PFS Objects = 5
 SIZE -2.40334 2.69733 0.507127 1.9265
@@ -346,7 +246,6 @@ STREAM
 ID: FEED
 Version: 2
 Flag 0
-GLOBAL 117
 TYPE 0 TERMINAL 1
 At -2.403341 1.506682
 Label At 0.539171 0.000000
@@ -376,7 +275,6 @@ STREAM
 ID: BOTTOM
 Version: 2
 Flag 0
-GLOBAL 117
 TYPE 0 TERMINAL 2
 At 2.697327 0.507127
 Label At -0.523664 0.000000
@@ -406,7 +304,6 @@ STREAM
 ID: UP
 Version: 2
 Flag 0
-GLOBAL 117
 TYPE 0 TERMINAL 2
 At 2.697327 1.903563
 Label At -0.561164 0.000000
@@ -436,7 +333,7 @@ LEGEND
 Version: 2
 Unfixed
 # of PFS Objects = 0
-VIEWPORT -3.310245 3.314301 3.748822 0.355402
+VIEWPORT -3.310210 2.355256 3.748795 -0.588827
 LAYOUT
 TableFormat 1
 Pages 1 1 1 1
@@ -453,4 +350,3 @@ VISIBILITY 0.030000
 PFDFLAG 255 255
 PFDMODE 0
 SCALE 0.014754
-

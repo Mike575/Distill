@@ -7,6 +7,9 @@ Module AspenActiveX
     Public Stage As New ArrayList
     Public ihNStage As IHNodeCol
     Public ihStage As IHNode
+    Public LowStage As Double
+    Public HighStage As Double
+    Public engine As Happ.IHAPEngine
 
 
     Function OpenSimulation() As IHapp
@@ -30,6 +33,7 @@ Module AspenActiveX
         ' open existing simulation
         AspenPlus = GetObject(path & "DistilR.bkp")
         ihAPsim = AspenPlus.Application
+        engine = AspenPlus.Engine
 
         ' display the GUI
         ihAPsim.Visible = True
@@ -113,7 +117,7 @@ ErrorHandler:
                 strSourceBlock = ""
                 strSourcePort = ""
             End If
-
+            strTable = ""
             strTable = strTable & Chr(13) & strStreamName _
                       & Chr(9) & strSourceBlock _
                       & Chr(9) & strSourcePort & Chr(9) _
@@ -211,10 +215,18 @@ ErrorHandler:
             i = i + 1
         Next ihStage
 
-        MsgBox(strout, , "TransferNTR")
+
         Exit Sub
 ErrorHandler:
         MsgBox("TransferNTR raised error " & Err.Description)
 
+    End Sub
+
+    Sub ChangeNTR(ByVal ihapsim As IHapp)
+        ihapsim.Tree.Data.Blocks.B1.Input.LOWER.value = LowStage    '90  
+        ihapsim.Tree.Data.Blocks.B1.Input.UPPER.value = HighStage    '200
+        Exit Sub
+ErrorHandler:
+        MsgBox("ChangeNTR raised error " & Err.Description)
     End Sub
 End Module

@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _1736mqi.inm
+MODNAME: apmain
+RUNID: _1736mqi
+NEW_RUNID: _1736mqi
+OLD_RUNID: _1736mqi
+PDF: _1736mqi.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\AspenBKP\DistilR.ads
