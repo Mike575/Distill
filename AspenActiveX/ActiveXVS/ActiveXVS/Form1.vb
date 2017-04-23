@@ -19,9 +19,12 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ihAPsim = OpenSimulation()
-        ihAPsim = AspenPlus.Application
+        ihAPsim = OpenDistilR()
+        ihAPsim = OpenRadFrac1()
+        ihAPsim = AspenPlusDistilR.Application
         Call TransferNTR(ihAPsim)
+
+        '  ihAPsim.Tree.Data.Components.Specifications.Input.CASN.ALCOHOL.value = "7732 - 18 - 5"
 
     End Sub
     Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -37,13 +40,18 @@
         Dim strOut As String
         On Error GoTo ErrorHandler
         'get the root of the tree
+        ihAPsim = AspenPlusDistilR.Application
         ihRoot = ihAPsim.Tree.Data.Blocks.B1.Input
         'now get the collection of nodes immediately below the Root
         ihcolOffspring = ihRoot.Elements
         strOut = ""
         For Each ihOffspring In ihcolOffspring
-            If ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUE) <> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
-                strOut = strOut & Chr(13) & ihOffspring.Name
+            If Not IsNumeric(ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUE)) Then
+
+                If ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUE) = "BENYIXI" Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
+                    strOut = strOut & vbCrLf & ihOffspring.Name
+                End If
+
             End If
         Next
         MsgBox("Offspring nodes are: " & strOut, , "GetCollectionExample")

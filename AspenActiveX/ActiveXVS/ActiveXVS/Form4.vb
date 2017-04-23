@@ -38,4 +38,8 @@
         'newSeries3.IsValueShownAsLabel = False
         'Chart1.Series.Add(newSeries3)
     End Sub
+
+    Private Sub Chart1_Click(sender As Object, e As EventArgs) Handles Chart1.Click
+
+    End Sub
 End Class

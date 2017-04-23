@@ -1,7 +1,10 @@
 ﻿Option Explicit On
 Module AspenActiveX
 
-    Public AspenPlus As HappLS
+    Public AspenPlusDistilR As HappLS
+    Public AspenPlusRadFrac1 As HappLS
+    Public ModifyR As Double
+    Public ModifyStage As Double
     Public ihAPsim As IHapp
     Public R As New ArrayList
     Public Stage As New ArrayList
@@ -12,7 +15,7 @@ Module AspenActiveX
     Public engine As Happ.IHAPEngine
 
 
-    Function OpenSimulation() As IHapp
+    Function OpenDistilR() As IHapp
 
         Dim ihAPsim As IHapp
         On Error GoTo ErrorHandler
@@ -31,9 +34,9 @@ Module AspenActiveX
         path = "C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\AspenBKP\"
 
         ' open existing simulation
-        AspenPlus = GetObject(path & "DistilR.bkp")
-        ihAPsim = AspenPlus.Application
-        engine = AspenPlus.Engine
+        AspenPlusDistilR = GetObject(path & "DistilR.bkp")
+        ihAPsim = AspenPlusDistilR.Application
+        engine = AspenPlusDistilR.Engine
 
         ' display the GUI
         ihAPsim.Visible = True
@@ -42,7 +45,44 @@ Module AspenActiveX
         ihAPsim.Run()
 
         ' return the Happ object for the AspenPlus simulator
-        OpenSimulation = ihAPsim
+        OpenDistilR = ihAPsim
+        Exit Function
+ErrorHandler:
+        MsgBox("OpenSimulation raised error " & Err.Description)
+        End
+    End Function
+
+    Function OpenRadFrac1() As IHapp
+
+        Dim ihAPsim As IHapp
+        On Error GoTo ErrorHandler
+        Dim VERSION As String = "V8.4"
+        Dim VERSIONNUMBER As String = "30.0"
+
+        ' define the path to the AspenPlus examples folder
+        Dim defaultpath As String
+        If (8 = IntPtr.Size Or Not String.IsNullOrEmpty(Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432"))) Then
+            defaultpath = Environment.GetEnvironmentVariable("ProgramFiles(x86)") + "\AspenTech\Aspen Plus " + VERSION + "\GUI"
+        Else
+            defaultpath = Environment.GetEnvironmentVariable("ProgramFiles") + "\AspenTech\Aspen Plus " + VERSION + "\GUI"
+        End If
+
+        Dim path As String
+        path = "C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\AspenBKP\"
+
+        ' open existing simulation
+        AspenPlusRadFrac1 = GetObject(path & "RadFrac1.bkp")
+        ihAPsim = AspenPlusRadFrac1.Application
+        engine = AspenPlusRadFrac1.Engine
+
+        ' display the GUI
+        ihAPsim.Visible = True
+
+        ' run the simulation
+        ihAPsim.Run()
+
+        ' return the Happ object for the AspenPlus simulator
+        OpenRadFrac1 = ihAPsim
         Exit Function
 ErrorHandler:
         MsgBox("OpenSimulation raised error " & Err.Description)
@@ -83,6 +123,8 @@ ErrorHandler:
         Dim strStreamName As String
         Dim strStreamType As String
 
+        strTable = ""
+
         On Error GoTo ErrorHandler
         ihStreamList = ihAPsim.Tree.Data.Streams
         ihBlockList = ihAPsim.Tree.Data.Blocks
@@ -117,7 +159,7 @@ ErrorHandler:
                 strSourceBlock = ""
                 strSourcePort = ""
             End If
-            strTable = ""
+
             strTable = strTable & Chr(13) & strStreamName _
                       & Chr(9) & strSourceBlock _
                       & Chr(9) & strSourcePort & Chr(9) _
