@@ -3,21 +3,41 @@ Module AspenActiveX
 
     Public AspenPlusDistilR As HappLS
     Public AspenPlusRadFrac1 As HappLS
-    Public ModifyR As Double
-    Public ModifyStage As Double
-    Public ihAPsim As IHapp
+    Public DSTWU_ModifyR As Double
+    Public DSTWU_ModifyStage As Double
+    Public RadFrac_ModifyR As Double
+    Public RadFrac_ModifyStage As Double
+    Public RadFrac_Nstage_feed As Integer       'RadFrac 模型中进料板位置
+
+    Public Heavykey_feed_MassFrac As Double     '重组分进料质量分数
+    Public Lightkey_feed_MassFrac As Double     '轻组分进料质量分数
+    Public Heavykey_Up_MassFrac As Double       '重组分塔顶回收质量分数
+    Public Lightkey_Up_MassFrac As Double       '轻组分塔顶回收质量分数
+    Public Heavykey_Bottom_MassFrac As Double   '重组分塔釜回收质量分数
+    Public Temperature_feed As Double           '进料温度
+    Public Pressure_feed As Double              '进料压力
+    Public velocity_feed As Double              '进料流速   kg/hr
+
+
+    ' Public ihAPsim As IHapp
+    Public ihAPsim_RadFrac As IHapp
+    Public ihApsim_DSTWU As IHapp
     Public R As New ArrayList
     Public Stage As New ArrayList
-    Public ihNStage As IHNodeCol
-    Public ihStage As IHNode
     Public LowStage As Double
     Public HighStage As Double
-    Public engine As Happ.IHAPEngine
+    Public engine_DSTWU As Happ.IHAPEngine
+    Public engine_RadFrac As Happ.IHAPEngine
+    Public eachStage_LightKey_MassFrac As New ArrayList
+    Public eachStage_MassFrac_StageNumber As New ArrayList
+    Public eachStage_HeavyKey_MassFrac As New ArrayList
+
 
 
     Function OpenDistilR() As IHapp
 
-        Dim ihAPsim As IHapp
+        Dim ihAPsim_DSTWU As IHapp
+        Dim ihAPsim_RadFrac As IHapp
         On Error GoTo ErrorHandler
         Dim VERSION As String = "V8.4"
         Dim VERSIONNUMBER As String = "30.0"
@@ -35,17 +55,17 @@ Module AspenActiveX
 
         ' open existing simulation
         AspenPlusDistilR = GetObject(path & "DistilR.bkp")
-        ihAPsim = AspenPlusDistilR.Application
-        engine = AspenPlusDistilR.Engine
+        ihAPsim_DSTWU = AspenPlusDistilR.Application
+        engine_DSTWU = AspenPlusDistilR.Engine
 
         ' display the GUI
-        ihAPsim.Visible = True
+        ihAPsim_DSTWU.Visible = True
 
         ' run the simulation
-        ihAPsim.Run()
+        ihAPsim_DSTWU.Run()
 
         ' return the Happ object for the AspenPlus simulator
-        OpenDistilR = ihAPsim
+        OpenDistilR = ihAPsim_DSTWU
         Exit Function
 ErrorHandler:
         MsgBox("OpenSimulation raised error " & Err.Description)
@@ -54,7 +74,7 @@ ErrorHandler:
 
     Function OpenRadFrac1() As IHapp
 
-        Dim ihAPsim As IHapp
+        Dim ihAPsim_RadFrac As IHapp
         On Error GoTo ErrorHandler
         Dim VERSION As String = "V8.4"
         Dim VERSIONNUMBER As String = "30.0"
@@ -72,17 +92,17 @@ ErrorHandler:
 
         ' open existing simulation
         AspenPlusRadFrac1 = GetObject(path & "RadFrac1.bkp")
-        ihAPsim = AspenPlusRadFrac1.Application
-        engine = AspenPlusRadFrac1.Engine
+        ihAPsim_RadFrac = AspenPlusRadFrac1.Application
+        engine_RadFrac = AspenPlusRadFrac1.Engine
 
         ' display the GUI
-        ihAPsim.Visible = True
+        ihAPsim_RadFrac.Visible = True
 
         ' run the simulation
-        ihAPsim.Run()
+        ihAPsim_RadFrac.Run()
 
         ' return the Happ object for the AspenPlus simulator
-        OpenRadFrac1 = ihAPsim
+        OpenRadFrac1 = ihAPsim_RadFrac
         Exit Function
 ErrorHandler:
         MsgBox("OpenSimulation raised error " & Err.Description)
@@ -240,35 +260,7 @@ ErrorHandler:
 
     End Sub
 
-    Sub TransferNTR(ByVal ihApsim As IHapp)
-        On Error GoTo ErrorHandler
-        Dim i As Integer
-        Dim strout As String
-        strout = ""
-        i = 0
-        ihNStage = ihApsim.Tree.Data.Blocks.B1.Output.RR_OUT.Elements
-        For Each ihStage In ihNStage
-            Stage.Add(ihStage.Name)
-            R.Add(ihStage.Value)
-
-            strout = strout & Chr(13) & ihStage.Name _
-            & Chr(9) & Format(ihStage.Value, "###.00") _
-            & Chr(9) & ihStage.UnitString
-            i = i + 1
-        Next ihStage
 
 
-        Exit Sub
-ErrorHandler:
-        MsgBox("TransferNTR raised error " & Err.Description)
 
-    End Sub
-
-    Sub ChangeNTR(ByVal ihapsim As IHapp)
-        ihapsim.Tree.Data.Blocks.B1.Input.LOWER.value = LowStage    '90  
-        ihapsim.Tree.Data.Blocks.B1.Input.UPPER.value = HighStage    '200
-        Exit Sub
-ErrorHandler:
-        MsgBox("ChangeNTR raised error " & Err.Description)
-    End Sub
 End Module

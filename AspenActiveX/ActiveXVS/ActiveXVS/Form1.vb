@@ -3,33 +3,30 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         'Call GetCollectionExample(ihAPsim)
-        Call GetScalarValuesExample(ihAPsim)
-        Call ListBlocksExample(ihAPsim)
+        Call GetScalarValuesExample(ihAPsim_RadFrac)
+        Call ListBlocksExample(ihAPsim_RadFrac)
         'Call UnitStringExample(ihAPsim)
         'Call UnitsConversionExample(ihAPsim)
         'Call UnitsChangeExample(ihAPsim)
         'Call TempProfExample(ihAPsim)
         'Call CompProfExample(ihAPsim)
         'Call ReacCoeffExample(ihAPsim)
-        Call ConnectivityExample(ihAPsim)
+        Call ConnectivityExample(ihAPsim_RadFrac)
         'Call RunExample(ihAPsim)
     End Sub
 
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        ihAPsim = OpenDistilR()
-        ihAPsim = OpenRadFrac1()
-        ihAPsim = AspenPlusDistilR.Application
-        Call TransferNTR(ihAPsim)
-
-        '  ihAPsim.Tree.Data.Components.Specifications.Input.CASN.ALCOHOL.value = "7732 - 18 - 5"
+        Database_init()
+        ihApsim_DSTWU = OpenDistilR()
+        ihAPsim_RadFrac = OpenRadFrac1()
 
     End Sub
     Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
 
-        '  Call CloseSimulation(ihAPsim)
+        ''Call CloseSimulation(ihApsim_DSTWU)
+        ''Call CloseSimulation(ihAPsim_RadFrac)
 
     End Sub
 
@@ -40,15 +37,15 @@
         Dim strOut As String
         On Error GoTo ErrorHandler
         'get the root of the tree
-        ihAPsim = AspenPlusDistilR.Application
-        ihRoot = ihAPsim.Tree.Data.Blocks.B1.Input
+        'ihAPsim_RadFrac = AspenPlusDistilR.Application
+        ihRoot = ihAPsim_RadFrac.Tree.Data.Blocks.B1.Input
         'now get the collection of nodes immediately below the Root
         ihcolOffspring = ihRoot.Elements
         strOut = ""
         For Each ihOffspring In ihcolOffspring
-            If Not IsNumeric(ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUE)) Then
+            If IsNumeric(ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUE)) Then
 
-                If ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUE) = "BENYIXI" Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
+                If ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUE) = 0.1 Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
                     strOut = strOut & vbCrLf & ihOffspring.Name
                 End If
 
@@ -61,13 +58,13 @@ ErrorHandler:
         MsgBox("GetCollectionExample raised error" & Err.Description)
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Form2.Show()
+        Find.Show()
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Form3.Visible = True
+        DSTWU2.Visible = True
 
     End Sub
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Form4.Visible = True
+        RadFrac1.Visible = True
     End Sub
 End Class
