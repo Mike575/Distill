@@ -1,0 +1,210 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 200 WHEELER ROAD                       EUROPE (44) 1189-226555
+ BURLINGTON, MASSACHUSETTS 01803                             
+ 781/221-6400
+
+ PLATFORM: WINDOWS                                       MAY 5, 2017         
+ VERSION: 30.0   Build 33                                FRIDAY      
+ INSTALLATION:                                           9:57:33 P.M.        
+
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 200 WHEELER ROAD,
+      BURLINGTON, MA 01803.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           MAY 5, 2017         
+   9:57:33 P.M.                           FRIDAY      
+   INPUT FILE: _4918gll.inm
+   RUN ID : _4918gll
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 21:57:32 Fri May 5, 2017
+          3    ;Directory   Runid RADFRAC1
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    SIM-OPTIONS MASS-BAL-CHE=YES OLD-DATABANK=YES
+         16
+         17    MODEL-OPTION
+         18
+         19    DATABANKS PURE28  / AQUEOUS  / SOLIDS  / INORGANIC  /  &
+         20            NOASPENPCD
+         21
+         22    PROP-SOURCES PURE28  / AQUEOUS  / SOLIDS  / INORGANIC
+         23
+         24    COMPONENTS
+         25        BENYIXI C8H8 /
+         26        YIBEN C8H10-4
+         27
+         28    ADA-SETUP
+         29        ADA-SETUP PROCEDURE=REL9
+         30
+         31    SOLVE
+         32        RUN-MODE MODE=SIM
+         33
+         34    FLOWSHEET
+         35        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         36
+         37    PROPERTIES NRTL
+         38
+         39    PROP-DATA NRTL-1
+         40        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         41            INVERSE-PRES='1/bar'
+         42        PROP-LIST NRTL
+         43        BPVAL BENYIXI YIBEN -.9750000000 37.64040000 .3000000000  &
+         44            0.0 0.0 0.0 57.67000000 97.00000000
+         45        BPVAL YIBEN BENYIXI 1.385000000 -56.00440000 .3000000000  &
+         46            0.0 0.0 0.0 57.67000000 97.00000000
+         47
+         48    STREAM FEED
+         49        SUBSTREAM MIXED TEMP=30. PRES=1.2 MASS-FLOW=1000.
+         50        MASS-FRAC BENYIXI 0.7 / YIBEN 0.3
+         51
+         52    BLOCK B1 RADFRAC
+         53        PARAM NSTAGE=172 ALGORITHM=STANDARD EFF=MURPHREE  &
+         54            HYDRAULIC=YES MAXOL=25 DAMPING=NONE
+         55        COL-CONFIG CONDENSER=TOTAL
+         56        FEEDS FEED 85
+         57        PRODUCTS UP 1 L / BOTTOM 172 L
+         58        P-SPEC 1 1.1
+         59        COL-SPECS DP-COL=0.1 MASS-D=300. MASS-RR=47.6850677
+         60        SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         61            BASE-STREAMS=FEED
+         62        SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM  &
+         63            BASE-STREAMS=FEED
+         64        VARY 1 MASS-D 280. 320.
+         65        VARY 2 MASS-RR 20. 200.
+         66        TRAY-SIZE 1 2 171 FLOAT
+         67        TRAY-SIZE 2 2 171 FLEXI
+         68        TRAY-RATE 1 2 171 FLOAT DIAM=0.8591731 <meter> P-UPDATE=NO
+         69        REPORT HYDRAULIC
+         70        STEFF-SEC SECNO=1 2 92 0.45 / SECNO=2 93 171 0.55
+         71
+         72    EO-CONV-OPTI
+         73
+         74    STREAM-REPOR MOLEFLOW
+         75    ;
+         76    ;
+         77    ;
+         78    ;
+         79    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+ 
+ 
+
+ PDF updated                                                                      TIME =      0.10
+
+ *** CALCULATION TRACE ***
+
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   FEED       ----       B1             UP         B1         ----    
+   BOTTOM     B1         ----                                         
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           FEED                           UP BOTTOM                   
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      B1 
+
+Calculations begin                                                              time      0.08
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.08
+
+      ENTHALPY CALCULATION FOR INLET STREAM FEED OF BLOCK B1                      TIME =      0.08
+      KODE = 2  NTRIAL =   2  T = 303.1500  P =  120000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.08
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    1    4      157.47    
+          2    8   66      72.901    
+          3    4   22      46.140    
+          4    3   14      27.123    
+          5    4   11      13.448    
+          6    3    7      4.4944    
+          7    3    5     0.43192    
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.217         20.000         200.00    
+
+      INFORMATION WHILE IN SEQUENCE MONITOR                    (TRTWRT.8172)    
+      TPSAR MESSAGE:    87.47%  JET FLOOD IN COLUMN B1      , SECTION   1       
+                       EXCEEDS 80%.                                             

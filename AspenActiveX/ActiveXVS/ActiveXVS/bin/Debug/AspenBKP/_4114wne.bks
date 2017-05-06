@@ -1,0 +1,11 @@
+ ? SETUP UNITS-SET SET1 ? \ UNITSET BASESET = MET (3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 5 3 4 3 3 3 3 3 3 3 3 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 5 3 3 3 3 3 3 5 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3) \                                                                       
+ ? BLOCK RADFRAC B1 ? ; SET1 ; \ PARAM NSTAGE = 86 MAXOL = 25 ALGORITHM =       
+ STANDARD DAMPING = NONE \ \ COL-SPECS DP-COL = .10 <75> <5> RR-BASIS = MASS    
+ BASIS-RR = 43.2473250 <0> <0> D-BASIS = MASS BASIS-D = 300.0 <-80> <3> \ \     
+ FEEDS FEED-SID = FEED FEED-STAGE = 85 \ \ P-SPEC2 PRES1 = 1.0 <20> <5> \ \     
+ PRODUCTS PROD-STREAM = UP PROD-STAGE = 1 PROD-PHASE = L / PROD-STREAM = BOTTOM 
+ PROD-STAGE = 86 PROD-PHASE = L \ \ COL-CONFIG CONDENSER = TOTAL \ "\@"         

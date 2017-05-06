@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _1821ttj.inm
+MODNAME: apmain
+RUNID: _1821ttj
+NEW_RUNID: _1821ttj
+OLD_RUNID: _1821ttj
+PDF: _1821ttj.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\AspenBKP\DistilR.ads

@@ -1,0 +1,1041 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 200 WHEELER ROAD                       EUROPE (44) 1189-226555
+ BURLINGTON, MASSACHUSETTS 01803                             
+ 781/221-6400
+
+ PLATFORM: WINDOWS                                       APRIL 30, 2017      
+ VERSION: 30.0   Build 33                                SUNDAY      
+ INSTALLATION:                                           11:32:51 P.M.       
+
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 200 WHEELER ROAD,
+      BURLINGTON, MA 01803.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           APRIL 30, 2017      
+   11:32:51 P.M.                          SUNDAY      
+   INPUT FILE: _1727xcu.inm
+   RUN ID : _1727xcu
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 23:32:51 Sun Apr 30, 2017
+          3    ;Directory   Runid RADFRAC1
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    SIM-OPTIONS MASS-BAL-CHE=YES PARADIGM=EO OLD-DATABANK=YES
+         16
+         17    MODEL-OPTION
+         18
+         19    DATABANKS PURE28  / AQUEOUS  / SOLIDS  / INORGANIC  /  &
+         20            NOASPENPCD
+         21
+         22    PROP-SOURCES PURE28  / AQUEOUS  / SOLIDS  / INORGANIC
+         23
+         24    COMPONENTS
+         25        BENYIXI C8H8 /
+         26        YIBEN C8H10-4
+         27
+         28    ADA-SETUP
+         29        ADA-SETUP PROCEDURE=REL9
+         30
+         31    SOLVE
+         32        RUN-MODE MODE=SIM
+         33
+         34    FLOWSHEET
+         35        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         36
+         37    PROPERTIES NRTL
+         38
+         39    PROP-DATA NRTL-1
+         40        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         41            INVERSE-PRES='1/bar'
+         42        PROP-LIST NRTL
+         43        BPVAL BENYIXI YIBEN -.9750000000 37.64040000 .3000000000  &
+         44            0.0 0.0 0.0 57.67000000 97.00000000
+         45        BPVAL YIBEN BENYIXI 1.385000000 -56.00440000 .3000000000  &
+         46            0.0 0.0 0.0 57.67000000 97.00000000
+         47
+         48    STREAM FEED
+         49        SUBSTREAM MIXED TEMP=30. PRES=1.2 MASS-FLOW=1000.
+         50        MASS-FRAC BENYIXI 0.3 / YIBEN 0.7
+         51
+         52    BLOCK B1 RADFRAC
+         53        PARAM NSTAGE=86 ALGORITHM=STANDARD MAXOL=25 DAMPING=NONE
+         54        COL-CONFIG CONDENSER=TOTAL
+         55        FEEDS FEED 43
+         56        PRODUCTS UP 1 L / BOTTOM 86 L
+         57        P-SPEC 1 1.1
+         58        COL-SPECS DP-STAGE=0.1 MASS-D=300. MASS-RR=43.247325
+         59        SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         60            SPEC-ACTIVE=YES
+         61        SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM
+         62        VARY 1 MASS-D 280. 320.
+         63        VARY 2 MASS-RR 20. 200.
+         64
+         65    EO-CONV-OPTI
+         66
+         67    STREAM-REPOR MOLEFLOW
+         68    ;
+         69    ;
+         70    ;
+         71    ;
+         72    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+ 
+ 
+
+ PDF updated                                                                      TIME =      0.05
+
+ *** CALCULATION TRACE ***
+
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   FEED       ----       B1             UP         B1         ----    
+   BOTTOM     B1         ----                                         
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           FEED                           UP BOTTOM                   
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      B1 
+
+Calculations begin                                                              time      0.12
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.12
+
+      ENTHALPY CALCULATION FOR INLET STREAM FEED OF BLOCK B1                      TIME =      0.12
+      KODE = 2  NTRIAL =   2  T = 303.1500  P =  120000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.12
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03A.7260)    
+      FEED PRESSURE  0.12000E+06 (N/SQM) OF STREAM FEED                         
+      IS LOWER THAN STAGE  43 PRESSURE  0.53000E+06 (N/SQM).                    
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    1    3      104.09    
+          2    9   25      20.550    
+          3    5   12      16.118    
+          4    5   11      4.0795    
+          5    3    6      1.7594    
+          6    2    3     0.23589E-01
+
+  **  ERROR WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")      
+                                                               (UDL03.5)        
+      DESIGN SPEC IS NOT SATISFIED BECAUSE ONE OR MORE MANIPULATED              
+      VARIABLE IS AT ITS BOUND.                                                 
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.88889E-01    0.77778E-01    0.88889E-01
+         2          200.00         20.000         200.00    
+
+->Starting EO Synchronization ...
+
+
+      INFORMATION WHILE INSTANTIATING THE EQUATION-ORIENTED STREAM BLOCK:       
+      "FEED"                                             (PML_AUTO_PHASE.5)     
+      BLOCK VAPOR PHASE DROPPED.                                                
+All unit operation blocks placed successfully in hierarchy Main
+All feed streams placed successfully in hierarchy Main
+All measurements are correctly specified.
+All connections are active.
+
+->Finished EO Synchronization ...
+
+<reset scope>
+<solver DMO>
+<set mode = sim>
+<apply solver settings>
+<set objective = None>
+<solve None>
+ 
+ 
+            Residual   Objective   Objective    Overall       Model
+          Convergence Convergence  Function  Nonlinearity Nonlinearity  Worst
+Iteration   Function    Function     Value       Ratio        Ratio     Model
+--------- ----------- ----------- ---------- ------------ ------------ --------
+     0      3.252D+02   0.000D+00  0.000D+00   -2.355D+00   -2.355D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.49D-01
+     1      1.474D+00   0.000D+00  0.000D+00    8.075D-01    8.075D-01 B1
+     2      3.367D-01   0.000D+00  0.000D+00    7.721D-01    7.721D-01 B1
+     3      7.413D-02   0.000D+00  0.000D+00    6.586D-01    6.586D-01 B1
+     4      5.042D-02   0.000D+00  0.000D+00    5.311D-01    5.311D-01 B1
+     5      9.082D-02   0.000D+00  0.000D+00   -1.031D+00   -1.031D+00 B1
+     6      2.314D+00   0.000D+00  0.000D+00   -2.044D+00   -2.044D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.64D-01
+     7      2.969D+00   0.000D+00  0.000D+00   -2.646D+00   -2.646D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.37D-01
+     8      3.655D+00   0.000D+00  0.000D+00   -3.213D+00   -3.213D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.19D-01
+     9      4.361D+00   0.000D+00  0.000D+00   -3.737D+00   -3.737D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.06D-01
+    10      5.080D+00   0.000D+00  0.000D+00   -4.219D+00   -4.219D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    11      5.854D+00   0.000D+00  0.000D+00   -4.668D+00   -4.668D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    12      6.740D+00   0.000D+00  0.000D+00   -5.080D+00   -5.080D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    13      7.743D+00   0.000D+00  0.000D+00   -5.441D+00   -5.441D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    14      8.863D+00   0.000D+00  0.000D+00   -5.738D+00   -5.738D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    15      1.009D+01   0.000D+00  0.000D+00   -5.967D+00   -5.967D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    16      1.142D+01   0.000D+00  0.000D+00   -6.119D+00   -6.119D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    17      1.282D+01   0.000D+00  0.000D+00   -6.196D+00   -6.196D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    18      1.427D+01   0.000D+00  0.000D+00   -6.200D+00   -6.200D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    19      1.572D+01   0.000D+00  0.000D+00   -6.138D+00   -6.138D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    20      1.713D+01   0.000D+00  0.000D+00   -6.014D+00   -6.014D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    21      1.845D+01   0.000D+00  0.000D+00   -5.839D+00   -5.839D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    22      1.963D+01   0.000D+00  0.000D+00   -5.620D+00   -5.620D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    23      2.062D+01   0.000D+00  0.000D+00   -5.367D+00   -5.367D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    24      2.138D+01   0.000D+00  0.000D+00   -5.087D+00   -5.087D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    25      2.187D+01   0.000D+00  0.000D+00   -4.788D+00   -4.788D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    26      2.208D+01   0.000D+00  0.000D+00   -4.477D+00   -4.477D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    27      2.200D+01   0.000D+00  0.000D+00   -4.159D+00   -4.159D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+    28      2.164D+01   0.000D+00  0.000D+00   -3.841D+00   -3.841D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.03D-01
+    29      2.103D+01   0.000D+00  0.000D+00   -3.507D+00   -3.507D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.11D-01
+    30      2.018D+01   0.000D+00  0.000D+00   -3.139D+00   -3.139D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.21D-01
+    31      1.906D+01   0.000D+00  0.000D+00   -2.738D+00   -2.738D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.34D-01
+    32      1.764D+01   0.000D+00  0.000D+00   -2.302D+00   -2.302D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.51D-01
+    33      1.589D+01   0.000D+00  0.000D+00   -1.832D+00   -1.832D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.77D-01
+    34      1.377D+01   0.000D+00  0.000D+00   -1.327D+00   -1.327D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 2.15D-01
+    35      1.122D+01   0.000D+00  0.000D+00   -7.862D-01   -7.862D-01 B1
+                       <Line Search ACTIVE> ==> Step taken 2.80D-01
+    36      8.202D+00   0.000D+00  0.000D+00   -2.113D-01   -2.113D-01 B1
+                       <Line Search ACTIVE> ==> Step taken 4.13D-01
+    37      4.653D+00   0.000D+00  0.000D+00    3.907D-01    3.907D-01 B1
+    38      2.163D-01   0.000D+00  0.000D+00    9.985D-01    9.985D-01 B1
+    39      9.460D-07   0.000D+00  0.000D+00
+ 
+Successful solution.
+ 
+ 
+Optimization Timing Statistics         Time      Percent
+================================      ========   =======
+ 
+MODEL computations                    0.54 secs    76.67 %
+DMO computations                      0.03 secs     4.44 %
+Miscellaneous                         0.13 secs    18.89 %
+--------------------------------     ---------    -------
+Total Optimization Time               0.70 secs   100.00 %
+ 
+  *   WARNING DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (UDL03N.1)
+      FINAL VALUE OF ONE OR MORE MANIPULATED VARIABLE LIES OUTSIDE
+      USER-SPECIFIED BOUNDS.  BOUNDS FOR MANIPULATED VARIABLES ARE
+      NOT USED FOR DSMETH=SIMULT.
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.19414        0.77778E-01    0.88889E-01
+         2          145.05         20.000         200.00    
+Problem converged
+**********************************************************************
+The command:
+SOLVE NONE
+generated
+       1 ASPEN PLUS warning(s)
+**********************************************************************
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       04/30/2017   23:32:55:32 
+ BLOCK B1 RADFRAC
+     PARAM NSTAGE=86 ALGORITHM=STANDARD MAXOL=25 DAMPING=NONE
+     COL-CONFIG CONDENSER=TOTAL
+     FEEDS FEED 53
+     PRODUCTS UP 1 L / BOTTOM 86 L
+     P-SPEC 1 1.1
+     COL-SPECS DP-STAGE=0.1 MASS-D=300. MASS-RR=43.247325
+     SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         SPEC-ACTIVE=YES
+     SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM
+     VARY 1 MASS-D 280. 320.
+     VARY 2 MASS-RR 20. 200.
+
+ PDF updated                                                                      TIME =      3.71
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+Calculations begin                                                              time      3.75
+
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      3.75
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03A.7260)    
+      FEED PRESSURE  0.12000E+06 (N/SQM) OF STREAM FEED                         
+      IS LOWER THAN STAGE  53 PRESSURE  0.63000E+06 (N/SQM).                    
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03D.11)      
+      PREVIOUS SOLUTION VALUE OF MANIPULATED VARIABLE FOR "VARYNO= 1"           
+      LIES OUTSIDE CURRENT LIMITS.  MANIPULATED VARIABLE IS RESET TO ITS        
+      INITIAL VALUE.                                                            
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    8   32      189.40    
+          2    5   13      95.825    
+          3    2    5      11.031    
+          4    2    5      2.2422    
+          5    2    4     0.28360    
+
+  **  ERROR WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")      
+                                                               (UDL03.5)        
+      DESIGN SPEC IS NOT SATISFIED BECAUSE ONE OR MORE MANIPULATED              
+      VARIABLE IS AT ITS BOUND.                                                 
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.88889E-01    0.77778E-01    0.88889E-01
+         2          200.00         20.000         200.00    
+
+->Starting EO Synchronization ...
+
+
+      INFORMATION WHILE INSTANTIATING THE EQUATION-ORIENTED STREAM BLOCK:       
+      "FEED"                                             (PML_AUTO_PHASE.5)     
+      BLOCK VAPOR PHASE DROPPED.                                                
+All feed streams placed successfully in hierarchy Main
+All measurements are correctly specified.
+All connections are active.
+
+->Finished EO Synchronization ...
+
+<reset scope>
+<solver DMO>
+<set mode = sim>
+<apply solver settings>
+<set objective = None>
+<solve None>
+ 
+ 
+            Residual   Objective   Objective    Overall       Model
+          Convergence Convergence  Function  Nonlinearity Nonlinearity  Worst
+Iteration   Function    Function     Value       Ratio        Ratio     Model
+--------- ----------- ----------- ---------- ------------ ------------ --------
+     0      4.573D+03   0.000D+00  0.000D+00   -1.063D+01   -1.063D+01 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+     1      1.603D+03   0.000D+00  0.000D+00   -3.703D+01   -3.703D+01 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+     2      1.412D+04   0.000D+00  0.000D+00   -3.603D+01   -3.603D+01 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+     3      3.580D+06   0.000D+00  0.000D+00   -9.298D-01   -9.298D-01 B1
+                       <Line Search ACTIVE> ==> Step taken 2.59D-01
+     4      3.113D+12   0.000D+00  0.000D+00    6.689D-01    6.689D-01 B1
+ 
+              +---------------------- ERROR ----------------------+
+ 
+                Error return due to an UNBOUNDED SOLUTION in the QP
+                subproblem.  The search direction was large and no
+                bound was encountered.
+ 
+                Action : Check the EO Solver Report for diagnostic
+                         messages.
+ 
+              +---------------------------------------------------+
+ 
+Error return, [DMO] System Status Information =   5
+ 
+ 
+Optimization Timing Statistics         Time      Percent
+================================      ========   =======
+ 
+MODEL computations                    0.09 secs    85.71 %
+DMO computations                      0.01 secs     7.14 %
+Miscellaneous                         0.01 secs     7.14 %
+--------------------------------     ---------    -------
+Total Optimization Time               0.11 secs   100.00 %
+ 
+KOND (condition flag) = 4
+  *   WARNING DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (UDL03N.1)
+      FINAL VALUE OF ONE OR MORE MANIPULATED VARIABLE LIES OUTSIDE
+      USER-SPECIFIED BOUNDS.  BOUNDS FOR MANIPULATED VARIABLES ARE
+      NOT USED FOR DSMETH=SIMULT.
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.19414        0.77778E-01    0.88889E-01
+         2        -0.38096E+09     20.000         200.00    
+
+  **  ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "FEED"
+      (MODEL: "STREAM")                                        (BALMAS.1)
+      BLOCK B1 IS NOT IN MASS BALANCE:
+      MASS INLET FLOW = 0.27777778E+00, MASS OUTLET FLOW = 0.27373397E+00
+      RELATIVE DIFFERENCE = 0.14772781E-01
+Problem failed to converge
+**********************************************************************
+The command:
+SOLVE NONE
+generated
+       1 ASPEN PLUS error(s)
+       1 ASPEN PLUS warning(s)
+**********************************************************************
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ FLOWSHEET    IS GENERATED BECAUSE OF OTHER CHANGES 04/30/2017   23:33:59:05 
+ FLOWSHEET
+     BLOCK B1 IN=FEED OUT=UP BOTTOM
+
+ CHANGES WERE MADE TO BLOCK        B1       04/30/2017   23:33:59:05 
+ BLOCK B1 RADFRAC
+     PARAM NSTAGE=90 ALGORITHM=STANDARD MAXOL=25 DAMPING=NONE
+     COL-CONFIG CONDENSER=TOTAL
+     FEEDS FEED 53
+     PRODUCTS UP 1 L / BOTTOM 90 L
+     P-SPEC 1 1.1
+     COL-SPECS DP-STAGE=0.1 MASS-D=300. MASS-RR=43.247325
+     SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         SPEC-ACTIVE=YES
+     SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM
+     VARY 1 MASS-D 280. 320.
+     VARY 2 MASS-RR 20. 200.
+
+ PDF updated                                                                      TIME =     67.43
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+Calculations begin                                                              time     67.46
+
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =     67.46
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03A.7260)    
+      FEED PRESSURE  0.12000E+06 (N/SQM) OF STREAM FEED                         
+      IS LOWER THAN STAGE  53 PRESSURE  0.63000E+06 (N/SQM).                    
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03D.11)      
+      PREVIOUS SOLUTION VALUE OF MANIPULATED VARIABLE FOR "VARYNO= 1"           
+      LIES OUTSIDE CURRENT LIMITS.  MANIPULATED VARIABLE IS RESET TO ITS        
+      INITIAL VALUE.                                                            
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03D.11)      
+      PREVIOUS SOLUTION VALUE OF MANIPULATED VARIABLE FOR "VARYNO= 2"           
+      LIES OUTSIDE CURRENT LIMITS.  MANIPULATED VARIABLE IS RESET TO ITS        
+      INITIAL VALUE.                                                            
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    8   38      147.95    
+          2    5   20      76.493    
+          3    6   21      6.0576    
+          4    2    6      1.4368    
+          5    2    4     0.39821    
+
+  **  ERROR WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")      
+                                                               (UDL03.5)        
+      DESIGN SPEC IS NOT SATISFIED BECAUSE ONE OR MORE MANIPULATED              
+      VARIABLE IS AT ITS BOUND.                                                 
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.88889E-01    0.77778E-01    0.88889E-01
+         2          200.00         20.000         200.00    
+
+->Starting EO Synchronization ...
+
+
+      INFORMATION WHILE INSTANTIATING THE EQUATION-ORIENTED STREAM BLOCK:       
+      "FEED"                                             (PML_AUTO_PHASE.5)     
+      BLOCK VAPOR PHASE DROPPED.                                                
+All feed streams placed successfully in hierarchy Main
+All measurements are correctly specified.
+All connections are active.
+
+->Finished EO Synchronization ...
+
+<reset scope>
+<solver DMO>
+<set mode = sim>
+<apply solver settings>
+<set objective = None>
+<solve None>
+ 
+ 
+            Residual   Objective   Objective    Overall       Model
+          Convergence Convergence  Function  Nonlinearity Nonlinearity  Worst
+Iteration   Function    Function     Value       Ratio        Ratio     Model
+--------- ----------- ----------- ---------- ------------ ------------ --------
+     0      4.639D+03   0.000D+00  0.000D+00   -1.039D+01   -1.039D+01 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+     1      2.260D+03   0.000D+00  0.000D+00   -5.926D+01   -5.926D+01 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+     2      2.108D+04   0.000D+00  0.000D+00    6.662D-01    6.662D-01 B1
+     3      7.157D+08   0.000D+00  0.000D+00    5.262D-01    5.262D-01 B1
+     4      8.505D+19   0.000D+00  0.000D+00    9.170D-02    9.170D-02 B1
+                       <Line Search ACTIVE> ==> Step taken 5.50D-01
+ 
+              +---------------------- ERROR ----------------------+
+ 
+                Error return due to an UNBOUNDED SOLUTION in the QP
+                subproblem.  The search direction was large and no
+                bound was encountered.
+ 
+                Action : Check the EO Solver Report for diagnostic
+                         messages.
+ 
+              +---------------------------------------------------+
+ 
+Error return, [DMO] System Status Information =   5
+ 
+ 
+Optimization Timing Statistics         Time      Percent
+================================      ========   =======
+ 
+MODEL computations                    0.12 secs    80.00 %
+DMO computations                      0.01 secs     5.00 %
+Miscellaneous                         0.02 secs    15.00 %
+--------------------------------     ---------    -------
+Total Optimization Time               0.16 secs   100.00 %
+ 
+KOND (condition flag) = 4
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1003)
+      LIQUID MOLEFRACTION IS NEGATIVE ON TRAY (86).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1003)
+      LIQUID MOLEFRACTION IS NEGATIVE ON TRAY (87).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1004)
+      VAPOR MOLEFRACTION IS NEGATIVE ON TRAY (87).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1004)
+      VAPOR MOLEFRACTION IS NEGATIVE ON TRAY (88).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *   WARNING DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (UDL03N.1)
+      FINAL VALUE OF ONE OR MORE MANIPULATED VARIABLE LIES OUTSIDE
+      USER-SPECIFIED BOUNDS.  BOUNDS FOR MANIPULATED VARIABLES ARE
+      NOT USED FOR DSMETH=SIMULT.
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.19414        0.77778E-01    0.88889E-01
+         2        -0.20811E+13     20.000         200.00    
+
+  **  ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "FEED"
+      (MODEL: "STREAM")                                        (BALMAS.1)
+      BLOCK B1 IS NOT IN MASS BALANCE:
+      MASS INLET FLOW = 0.27777778E+00, MASS OUTLET FLOW = 0.27838444E+00
+      RELATIVE DIFFERENCE = 0.21839989E-02
+Problem failed to converge
+**********************************************************************
+The command:
+SOLVE NONE
+generated
+       4 ASPEN PLUS severe error(s)
+       1 ASPEN PLUS error(s)
+       1 ASPEN PLUS warning(s)
+**********************************************************************
+<reset scope>
+<solver DMO>
+<set mode = sim>
+<apply solver settings>
+<set objective = None>
+<solve None>
+ 
+ 
+            Residual   Objective   Objective    Overall       Model
+          Convergence Convergence  Function  Nonlinearity Nonlinearity  Worst
+Iteration   Function    Function     Value       Ratio        Ratio     Model
+--------- ----------- ----------- ---------- ------------ ------------ --------
+Warning ...  QP slack variable = -1.34558D-01
+ 
+ 
+              +---------------------- ERROR -------------------------+
+ 
+                Error return from [DMO] solver subroutine DMOQPS
+                because the problem has NO FEASIBLE SOLUTION.
+ 
+                Action : Check the diagnostic messages in the
+                         EO Solver Report.
+ 
+              +------------------------------------------------------+
+ 
+Error return, [DMO] System Status Information =   5
+ 
+ 
+Optimization Timing Statistics         Time      Percent
+================================      ========   =======
+ 
+MODEL computations                    0.02 secs    50.00 %
+DMO computations                      0.01 secs    25.00 %
+Miscellaneous                         0.01 secs    25.00 %
+--------------------------------     ---------    -------
+Total Optimization Time               0.03 secs   100.00 %
+ 
+KOND (condition flag) = 4
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1003)
+      LIQUID MOLEFRACTION IS NEGATIVE ON TRAY (86).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1003)
+      LIQUID MOLEFRACTION IS NEGATIVE ON TRAY (87).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1004)
+      VAPOR MOLEFRACTION IS NEGATIVE ON TRAY (87).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1004)
+      VAPOR MOLEFRACTION IS NEGATIVE ON TRAY (88).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *   WARNING DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (UDL03N.1)
+      FINAL VALUE OF ONE OR MORE MANIPULATED VARIABLE LIES OUTSIDE
+      USER-SPECIFIED BOUNDS.  BOUNDS FOR MANIPULATED VARIABLES ARE
+      NOT USED FOR DSMETH=SIMULT.
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.19414        0.77778E-01    0.88889E-01
+         2        -0.20811E+13     20.000         200.00    
+
+  **  ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "FEED"
+      (MODEL: "STREAM")                                        (BALMAS.1)
+      BLOCK B1 IS NOT IN MASS BALANCE:
+      MASS INLET FLOW = 0.27777778E+00, MASS OUTLET FLOW = 0.27838444E+00
+      RELATIVE DIFFERENCE = 0.21839989E-02
+Problem failed to converge
+**********************************************************************
+The command:
+SOLVE NONE
+generated
+       4 ASPEN PLUS severe error(s)
+       1 ASPEN PLUS error(s)
+       1 ASPEN PLUS warning(s)
+**********************************************************************
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ FLOWSHEET    IS GENERATED BECAUSE OF OTHER CHANGES 04/30/2017   23:34:53:93 
+ FLOWSHEET
+     BLOCK B1 IN=FEED OUT=UP BOTTOM
+
+ CHANGES WERE MADE TO BLOCK        B1       04/30/2017   23:34:53:93 
+ BLOCK B1 RADFRAC
+     PARAM NSTAGE=89 ALGORITHM=STANDARD MAXOL=25 DAMPING=NONE
+     COL-CONFIG CONDENSER=TOTAL
+     FEEDS FEED 53
+     PRODUCTS UP 1 L / BOTTOM 89 L
+     P-SPEC 1 1.1
+     COL-SPECS DP-STAGE=0.1 MASS-D=300. MASS-RR=43.247325
+     SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         SPEC-ACTIVE=YES
+     SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM
+     VARY 1 MASS-D 280. 320.
+     VARY 2 MASS-RR 20. 200.
+
+ PDF updated                                                                      TIME =    122.31
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+Calculations begin                                                              time    122.35
+
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =    122.35
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03A.7260)    
+      FEED PRESSURE  0.12000E+06 (N/SQM) OF STREAM FEED                         
+      IS LOWER THAN STAGE  53 PRESSURE  0.63000E+06 (N/SQM).                    
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03D.11)      
+      PREVIOUS SOLUTION VALUE OF MANIPULATED VARIABLE FOR "VARYNO= 1"           
+      LIES OUTSIDE CURRENT LIMITS.  MANIPULATED VARIABLE IS RESET TO ITS        
+      INITIAL VALUE.                                                            
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03D.11)      
+      PREVIOUS SOLUTION VALUE OF MANIPULATED VARIABLE FOR "VARYNO= 2"           
+      LIES OUTSIDE CURRENT LIMITS.  MANIPULATED VARIABLE IS RESET TO ITS        
+      INITIAL VALUE.                                                            
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    9   45      199.52    
+          2    5   21      105.30    
+          3    6   17      13.991    
+          4    2    6      3.5141    
+          5    2    5      1.3212    
+          6    2    4     0.27911    
+
+  **  ERROR WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")      
+                                                               (UDL03.5)        
+      DESIGN SPEC IS NOT SATISFIED BECAUSE ONE OR MORE MANIPULATED              
+      VARIABLE IS AT ITS BOUND.                                                 
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.88889E-01    0.77778E-01    0.88889E-01
+         2          200.00         20.000         200.00    
+
+->Starting EO Synchronization ...
+
+
+      INFORMATION WHILE INSTANTIATING THE EQUATION-ORIENTED STREAM BLOCK:       
+      "FEED"                                             (PML_AUTO_PHASE.5)     
+      BLOCK VAPOR PHASE DROPPED.                                                
+All feed streams placed successfully in hierarchy Main
+All measurements are correctly specified.
+All connections are active.
+
+->Finished EO Synchronization ...
+
+<reset scope>
+<solver DMO>
+<set mode = sim>
+<apply solver settings>
+<set objective = None>
+<solve None>
+ 
+ 
+            Residual   Objective   Objective    Overall       Model
+          Convergence Convergence  Function  Nonlinearity Nonlinearity  Worst
+Iteration   Function    Function     Value       Ratio        Ratio     Model
+--------- ----------- ----------- ---------- ------------ ------------ --------
+     0      4.619D+03   0.000D+00  0.000D+00   -1.067D+01   -1.067D+01 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+     1      2.062D+03   0.000D+00  0.000D+00   -5.327D+01   -5.327D+01 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+     2      2.097D+04   0.000D+00  0.000D+00    7.964D-02    7.964D-02 B1
+                       <Line Search ACTIVE> ==> Step taken 5.43D-01
+     3      6.370D+08   0.000D+00  0.000D+00    4.605D-01    4.605D-01 B1
+     4      1.370D+19   0.000D+00  0.000D+00    2.990D-01    2.990D-01 B1
+ 
+              +---------------------- ERROR ----------------------+
+ 
+                Error return due to an UNBOUNDED SOLUTION in the QP
+                subproblem.  The search direction was large and no
+                bound was encountered.
+ 
+                Action : Check the EO Solver Report for diagnostic
+                         messages.
+ 
+              +---------------------------------------------------+
+ 
+Error return, [DMO] System Status Information =   5
+ 
+ 
+Optimization Timing Statistics         Time      Percent
+================================      ========   =======
+ 
+MODEL computations                    0.20 secs    83.33 %
+DMO computations                      0.02 secs    10.00 %
+Miscellaneous                         0.02 secs     6.67 %
+--------------------------------     ---------    -------
+Total Optimization Time               0.23 secs   100.00 %
+ 
+KOND (condition flag) = 4
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1003)
+      LIQUID MOLEFRACTION IS NEGATIVE ON TRAY (86).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1003)
+      LIQUID MOLEFRACTION IS NEGATIVE ON TRAY (87).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1004)
+      VAPOR MOLEFRACTION IS NEGATIVE ON TRAY (87).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1003)
+      LIQUID MOLEFRACTION IS NEGATIVE ON TRAY (88).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1004)
+      VAPOR MOLEFRACTION IS NEGATIVE ON TRAY (88).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *** SEVERE ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (CMBLR2.1004)
+      VAPOR MOLEFRACTION IS NEGATIVE ON TRAY (89).
+      RESET TO ABSOLUTE VALUE AND RENORMALIZED.
+  *   WARNING DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (UDL03N.1)
+      FINAL VALUE OF ONE OR MORE MANIPULATED VARIABLE LIES OUTSIDE
+      USER-SPECIFIED BOUNDS.  BOUNDS FOR MANIPULATED VARIABLES ARE
+      NOT USED FOR DSMETH=SIMULT.
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.19414        0.77778E-01    0.88889E-01
+         2        -0.13375E+13     20.000         200.00    
+
+  **  ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "FEED"
+      (MODEL: "STREAM")                                        (BALMAS.1)
+      BLOCK B1 IS NOT IN MASS BALANCE:
+      MASS INLET FLOW = 0.27777778E+00, MASS OUTLET FLOW = 0.26896002E+00
+      RELATIVE DIFFERENCE = 0.32784632E-01
+Problem failed to converge
+**********************************************************************
+The command:
+SOLVE NONE
+generated
+       6 ASPEN PLUS severe error(s)
+       1 ASPEN PLUS error(s)
+       1 ASPEN PLUS warning(s)
+**********************************************************************
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       04/30/2017   23:35:02:46 
+ BLOCK B1 RADFRAC
+     PARAM NSTAGE=89 ALGORITHM=STANDARD MAXOL=25 DAMPING=NONE
+     COL-CONFIG CONDENSER=TOTAL
+     FEEDS FEED 53
+     PRODUCTS UP 1 L / BOTTOM 89 L
+     P-SPEC 1 1.1
+     COL-SPECS DP-STAGE=0.1 MASS-D=300. MASS-RR=25.
+     SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         SPEC-ACTIVE=YES
+     SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM
+     VARY 1 MASS-D 280. 320.
+     VARY 2 MASS-RR 20. 200.
+
+ PDF updated                                                                      TIME =    130.84
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+Calculations begin                                                              time    130.87
+
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =    130.87
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03A.7260)    
+      FEED PRESSURE  0.12000E+06 (N/SQM) OF STREAM FEED                         
+      IS LOWER THAN STAGE  53 PRESSURE  0.63000E+06 (N/SQM).                    
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03D.11)      
+      PREVIOUS SOLUTION VALUE OF MANIPULATED VARIABLE FOR "VARYNO= 1"           
+      LIES OUTSIDE CURRENT LIMITS.  MANIPULATED VARIABLE IS RESET TO ITS        
+      INITIAL VALUE.                                                            
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL03D.11)      
+      PREVIOUS SOLUTION VALUE OF MANIPULATED VARIABLE FOR "VARYNO= 2"           
+      LIES OUTSIDE CURRENT LIMITS.  MANIPULATED VARIABLE IS RESET TO ITS        
+      INITIAL VALUE.                                                            
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    9   37      72.211    
+          2    5   16      40.094    
+          3    3   11      4.4320    
+          4    6   21      5.8366    
+          5    3    7      4.2153    
+          6    2    4     0.50694    
+
+  **  ERROR WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")      
+                                                               (UDL03.5)        
+      DESIGN SPEC IS NOT SATISFIED BECAUSE ONE OR MORE MANIPULATED              
+      VARIABLE IS AT ITS BOUND.                                                 
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.88889E-01    0.77778E-01    0.88889E-01
+         2          200.00         20.000         200.00    
+
+->Starting EO Synchronization ...
+
+
+      INFORMATION WHILE INSTANTIATING THE EQUATION-ORIENTED STREAM BLOCK:       
+      "FEED"                                             (PML_AUTO_PHASE.5)     
+      BLOCK VAPOR PHASE DROPPED.                                                
+All feed streams placed successfully in hierarchy Main
+All measurements are correctly specified.
+All connections are active.
+
+->Finished EO Synchronization ...
+
+<reset scope>
+<solver DMO>
+<set mode = sim>
+<apply solver settings>
+<set objective = None>
+<solve None>
+ 
+ 
+            Residual   Objective   Objective    Overall       Model
+          Convergence Convergence  Function  Nonlinearity Nonlinearity  Worst
+Iteration   Function    Function     Value       Ratio        Ratio     Model
+--------- ----------- ----------- ---------- ------------ ------------ --------
+     0      4.603D+03   0.000D+00  0.000D+00   -1.704D+01   -1.704D+01 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+                       <Line Search ACTIVE> ==> Step taken 4.09D-02
+     1      9.550D+01   0.000D+00  0.000D+00   -4.166D+00   -4.166D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 1.00D-01
+     2      6.168D-01   0.000D+00  0.000D+00    5.042D-01    5.042D-01 B1
+     3      2.070D-01   0.000D+00  0.000D+00    7.666D-01    7.666D-01 B1
+     4      3.217D-02   0.000D+00  0.000D+00    6.296D-01    6.296D-01 B1
+     5      7.791D-01   0.000D+00  0.000D+00    2.299D-01    2.299D-01 B1
+     6      2.495D+02   0.000D+00  0.000D+00   -9.861D-02   -9.861D-02 B1
+                       <Line Search ACTIVE> ==> Step taken 4.55D-01
+     7      5.082D+05   0.000D+00  0.000D+00   -7.241D-01   -7.241D-01 B1
+                       <Line Search ACTIVE> ==> Step taken 2.90D-01
+     8      1.707D+11   0.000D+00  0.000D+00   -1.393D+00   -1.393D+00 B1
+                       <Line Search ACTIVE> ==> Step taken 2.09D-01
+ 
+              +---------------------- ERROR ----------------------+
+ 
+                Error return due to an UNBOUNDED SOLUTION in the QP
+                subproblem.  The search direction was large and no
+                bound was encountered.
+ 
+                Action : Check the EO Solver Report for diagnostic
+                         messages.
+ 
+              +---------------------------------------------------+
+ 
+Error return, [DMO] System Status Information =   5
+ 
+ 
+Optimization Timing Statistics         Time      Percent
+================================      ========   =======
+ 
+MODEL computations                    0.23 secs    85.29 %
+DMO computations                      0.02 secs     5.88 %
+Miscellaneous                         0.02 secs     8.82 %
+--------------------------------     ---------    -------
+Total Optimization Time               0.27 secs   100.00 %
+ 
+KOND (condition flag) = 4
+  *   WARNING DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "B1"
+      (MODEL: "RADFRAC")                                       (UDL03N.1)
+      FINAL VALUE OF ONE OR MORE MANIPULATED VARIABLE LIES OUTSIDE
+      USER-SPECIFIED BOUNDS.  BOUNDS FOR MANIPULATED VARIABLES ARE
+      NOT USED FOR DSMETH=SIMULT.
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.19414        0.77778E-01    0.88889E-01
+         2        -0.30791E+08     20.000         200.00    
+
+  **  ERROR DURING THE POST-SOLVE STAGE OF UNIT OPERATIONS BLOCK: "FEED"
+      (MODEL: "STREAM")                                        (BALMAS.1)
+      BLOCK B1 IS NOT IN MASS BALANCE:
+      MASS INLET FLOW = 0.27777778E+00, MASS OUTLET FLOW = 0.27624346E+00
+      RELATIVE DIFFERENCE = 0.55542390E-02
+Problem failed to converge
+**********************************************************************
+The command:
+SOLVE NONE
+generated
+       1 ASPEN PLUS error(s)
+       1 ASPEN PLUS warning(s)
+**********************************************************************
