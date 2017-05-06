@@ -123,6 +123,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="record.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Find.resx">

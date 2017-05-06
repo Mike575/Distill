@@ -3,27 +3,35 @@ Module AspenActiveX
 
     Public AspenPlusDistilR As HappLS
     Public AspenPlusRadFrac1 As HappLS
-    Public DSTWU_ModifyR As Double
-    Public DSTWU_ModifyStage As Double
+    Public RadFrac_Standard As HappLS
+    Public Lightkey_Row As Integer              '轻组分数据库位置
+    Public Heavykey_Row As Integer              '重组分数据库位置
+    Public ModifyR_DSTWU As Double
+    Public ModifyStage_DSTWU As Double
+    Public ModifyR_RadFrac As Double
+    Public Modify_DistillRate_RadFrac As Double
     Public RadFrac_ModifyR As Double
     Public RadFrac_ModifyStage As Double
     Public RadFrac_Nstage_feed As Integer       'RadFrac 模型中进料板位置
 
     Public Heavykey_feed_MassFrac As Double     '重组分进料质量分数
-    Public Lightkey_feed_MassFrac As Double     '轻组分进料质量分数
+    Public Lightkey_feed_MassFrac As Double     '轻组分进料质量分数  
     Public Heavykey_Up_MassFrac As Double       '重组分塔顶回收质量分数
     Public Lightkey_Up_MassFrac As Double       '轻组分塔顶回收质量分数
     Public Heavykey_Bottom_MassFrac As Double   '重组分塔釜回收质量分数
     Public Temperature_feed As Double           '进料温度
     Public Pressure_feed As Double              '进料压力
     Public velocity_feed As Double              '进料流速   kg/hr
-
+    Public Pressure_Bottom As Double            '塔底压力
+    Public Pressure_Top As Double               '塔顶压力
+    Public Pressure_Column_Drop As Double       '全塔压降
+    Public Reflux_Ratio As Double               '回流比
 
     ' Public ihAPsim As IHapp
     Public ihAPsim_RadFrac As IHapp
     Public ihApsim_DSTWU As IHapp
-    Public R As New ArrayList
-    Public Stage As New ArrayList
+    Public DSTWU_R As New ArrayList
+    Public DSTWU_Stage As New ArrayList
     Public LowStage As Double
     Public HighStage As Double
     Public engine_DSTWU As Happ.IHAPEngine
@@ -32,6 +40,15 @@ Module AspenActiveX
     Public eachStage_MassFrac_StageNumber As New ArrayList
     Public eachStage_HeavyKey_MassFrac As New ArrayList
 
+    Public Structure Node
+        Dim Row As Integer
+        Dim deep As Integer
+        Dim deepin() As String
+        Dim Name As String
+        Dim value As String
+        Dim address As String
+
+    End Structure
 
 
     Function OpenDistilR() As IHapp
@@ -92,6 +109,7 @@ ErrorHandler:
 
         ' open existing simulation
         AspenPlusRadFrac1 = GetObject(path & "RadFrac1.bkp")
+        RadFrac_Standard = GetObject(path & "RadFrac.bkp")
         ihAPsim_RadFrac = AspenPlusRadFrac1.Application
         engine_RadFrac = AspenPlusRadFrac1.Engine
 

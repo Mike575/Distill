@@ -58,3 +58,33 @@ Application.Tree.Data.Blocks.B1.Stream Results.Table.Total Flow l/min BOTTOM    
 Application.Tree.Data.Blocks.B1.Stream Results.Table.Total Flow l/min UP        '6.147346
 Application.Tree.Data.Blocks.B1.Stream Results.Table.Temperature C FEED         '30
 
+#RadFrac
+Application.Tree.FindNode("\Data\Blocks\B1\Input\FEED_STAGE\FEED")      'feed stage
+Application.Tree.FindNode("\Data\Blocks\B1\Input\STEFF_SEC\1")          'Murphree 0.45 section1
+Application.Tree.FindNode("\Data\Blocks\B1\Input\STEFF_SEC\2")          'Murphree 0.55 section2
+Application.Tree.FindNode("\Data\Blocks\B1\Input\STEFF_STAGE1\1")       'section1 starting stage
+Application.Tree.FindNode("\Data\Blocks\B1\Input\STEFF_STAGE2\1")       'section1 ending stage
+Application.Tree.FindNode("\Data\Blocks\B1\Input\STEFF_STAGE1\2")       'section2 starting stage
+Application.Tree.FindNode("\Data\Blocks\B1\Input\STEFF_STAGE2\2")       'section2 ending stage
+
+
+Temperature liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_TL")
+Temperature vapor to:    Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_TVTO")
+Mass flow liquid from:   Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_LMF")
+Mass flow vapor to:      Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_VMF")
+Volume flow liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_LVF")
+Volume flow vapor to:    Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_VVF")
+Molecular wt liquid from:Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MWL")
+Molecular wt vapor to:   Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MWV")
+Density liquid from:     Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_RHOL")
+Density vapor to:        Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_RHOV")
+Viscosity liquid from:   Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MUL")
+Viscosity vapor to:      Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MUV")
+Surface tension liquid from:    Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_STEN")
+Foaming index:           Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FMIDX")
+Flow parameter:          Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_PARM")
+Reduced vapor:          Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_QR")
+Reduced F factor        Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FFR")
+
+
+

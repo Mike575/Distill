@@ -1,4 +1,4 @@
-MM "30.0" FLAVOR "NO" VERSION "30.0" DATETIME "Sun Apr 23 23:26:01 2017" 
+MM "30.0" FLAVOR "NO" VERSION "30.0" DATETIME "Fri May 05 13:41:59 2017" 
 MACHINE "WIN-NT/VC"  ; 
 startlibrary
 version1
@@ -48,41 +48,40 @@ SETUP "RUN-CONTROL" ? ? SETUP DESCRIPTION ? ? ODATABANKS ? ? DATABANKS ? \
 DATABANKS \ ? COMPONENTS MAIN ? \ COMPONENTS CID = BENYIXI ANAME = C8H8 
 OUTNAME = BENYIXI DBNAME1 = "STYRENE" ANAME1 = "C8H8" /  CID = YIBEN ANAME = 
 C8H10-4 OUTNAME = YIBEN DBNAME1 = "ETHYLBENZENE" ANAME1 = "C8H10-4" \ ? 
-COMPONENTS "ADA/PCS" "PSEUDO-COMP" ? ; "METCBAR_MOLE" ; ? COMPONENTS "ADA/PCS" 
-"PC-PROP-DATA" ? ; "METCBAR_MOLE" ; ? COMPONENTS "ADA/PCS" "LE-PROP-DATA" ? ; 
-"METCBAR_MOLE" ; ? COMPONENTS "ADA/PCS" "ADA-SETUP" ? \ "ADA-SETUP" PROCEDURE
- = REL9 \ ? COMPONENTS "COMP-LIST" GLOBAL ? ? COMPONENTS "MOIST-COMPS" ? ? 
-COMPONENTS "UNIFAC-GROUP" ? ? SOLVE ? \ "RUN-MODE" MODE = SIM \ ? 
-"INIT-VAR-ATT" ? ? "EO-ALIAS" ? ? SPECGROUPS ? ? CONNECTIONS ? ? "EO-OPTIONS" 
-? ? SCRIPTMETHOD ? ? "DYN-OPTIONS" ? ? FLOWSHEET GLOBAL ? \ BLOCK BLKID = B1 
-BLKTYPE = DSTWU MDLTYPE = "DSTWU" IN = ( FEED M0-1 ) OUT = ( BOTTOM M1-2 UP 
-M0-1 ) \ ? PROPERTIES MAIN ? \ GPROPERTIES GBASEOPSET = NRTL GOPSETNAME = 
-NRTL PARCON = -2 \ ? PROPERTIES "OPTION-SETS" NRTL ? \ PARAM BASE = NRTL \ ? 
-PROPERTIES "NC-PROPS" ? ? PROPERTIES "MOLEC-STRUCT" BENYIXI ? ? PROPERTIES 
-"MOLEC-STRUCT" YIBEN ? ? PROPERTIES PARAMETERS SUMMARY ? ? PROPERTIES 
-PARAMETERS BINARY SCALAR "MLQKIJ-1" ? ; "ENG_MOLE" ; \ PROP-LIST PARAMNAME = 
-MLQKIJ SETNO = 1 UNITROW = 0 \ ? PROPERTIES PARAMETERS BINARY SCALAR "RKTKIJ-1" 
-? ; "ENG_MOLE" ; \ PROP-LIST PARAMNAME = RKTKIJ SETNO = 1 UNITROW = 0 \ ? 
-PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "ANDKIJ-1" ? ; "ENG_MOLE" ; \ 
-PROP-LIST PARAMNAME = ANDKIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 TUNITLABEL
- = F NEL = 2 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "ANDMIJ-1" ? ; 
-"ENG_MOLE" ; \ PROP-LIST PARAMNAME = ANDMIJ SETNO = 1 UNITROW = 0 TUNITROW = 
-22 TUNITLABEL = F NEL = 2 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" 
-"HENRY-1" ? ; "METCBAR_MOLE" ; \ PROP-LIST PARAMNAME = HENRY SETNO = 1 
-UNITROW = 20 UNITLABEL = bar TUNITROW = 22 TUNITLABEL = C BDBANK = ( BINARY 
-HENRY ) NEL = 7 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "MUKIJ-1" ? ; 
-"ENG_MOLE" ; \ PROP-LIST PARAMNAME = MUKIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 
-TUNITLABEL = F NEL = 6 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "MULIJ-1" 
-? ; "ENG_MOLE" ; \ PROP-LIST PARAMNAME = MULIJ SETNO = 1 UNITROW = 0 TUNITROW
- = 22 TUNITLABEL = F NEL = 11 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" 
-"NRTL-1" ? ; "METCBAR_MOLE" ; \ PROP-LIST PARAMNAME = NRTL SETNO = 1 UNITROW
- = 0 TUNITROW = 22 TUNITLABEL = C BDBANK = ( "VLE-IG" "LLE-ASPEN" "VLE-LIT" ) 
-NEL = 12 \ \ BPVAL PARAMNAME2 = NRTL CID1 = BENYIXI CID2 = YIBEN UNITROW2 = 0 
+COMPONENTS "ADA/PCS" "PC-PROP-DATA" ? ; "METCBAR_MOLE" ; ? COMPONENTS "ADA/PCS" 
+"LE-PROP-DATA" ? ; "METCBAR_MOLE" ; ? COMPONENTS "ADA/PCS" "ADA-SETUP" ? \ 
+"ADA-SETUP" PROCEDURE = REL9 \ ? COMPONENTS "COMP-LIST" GLOBAL ? ? COMPONENTS 
+"MOIST-COMPS" ? ? COMPONENTS "UNIFAC-GROUP" ? ? SOLVE ? \ "RUN-MODE" MODE = 
+SIM \ ? "INIT-VAR-ATT" ? ? "EO-ALIAS" ? ? SPECGROUPS ? ? CONNECTIONS ? ? 
+"EO-OPTIONS" ? ? SCRIPTMETHOD ? ? "DYN-OPTIONS" ? ? FLOWSHEET GLOBAL ? \ 
+BLOCK BLKID = B1 BLKTYPE = DSTWU MDLTYPE = "DSTWU" IN = ( FEED M0-1 ) OUT = ( 
+BOTTOM M1-2 UP M0-1 ) \ ? PROPERTIES MAIN ? \ GPROPERTIES GBASEOPSET = NRTL 
+GOPSETNAME = NRTL PARCON = -2 \ ? PROPERTIES "OPTION-SETS" NRTL ? \ PARAM 
+BASE = NRTL \ ? PROPERTIES "MOLEC-STRUCT" BENYIXI ? ? PROPERTIES "MOLEC-STRUCT" 
+YIBEN ? ? PROPERTIES PARAMETERS SUMMARY ? ? PROPERTIES PARAMETERS BINARY 
+SCALAR "MLQKIJ-1" ? ; "ENG_MOLE" ; \ PROP-LIST PARAMNAME = MLQKIJ SETNO = 1 
+UNITROW = 0 \ ? PROPERTIES PARAMETERS BINARY SCALAR "RKTKIJ-1" ? ; "ENG_MOLE" 
+; \ PROP-LIST PARAMNAME = RKTKIJ SETNO = 1 UNITROW = 0 \ ? PROPERTIES 
+PARAMETERS BINARY "T-DEPENDENT" "ANDKIJ-1" ? ; "ENG_MOLE" ; \ PROP-LIST 
+PARAMNAME = ANDKIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 TUNITLABEL = F NEL = 2 
+\ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "ANDMIJ-1" ? ; "ENG_MOLE" ; \ 
+PROP-LIST PARAMNAME = ANDMIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 TUNITLABEL
+ = F NEL = 2 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "HENRY-1" ? ; 
+"METCBAR_MOLE" ; \ PROP-LIST PARAMNAME = HENRY SETNO = 1 UNITROW = 20 
+UNITLABEL = bar TUNITROW = 22 TUNITLABEL = C BDBANK = ( BINARY HENRY ) NEL = 
+7 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "MUKIJ-1" ? ; "ENG_MOLE" ; \ 
+PROP-LIST PARAMNAME = MUKIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 TUNITLABEL = 
+F NEL = 6 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "MULIJ-1" ? ; 
+"ENG_MOLE" ; \ PROP-LIST PARAMNAME = MULIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 
+TUNITLABEL = F NEL = 11 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "NRTL-1" 
+? ; "METCBAR_MOLE" ; \ PROP-LIST PARAMNAME = NRTL SETNO = 1 UNITROW = 0 
+TUNITROW = 22 TUNITLABEL = C BDBANK = ( "VLE-IG" "LLE-ASPEN" "VLE-LIT" ) NEL
+ = 12 \ \ BPVAL PARAMNAME2 = NRTL CID1 = BENYIXI CID2 = YIBEN UNITROW2 = 0 
 TUNITROW2 = 22 TUNITLABEL2 = C VAL1 = "VLE-IG" VAL2 = "VLE-IG" VAL3 = "VLE-IG" 
 VAL4 = "VLE-IG" VAL5 = "VLE-IG" VAL6 = "VLE-IG" VAL7 = "VLE-IG" VAL8 = "VLE-IG" 
 VAL9 = "VLE-IG" VAL10 = "VLE-IG" VAL11 = "VLE-IG" VAL12 = "VLE-IG" \ ? 
-PROPERTIES "ATTR-COMPS" ? ? POLYMERS ? ? "ATTR-SCALING" ? ; "METCBAR_MOLE" ; 
-? "STREAM-CLASS" SUBSTREAMS ? \ DEF-SUBS-CLA SUBSTREAMS = MIXED \ \ 
+PROPERTIES "ATTR-COMPS" ? ? "ATTR-SCALING" ? ; "METCBAR_MOLE" ; ? 
+"STREAM-CLASS" SUBSTREAMS ? \ DEF-SUBS-CLA SUBSTREAMS = MIXED \ \ 
 DEF-SUBS-CLA SUBSTREAMS = CISOLID \ \ DEF-SUBS-CLA SUBSTREAMS = NC \ \ 
 DEF-SUBS-CLA SUBSTREAMS = NCPSD \ \ DEF-SUBS-CLA SUBSTREAMS = CIPSD \ ? 
 "STREAM-CLASS" "DEF-STREAMS" ? ? "STREAM-NAMES" ? ? STREAM MATERIAL FEED ? ; 
@@ -91,26 +90,26 @@ DEF-SUBS-CLA SUBSTREAMS = NCPSD \ \ DEF-SUBS-CLA SUBSTREAMS = CIPSD \ ?
 <-3> <0> JUNK = 2 \ \ MOLE-FLOW SSID1 = MIXED CID = BENYIXI FLOW = 0.7 <-3> 
 <0> /  SSID1 = MIXED CID = YIBEN FLOW = 0.3 <-3> <0> \ ? BLOCK DSTWU B1 ? ; 
 "METCBAR_MOLE" ; ; ICON1 ; \ PARAM LIGHTKEY = YIBEN RECOVL = 0.998 <0> <0> 
-HEAVYKEY = BENYIXI RECOVH = 0.001 <0> <0> PTOP = 0.18 <20> <5> PBOT = 0.2 
-<20> <5> NSTAGE = 200 RR = -1.5 <0> <0> PLOT = YES OPT-NTRR = RR OPT-CALHETP
- = NO \ \ PLOT LOWER = 90 UPPER = 120 INCR = 1 OPT-SZNO = SIZE \ ? COSTING 
-OPTIONS ? ; "METCBAR_MOLE" ; ? COSTING "LABOR-COST" ? ; "METCBAR_MOLE" ; ? 
-COSTING "CAPITAL-COST" ? ; "METCBAR_MOLE" ; ? COSTING OPERATING ? ; 
-"METCBAR_MOLE" ; ? COSTING PROFIT ? ; "METCBAR_MOLE" ; ? CURRENCY ? ? 
-"STREAM-PRICE" ? ; "METCBAR_MOLE" ; ? "EO-CONV-OPTI" ? \ DMO-PARAMS MODE = 
-DEFAULT \ \ DMO-PARAMS MODE = SIMULATION \ \ DMO-PARAMS MODE = 
-"PARAMETER-ESTIMATION" \ \ DMO-PARAMS MODE = RECONCILIATION \ \ DMO-PARAMS 
-MODE = OPTIMIZATION \ \ LSSQP-PARAMS MODE-L = DEFAULT \ \ LSSQP-PARAMS MODE-L
- = SIMULATION \ \ LSSQP-PARAMS MODE-L = "PARAMETER-ESTIMATION" \ \ 
-LSSQP-PARAMS MODE-L = RECONCILIATION \ \ LSSQP-PARAMS MODE-L = OPTIMIZATION \ 
-\ NSOLVE-PARAM NSOLVE-MODE = DEFAULT \ \ NSOLVE-PARAM NSOLVE-MODE = 
-SIMULATION \ \ NSOLVE-PARAM NSOLVE-MODE = "PARAMETER-ESTIMATION" \ \ 
-XSLP-PARAMS XSLP-MODE = DEFAULT \ \ XSLP-PARAMS XSLP-MODE = SIMULATION \ \ 
-XSLP-PARAMS XSLP-MODE = "PARAMETER-ESTIMATION" \ \ XSLP-PARAMS XSLP-MODE = 
-RECONCILIATION \ \ XSLP-PARAMS XSLP-MODE = OPTIMIZATION \ ? "CONV-OPTIONS" ? 
-? TEAR ? ? "CONV-ORDER" ? ? REPORT REPORT ? ? REPORT "BLOCK-REPORT" ? ? 
-REPORT "STREAM-REPOR" ? \ OPTIONS MOLEFLOW = MOLEFLOW \ ? REPORT "PROPERTY-REP" 
-? ? REPORT "ADA-REPORT" ? ? "STREAM-LIB" ? ; "METCBAR_MOLE" ; 
+HEAVYKEY = BENYIXI RECOVH = 0.001 <0> <0> PTOP = 1.1 <20> <5> PBOT = 1.2 <20> 
+<5> NSTAGE = 200 RR = -1.5 <0> <0> PLOT = YES OPT-NTRR = RR OPT-CALHETP = NO 
+\ \ PLOT LOWER = 76 UPPER = 100 INCR = 1 OPT-SZNO = SIZE \ ? COSTING OPTIONS 
+? ; "METCBAR_MOLE" ; ? COSTING "LABOR-COST" ? ; "METCBAR_MOLE" ; ? COSTING 
+"CAPITAL-COST" ? ; "METCBAR_MOLE" ; ? COSTING OPERATING ? ; "METCBAR_MOLE" ; 
+? COSTING PROFIT ? ; "METCBAR_MOLE" ; ? CURRENCY ? ? "STREAM-PRICE" ? ; 
+"METCBAR_MOLE" ; ? "EO-CONV-OPTI" ? \ DMO-PARAMS MODE = DEFAULT \ \ 
+DMO-PARAMS MODE = SIMULATION \ \ DMO-PARAMS MODE = "PARAMETER-ESTIMATION" \ \ 
+DMO-PARAMS MODE = RECONCILIATION \ \ DMO-PARAMS MODE = OPTIMIZATION \ \ 
+LSSQP-PARAMS MODE-L = DEFAULT \ \ LSSQP-PARAMS MODE-L = SIMULATION \ \ 
+LSSQP-PARAMS MODE-L = "PARAMETER-ESTIMATION" \ \ LSSQP-PARAMS MODE-L = 
+RECONCILIATION \ \ LSSQP-PARAMS MODE-L = OPTIMIZATION \ \ NSOLVE-PARAM 
+NSOLVE-MODE = DEFAULT \ \ NSOLVE-PARAM NSOLVE-MODE = SIMULATION \ \ 
+NSOLVE-PARAM NSOLVE-MODE = "PARAMETER-ESTIMATION" \ \ XSLP-PARAMS XSLP-MODE
+ = DEFAULT \ \ XSLP-PARAMS XSLP-MODE = SIMULATION \ \ XSLP-PARAMS XSLP-MODE
+ = "PARAMETER-ESTIMATION" \ \ XSLP-PARAMS XSLP-MODE = RECONCILIATION \ \ 
+XSLP-PARAMS XSLP-MODE = OPTIMIZATION \ ? "CONV-OPTIONS" ? ? TEAR ? ? 
+"CONV-ORDER" ? ? REPORT REPORT ? ? REPORT "BLOCK-REPORT" ? ? REPORT 
+"STREAM-REPOR" ? \ OPTIONS MOLEFLOW = MOLEFLOW \ ? REPORT "PROPERTY-REP" ? ? 
+REPORT "ADA-REPORT" ? ? "STREAM-LIB" ? ; "METCBAR_MOLE" ; 
 
  GRAPHICS_BACKUP
 PFS V 5.00
@@ -234,74 +233,10 @@ economics_active 0
 ignoreEOVarNameFixupsOnImport 1
 #
 $_APWNSHELL_SETTINGS
-<CommonShellSettings xmlns="http://schemas.aspentech.com/xaml/presentation/visualisation/commonshell" xmlns:atapmaa="clr-namespace:AspenTech.AspenPlus.Modules.ApwnApplication;assembly=ApwnShell" xmlns:atapie="clr-namespace:AspenTech.AspenPlus.Infrastructure.Events;assembly=AspenTech.AspenPlus.Infrastructure" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:apmab="clr-namespace:AspenPlus.Modules.ApwnBrowser;assembly=ApwnShell" xmlns:cxv="http://schemas.aspentech.com/xaml/presentation/cxsviewmodel" xmlns:atapi="clr-namespace:AspenTech.AspenPlus.Infrastructure;assembly=AspenTech.AspenPlus.Infrastructure">
+<CommonShellSettings xmlns="http://schemas.aspentech.com/xaml/presentation/visualisation/commonshell" xmlns:atapi="clr-namespace:AspenTech.AspenPlus.Infrastructure;assembly=AspenTech.AspenPlus.Infrastructure" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:atdi="clr-namespace:AspenTech.Dashboard.Infrastructure;assembly=AspenTech.Dashboard.Infrastructure">
   <CommonShellSettings.CurrentWorkspace>
-    <ShellWorkspace Layout="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;xamDockManager version=&quot;13.1.20131.2073&quot;&gt;&#xD;&#xA;  &lt;contentPanes&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen2&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-23T15:25:01.5368256Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen4&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-23T14:48:39.9897187Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;ModelLibraryScreenFactoryKey&quot; location=&quot;DockedBottom&quot; lastActivatedTime=&quot;2017-04-23T14:48:37.9743433Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;FlowsheetScreenFactory&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-23T14:47:40.7106625Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;ControlPanelScreenFactory&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-23T13:54:43.9928569Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen3&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-10T02:07:26.2349264Z&quot; /&gt;&#xD;&#xA;  &lt;/contentPanes&gt;&#xD;&#xA;  &lt;panes&gt;&#xD;&#xA;    &lt;splitPane name=&quot;Zf2b06eaf8fb941ea81005458c70947f6&quot; splitterOrientation=&quot;Vertical&quot; location=&quot;DockedBottom&quot;&gt;&#xD;&#xA;      &lt;contentPane name=&quot;ModelLibraryScreenFactoryKey&quot; /&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;  &lt;/panes&gt;&#xD;&#xA;  &lt;documents splitterOrientation=&quot;Vertical&quot;&gt;&#xD;&#xA;    &lt;splitPane name=&quot;Z69835dae2723486e9d051b2637f7ac3f&quot; splitterOrientation=&quot;Vertical&quot;&gt;&#xD;&#xA;      &lt;tabGroup name=&quot;Zca9d669003014042bef2ec7a9b49fef8&quot; selectedIndex=&quot;1&quot;&gt;&#xD;&#xA;        &lt;contentPane name=&quot;FlowsheetScreenFactory&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;_AnonymousScreen2&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;_AnonymousScreen3&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;ControlPanelScreenFactory&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;_AnonymousScreen4&quot; /&gt;&#xD;&#xA;      &lt;/tabGroup&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;  &lt;/documents&gt;&#xD;&#xA;&lt;/xamDockManager&gt;" NavigationGroupToSelect="Simulation" IsNavigationPaneMinimized="False" IsRibbonMinimized="False">
+    <ShellWorkspace Layout="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;xamDockManager version=&quot;13.1.20131.2073&quot;&gt;&#xD;&#xA;  &lt;contentPanes&gt;&#xD;&#xA;    &lt;contentPane name=&quot;FlowsheetScreenFactory&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-05-05T05:41:59.1471048Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen1&quot; location=&quot;DockedTop&quot; lastActivatedTime=&quot;2017-05-04T02:57:04.3700883Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;ModelLibraryScreenFactoryKey&quot; location=&quot;DockedBottom&quot; lastActivatedTime=&quot;2017-05-04T02:44:12.2122811Z&quot; /&gt;&#xD;&#xA;  &lt;/contentPanes&gt;&#xD;&#xA;  &lt;panes&gt;&#xD;&#xA;    &lt;splitPane splitterOrientation=&quot;Vertical&quot; location=&quot;DockedBottom&quot;&gt;&#xD;&#xA;      &lt;contentPane name=&quot;ModelLibraryScreenFactoryKey&quot; /&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;    &lt;splitPane splitterOrientation=&quot;Vertical&quot; location=&quot;DockedTop&quot;&gt;&#xD;&#xA;      &lt;contentPane name=&quot;_AnonymousScreen1&quot; /&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;  &lt;/panes&gt;&#xD;&#xA;  &lt;documents splitterOrientation=&quot;Vertical&quot;&gt;&#xD;&#xA;    &lt;splitPane splitterOrientation=&quot;Vertical&quot;&gt;&#xD;&#xA;      &lt;tabGroup selectedIndex=&quot;0&quot;&gt;&#xD;&#xA;        &lt;contentPane name=&quot;FlowsheetScreenFactory&quot; /&gt;&#xD;&#xA;      &lt;/tabGroup&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;  &lt;/documents&gt;&#xD;&#xA;&lt;/xamDockManager&gt;" NavigationGroupToSelect="Simulation" IsNavigationPaneMinimized="False" IsRibbonMinimized="False">
       <ShellWorkspace.Screens>
-        <WorkspaceScreenData PaneName="_AnonymousScreen2" ScreenFactoryKey="ApwnFormContentFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapmaa:ApwnFormScreenSubject Key="Blocks.B1.Stream Results" NavigationGroupKey="Simulation">
-              <atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-                <atapie:ShowFormEventArgs FormProgId="MMBlkStrSum.MMBlkStrSum_SummMH" FormKey="Blocks.B1.Stream Results" Header="B1 (DSTWU) - Stream Results" ResultsOnly="True" PathKey="Top.appModelV8.Blocks.B1">
-                  <atapie:ShowFormEventArgs.Parameters>
-                    <s:String assembly:Key="id">B1</s:String>
-                    <s:String assembly:Key="main">Top.appModelV8.Blocks.B1</s:String>
-                  </atapie:ShowFormEventArgs.Parameters>
-                </atapie:ShowFormEventArgs>
-              </atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-              <atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-                <apmab:ApwnPlotwizardRule ContextPath="Top.appModelV8.Blocks.B1" />
-              </atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-            </atapmaa:ApwnFormScreenSubject>
-          </WorkspaceScreenData.ScreenSubject>
-          <WorkspaceScreenData.ScreenState>
-            <atapmaa:ApwnFormScreenState>
-              <atapmaa:ApwnFormScreenState.Parameters>
-                <cxv:CxvParameter Name="main" Value="Top.appModelV8.Blocks.B1" />
-                <cxv:CxvParameter Name="id" Value="B1" />
-                <cxv:CxvParameter Name="main_summMH" Value="@main.@parent.@parent" />
-                <cxv:CxvParameter Name="extraComments_path" Value="Comments" />
-                <cxv:CxvParameter Name="extraDescription_path" Value="Input.DESCRIPTION" />
-                <cxv:CxvParameter Name="extraUnits_path" Value="Input.Unit Set" />
-                <cxv:CxvParameter Name="selected_tab" Value="tab0" />
-              </atapmaa:ApwnFormScreenState.Parameters>
-            </atapmaa:ApwnFormScreenState>
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="_AnonymousScreen4" ScreenFactoryKey="ApwnFormContentFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapmaa:ApwnFormScreenSubject Key="Blocks.B1.Input" NavigationGroupKey="Simulation">
-              <atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-                <atapie:ShowFormEventArgs FormProgId="MMDSTWU.MMDSTWU_INPUT" FormKey="Blocks.B1.Input" Header="B1 (DSTWU) - Input" ResultsOnly="False" PathKey="Top.appModelV8.Blocks.B1">
-                  <atapie:ShowFormEventArgs.Parameters>
-                    <s:String assembly:Key="id">B1</s:String>
-                    <s:String assembly:Key="main">Top.appModelV8.Blocks.B1</s:String>
-                  </atapie:ShowFormEventArgs.Parameters>
-                </atapie:ShowFormEventArgs>
-              </atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-              <atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-                <apmab:ApwnPlotwizardRule ContextPath="Top.appModelV8.Blocks.B1" />
-              </atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-            </atapmaa:ApwnFormScreenSubject>
-          </WorkspaceScreenData.ScreenSubject>
-          <WorkspaceScreenData.ScreenState>
-            <atapmaa:ApwnFormScreenState>
-              <atapmaa:ApwnFormScreenState.Parameters>
-                <cxv:CxvParameter Name="main" Value="Top.appModelV8.Blocks.B1" />
-                <cxv:CxvParameter Name="id" Value="B1" />
-                <cxv:CxvParameter Name="extraComments_path" Value="Comments" />
-                <cxv:CxvParameter Name="extraDescription_path" Value="Input.DESCRIPTION" />
-                <cxv:CxvParameter Name="extraUnits_path" Value="Input.Unit Set" />
-                <cxv:CxvParameter Name="selected_tab" Value="tab1" />
-              </atapmaa:ApwnFormScreenState.Parameters>
-            </atapmaa:ApwnFormScreenState>
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="ModelLibraryScreenFactoryKey" ScreenFactoryKey="ModelLibraryScreenFactoryKey">
-          <WorkspaceScreenData.ScreenState>
-            <ScreenState />
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
         <WorkspaceScreenData PaneName="FlowsheetScreenFactory" ScreenFactoryKey="FlowsheetScreenFactory">
           <WorkspaceScreenData.ScreenSubject>
             <atapi:StringScreenSubject subject="{assembly:Null}" fatherNodePath="{assembly:Null}" NavigationGroupKey="Simulation" />
@@ -310,37 +245,20 @@ $_APWNSHELL_SETTINGS
             <ScreenState Zoom="1.230001" />
           </WorkspaceScreenData.ScreenState>
         </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="ControlPanelScreenFactory" ScreenFactoryKey="ControlPanelScreenFactory">
+        <WorkspaceScreenData PaneName="_AnonymousScreen1" ScreenFactoryKey="DashboardScreenFactoryKey">
           <WorkspaceScreenData.ScreenState>
-            <ScreenState />
+            <atdi:DashboardScreenState>
+              <atdi:DashboardScreenState.ItemStates>
+                <atdi:DashboardItemState Key="EnergyAnalysisDashboardItem" State="&lt;CDI State=&quot;Inactive&quot; /&gt;" />
+                <atdi:DashboardItemState Key="EconomicsAnalysisDashboardItem" State="&lt;CDI State=&quot;Inactive&quot; /&gt;" />
+                <atdi:DashboardItemState Key="EdrActivationDashboardItem" State="&lt;CDI State=&quot;Inactive&quot; /&gt;" />
+              </atdi:DashboardScreenState.ItemStates>
+            </atdi:DashboardScreenState>
           </WorkspaceScreenData.ScreenState>
         </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="_AnonymousScreen3" ScreenFactoryKey="ApwnFormContentFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapmaa:ApwnFormScreenSubject Key="Utilities" NavigationGroupKey="Simulation">
-              <atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-                <atapie:ShowFormEventArgs FormProgId="MMGENUTL.MMGENUTL_OBJMAN" FormKey="Utilities" Header="Utilities" ResultsOnly="False" PathKey="Top.appModelV8.Utilities">
-                  <atapie:ShowFormEventArgs.Parameters>
-                    <s:String assembly:Key="id">Utilities</s:String>
-                    <s:String assembly:Key="main">Top.appModelV8.Utilities</s:String>
-                  </atapie:ShowFormEventArgs.Parameters>
-                </atapie:ShowFormEventArgs>
-              </atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-              <atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-                <apmab:ApwnPlotwizardRule ContextPath="Top.appModelV8.Utilities" />
-              </atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-            </atapmaa:ApwnFormScreenSubject>
-          </WorkspaceScreenData.ScreenSubject>
+        <WorkspaceScreenData PaneName="ModelLibraryScreenFactoryKey" ScreenFactoryKey="ModelLibraryScreenFactoryKey">
           <WorkspaceScreenData.ScreenState>
-            <atapmaa:ApwnFormScreenState>
-              <atapmaa:ApwnFormScreenState.Parameters>
-                <cxv:CxvParameter Name="main" Value="Top.appModelV8.Utilities" />
-                <cxv:CxvParameter Name="id" Value="Utilities" />
-                <cxv:CxvParameter Name="extraComments_path" Value="Comments" />
-                <cxv:CxvParameter Name="extraDescription_path" Value="Input.DESCRIPTION" />
-                <cxv:CxvParameter Name="extraUnits_path" Value="Input.Unit Set" />
-              </atapmaa:ApwnFormScreenState.Parameters>
-            </atapmaa:ApwnFormScreenState>
+            <ScreenState />
           </WorkspaceScreenData.ScreenState>
         </WorkspaceScreenData>
       </ShellWorkspace.Screens>
@@ -349,114 +267,6 @@ $_APWNSHELL_SETTINGS
   <CommonShellSettings.SavedWorkspaces>
     <ShellWorkspaceFolder />
   </CommonShellSettings.SavedWorkspaces>
-  <CommonShellSettings.NavigatorGroupWorkspaces>
-    <ShellWorkspace Name="Properties" Layout="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;xamDockManager version=&quot;13.1.20131.2073&quot;&gt;&#xD;&#xA;  &lt;contentPanes&gt;&#xD;&#xA;    &lt;contentPane name=&quot;ControlPanelScreenFactory&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-23T14:48:20.1403991Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen3&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-23T14:48:17.7191374Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen2&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-23T14:38:54.0607153Z&quot; /&gt;&#xD;&#xA;    &lt;contentPane name=&quot;_AnonymousScreen1&quot; location=&quot;Document&quot; lastActivatedTime=&quot;2017-04-23T14:27:49.5360275Z&quot; /&gt;&#xD;&#xA;  &lt;/contentPanes&gt;&#xD;&#xA;  &lt;documents splitterOrientation=&quot;Vertical&quot;&gt;&#xD;&#xA;    &lt;splitPane name=&quot;Zb582961af6284a899f39e0e1b689ab75&quot; splitterOrientation=&quot;Vertical&quot;&gt;&#xD;&#xA;      &lt;tabGroup name=&quot;Z2dbc68ea83a1407b814365a828e3c36b&quot; selectedIndex=&quot;3&quot;&gt;&#xD;&#xA;        &lt;contentPane name=&quot;_AnonymousScreen1&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;_AnonymousScreen2&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;_AnonymousScreen3&quot; /&gt;&#xD;&#xA;        &lt;contentPane name=&quot;ControlPanelScreenFactory&quot; /&gt;&#xD;&#xA;      &lt;/tabGroup&gt;&#xD;&#xA;    &lt;/splitPane&gt;&#xD;&#xA;  &lt;/documents&gt;&#xD;&#xA;&lt;/xamDockManager&gt;" NavigationGroupToSelect="Properties" IsNavigationPaneMinimized="False" IsRibbonMinimized="False">
-      <ShellWorkspace.Screens>
-        <WorkspaceScreenData PaneName="ControlPanelScreenFactory" ScreenFactoryKey="ControlPanelScreenFactory">
-          <WorkspaceScreenData.ScreenState>
-            <ScreenState />
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="_AnonymousScreen3" ScreenFactoryKey="ApwnFormContentFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapmaa:ApwnFormScreenSubject Key="Methods.Parameters.Binary Interaction.NRTL-1" NavigationGroupKey="Properties">
-              <atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-                <atapie:ShowFormEventArgs FormProgId="MMPARAM_BI_COR.MMPARAM_BI_COR_INP" FormKey="Methods.Parameters.Binary Interaction.NRTL-1" Header="Binary Interaction - NRTL-1 (T-DEPENDENT)" ResultsOnly="False" PathKey="Top.appModelV8.Properties.Parameters.Binary Interaction.NRTL-1">
-                  <atapie:ShowFormEventArgs.Parameters>
-                    <s:String assembly:Key="id">NRTL-1</s:String>
-                    <s:String assembly:Key="main">Top.appModelV8.Properties.Parameters.Binary Interaction.NRTL-1</s:String>
-                  </atapie:ShowFormEventArgs.Parameters>
-                </atapie:ShowFormEventArgs>
-              </atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-              <atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-                <apmab:ApwnPlotwizardRule ContextPath="Top.appModelV8.Properties.Parameters.Binary Interaction.NRTL-1" />
-              </atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-            </atapmaa:ApwnFormScreenSubject>
-          </WorkspaceScreenData.ScreenSubject>
-          <WorkspaceScreenData.ScreenState>
-            <atapmaa:ApwnFormScreenState>
-              <atapmaa:ApwnFormScreenState.Parameters>
-                <cxv:CxvParameter Name="main" Value="Top.appModelV8.Properties.Parameters.Binary Interaction.NRTL-1" />
-                <cxv:CxvParameter Name="id" Value="NRTL-1" />
-                <cxv:CxvParameter Name="extraComments_path" Value="Comments" />
-                <cxv:CxvParameter Name="extraDescription_path" Value="Input.DESCRIPTION" />
-                <cxv:CxvParameter Name="extraUnits_path" Value="Input.Unit Set" />
-                <cxv:CxvParameter Name="choice" Value="NRTL" />
-                <cxv:CxvParameter Name="z">
-                  <cxv:CxvParameter.Value>
-                    <s:Int32>0</s:Int32>
-                  </cxv:CxvParameter.Value>
-                </cxv:CxvParameter>
-                <cxv:CxvParameter Name="y" Value="1" />
-                <cxv:CxvParameter Name="CmdSearchEnable" Value="1" />
-                <cxv:CxvParameter Name="CmdReginfoVisible" Value="0" />
-                <cxv:CxvParameter Name="selected_tab" Value="tab0" />
-              </atapmaa:ApwnFormScreenState.Parameters>
-            </atapmaa:ApwnFormScreenState>
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="_AnonymousScreen2" ScreenFactoryKey="ApwnFormContentFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapmaa:ApwnFormScreenSubject>
-              <atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-                <atapie:ShowFormEventArgs FormKey="Variable Explorer" Header="Variable Explorer" />
-              </atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-            </atapmaa:ApwnFormScreenSubject>
-          </WorkspaceScreenData.ScreenSubject>
-          <WorkspaceScreenData.ScreenState>
-            <atapmaa:ApwnFormScreenState>
-              <atapmaa:ApwnFormScreenState.Parameters>
-                <cxv:CxvParameter Name="NumOptions">
-                  <cxv:CxvParameter.Value>
-                    <s:Int32>0</s:Int32>
-                  </cxv:CxvParameter.Value>
-                </cxv:CxvParameter>
-                <cxv:CxvParameter Name="NumPrompts">
-                  <cxv:CxvParameter.Value>
-                    <s:Int32>0</s:Int32>
-                  </cxv:CxvParameter.Value>
-                </cxv:CxvParameter>
-                <cxv:CxvParameter Name="extraComments_path" Value="Comments" />
-                <cxv:CxvParameter Name="extraDescription_path" Value="Input.DESCRIPTION" />
-                <cxv:CxvParameter Name="extraUnits_path" Value="Input.Unit Set" />
-              </atapmaa:ApwnFormScreenState.Parameters>
-            </atapmaa:ApwnFormScreenState>
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-        <WorkspaceScreenData PaneName="_AnonymousScreen1" ScreenFactoryKey="ApwnFormContentFactory">
-          <WorkspaceScreenData.ScreenSubject>
-            <atapmaa:ApwnFormScreenSubject Key="Components.Specifications" NavigationGroupKey="Properties">
-              <atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-                <atapie:ShowFormEventArgs FormProgId="MMCOMP_SPEC.MMCOMP_SPEC_INPUT" FormKey="Components.Specifications" Header="Components - Specifications" ResultsOnly="False" PathKey="Top.appModelV8.Components.Specifications">
-                  <atapie:ShowFormEventArgs.Parameters>
-                    <s:String assembly:Key="id">Specifications</s:String>
-                    <s:String assembly:Key="main">Top.appModelV8.Components.Specifications</s:String>
-                  </atapie:ShowFormEventArgs.Parameters>
-                </atapie:ShowFormEventArgs>
-              </atapmaa:ApwnFormScreenSubject.ShowFormArgs>
-              <atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-                <apmab:ApwnPlotwizardRule ContextPath="Top.appModelV8.Components.Specifications" />
-              </atapmaa:ApwnFormScreenSubject.PlotwizardRule>
-            </atapmaa:ApwnFormScreenSubject>
-          </WorkspaceScreenData.ScreenSubject>
-          <WorkspaceScreenData.ScreenState>
-            <atapmaa:ApwnFormScreenState>
-              <atapmaa:ApwnFormScreenState.Parameters>
-                <cxv:CxvParameter Name="main" Value="Top.appModelV8.Components.Specifications" />
-                <cxv:CxvParameter Name="id" Value="Specifications" />
-                <cxv:CxvParameter Name="extraComments_path" Value="Comments" />
-                <cxv:CxvParameter Name="extraDescription_path" Value="Input.DESCRIPTION" />
-                <cxv:CxvParameter Name="extraUnits_path" Value="Input.Unit Set" />
-                <cxv:CxvParameter Name="NotNeedName" Value="NotNull" />
-                <cxv:CxvParameter Name="NotNeedType" Value="NotNull" />
-                <cxv:CxvParameter Name="selected_tab" Value="tab0" />
-              </atapmaa:ApwnFormScreenState.Parameters>
-            </atapmaa:ApwnFormScreenState>
-          </WorkspaceScreenData.ScreenState>
-        </WorkspaceScreenData>
-      </ShellWorkspace.Screens>
-    </ShellWorkspace>
-  </CommonShellSettings.NavigatorGroupWorkspaces>
 </CommonShellSettings>
 $_END_APWNSHELL_SETTINGS
 #
@@ -466,6 +276,7 @@ $_START_TEMPLATE_Model
 <TabbedSummaryGridTemplateCol>
   <TabbedSummaryGridTemplates />
 </TabbedSummaryGridTemplateCol>
+
 $_END_TEMPLATE_Model
 $_END_GRID_TEMPLATES
 PFSVData
@@ -484,6 +295,7 @@ STREAM
 ID: FEED
 Version: 2
 Flag 0
+GLOBAL 117
 TYPE 0 TERMINAL 1
 At -2.403341 1.506682
 Label At 0.539171 0.000000
@@ -513,6 +325,7 @@ STREAM
 ID: BOTTOM
 Version: 2
 Flag 0
+GLOBAL 117
 TYPE 0 TERMINAL 2
 At 2.697327 0.507127
 Label At -0.523664 0.000000
@@ -542,6 +355,7 @@ STREAM
 ID: UP
 Version: 2
 Flag 0
+GLOBAL 117
 TYPE 0 TERMINAL 2
 At 2.697327 1.903563
 Label At -0.561164 0.000000
@@ -571,7 +385,7 @@ LEGEND
 Version: 2
 Unfixed
 # of PFS Objects = 0
-VIEWPORT -3.310140 2.355326 3.748741 -0.588881
+VIEWPORT -3.310105 3.314441 3.748714 0.148738
 LAYOUT
 TableFormat 1
 Pages 1 1 1 1
@@ -605,14 +419,14 @@ $_SUMMARY_FILE
  LSET L_STRPR (%ID_STRPR)                                                       
  IDSET ID_GUID (PROPERTIES) ( 1270 *6 )                                         
  LSET L_GUID (%ID_GUID)                                                         
- DSET RUN-STATUS IT @IT ( "APRIL 23, 2017      10:49:44 P.M." "_3951eqr.inm" 0) 
+ DSET RUN-STATUS IT @IT ( "MAY 4, 2017         12:09:30 A.M." "_3116hct.inm" 0) 
  DSET RUN-STATUS CURRENCY @CURRENCY ( "$" )                                     
  IDSET ID_NCC (COMPONENTS) (BENYIXI YIBEN)                                      
  IDSET ID_NCCNS (COMPONENTS) (BENYIXI YIBEN)                                    
  IDSET ALIAS (COMPONENTS) (1 *6)                                                
  LSET ALIAS ( %ID_NCC & %ALIAS)                                                 
- DSET RUN-STATUS RUNID @RUNID ("_3951eqr")                                      
- DSET RUN-STATUS RUNID @RUNID ("_3951eqr")                                      
+ DSET RUN-STATUS RUNID @RUNID ("_3116hct")                                      
+ DSET RUN-STATUS RUNID @RUNID ("_3116hct")                                      
  IDSET STATUS (PROPERTIES) (125 *1 126 *1 127 *1 128 *1 129 *1 130 *1)          
  LSET STATUS (%STATUS)                                                          
  IDSET PPSTAT (PROPERTIES) (272 *1)                                             
@@ -664,7 +478,7 @@ $_SUMMARY_FILE
  IDSET SPSTAT (SPSTAT) (116 *1)                                                 
  LSET SPSTAT ( %SPSTAT)                                                         
  IDSET IDERR (PROPERTIES) (131 *1)                                              
- DSET RUN-STATUS SP @SP ( "APRIL 23, 2017 10:49:44 P.M." )                      
+ DSET RUN-STATUS SP @SP ( "MAY 4, 2017 12:09:30 A.M." )                         
  IDSET FOR (PROPERTIES) (737 *1)                                                
  LSET FOR (%FOR)                                                                
  IDSET FORSTAT (PROPERTIES) (738 *1)                                            
@@ -705,7 +519,7 @@ $_SUMMARY_FILE
  LSET BPBATCH ( %TOTAX %ENERGX)                                                 
  DSET RUN-STATUS FORSTAT @FORSTAT (2)                                           
  DSET FLWBAL @FLWBAL (0.D0 <3> 0.D0 <3> 0.D0 0.D0 0.D0 <3> 0.D0 0.D0 <3> 0.D0   
- -7.66120650D+03 <3> -1.48087165D-01)                                           
+ -1.59565872D+04 <3> -2.65811009D-01)                                           
  DSET ALIAS @ALIAS ( "C8H8" "C8H10-4" )                                         
  IDSET ID_1 (NPOINT) (#2)                                                       
  IDSET ID_2 (PROPERTIES) (339 *6 132 *5 1196 *6 1197 *6 1198 *6)                
@@ -719,32 +533,31 @@ $_SUMMARY_FILE
  DSET BLOCK DSTWU B1 COMPSTAT @L1 (0)                                           
  DSET BLOCK DSTWU B1 SYNCSTAT @L1 (0)                                           
  DSET BLOCK DSTWU B1 BLKIN @BLKIN (1 FEED                                       
- "649456d8-1a6e-49b4-8eb2-80713cb3cf28" "12c72d59-69d2-4166-913b-ea297b37a6ff"  
+ "adc59c85-f5c2-413e-8713-d1333736a2a9" "16e70475-576c-4009-89ee-e3f20ad8cd47"  
  )                                                                              
  DSET BLOCK DSTWU B1 TYPIN @TYPIN (1 MATERIAL)                                  
  DSET BLOCK DSTWU B1 BLKOUT @BLKOUT (2 UP BOTTOM                                
- "649456d8-1a6e-49b4-8eb2-80713cb3cf28" "28fd6e8e-9363-4f85-8e1b-aa400ca90bdf"  
- "7005f18c-efe7-415b-8b05-f326961cbd1a" )                                       
+ "adc59c85-f5c2-413e-8713-d1333736a2a9" "5638ffee-f845-419f-be27-67cf2b22e5b6"  
+ "2ec8a23a-e236-4a34-a21a-2da77cc25c04" )                                       
  DSET BLOCK DSTWU B1 TYPOUT @TYPOUT (2 MATERIAL MATERIAL)                       
  DSET BLOCK DSTWU B1 RES_D @L_2 (9.54670345D+00 <3> 9.54670345D+00 <3> 0.D0 <3> 
  0.D0 1.00000000D+03 <3> 1.00000000D+03 <3> * <3> 0.D0 * <3> * <3> * <3> *      
  9.54670345D+00 <3> 9.54670345D+00 <3> 0.D0 <3> 0.D0 1.00000000D+03 <3>         
- 1.00000000D+03 <3> * <3> 0.D0 4.40732333D+04 <3> 5.17344398D+04 <3> * <3>      
- -1.48087165D-01 0.D0 <3> 0.D0 <3> 0.D0 <3> 0.D0 <3> 0.D0 <3> 1.31783434D+05 <3>
- 1.39444640D+05 <3> * <3> 1.13628666D+01 1.70443000D+01 5.33535077D+01          
- 8.09179894D+01 4.64289849D+01 4.74289849D+01 8.18517546D+01 <4> 9.29436717D+01 
+ 1.00000000D+03 <3> * <3> 0.D0 4.40732333D+04 <3> 6.00298205D+04 <3> * <3>      
+ -2.65811009D-01 0.D0 <3> 0.D0 <3> 0.D0 <3> 0.D0 <3> 0.D0 <3> 1.60136874D+05 <3>
+ 1.76093461D+05 <3> * <3> 1.53939107D+01 2.30908661D+01 7.31913005D+01          
+ 1.10101088D+02 6.50270732D+01 6.60270732D+01 1.39270076D+02 <4> 1.52015757D+02 
  <4> * <1> 2.96101760D-01)                                                      
- IDSET ID_4 (NSTAGE) (90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 
- 107 108 109 110 111 112 113 114 115 116 117 118 119 120 )                      
+ IDSET ID_4 (NSTAGE) (76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94  
+ 95 96 97 98 99 100 )                                                           
  IDSET ID_5 (PROPERTIES) (14 *2)                                                
  LSET L_3 (%ID_5 & %ID_4)                                                       
- DSET BLOCK DSTWU B1 RR_TABLE @L_3 (1.51793653D+01 1.49803580D+01               
- 1.47785111D+01 1.45730594D+01 1.43645673D+01 1.41556578D+01 1.39536894D+01     
- 1.37636867D+01 1.35923740D+01 1.34424942D+01 1.33129547D+01 1.32028558D+01     
- 1.31065165D+01 1.30230200D+01 1.29495886D+01 1.28843986D+01 1.28260182D+01     
- 1.27733227D+01 1.27258816D+01 1.26816096D+01 1.26413133D+01 1.26040688D+01     
- 1.25694935D+01 1.25372698D+01 1.25071316D+01 1.24788537D+01 1.24522448D+01     
- 1.24271404D+01 1.24033986D+01 1.23808960D+01 1.23595249D+01 )                  
+ DSET BLOCK DSTWU B1 RR_TABLE @L_3 (1.35121175D+02 9.76146058D+01               
+ 8.41242809D+01 7.56668016D+01 6.95098966D+01 6.45787439D+01 6.04327965D+01     
+ 5.68120548D+01 5.35528681D+01 5.05416413D+01 4.76850677D+01 4.49492479D+01     
+ 4.22179681D+01 3.95286629D+01 3.69074126D+01 3.45682537D+01 3.26647819D+01     
+ 3.11877331D+01 3.00335446D+01 2.91055749D+01 2.83366910D+01 2.76828283D+01     
+ 2.71147765D+01 2.66153465D+01 2.61637137D+01 )                                 
  IDSET ID_6 (PROPERTIES) (7001 *2 <22> 7002 *2 <20> 8103 *2 <10> 204 *2 <12>    
  8101 *2 <11> 7003 *2 )                                                         
  LSET L_4 ( %ID_6 )                                                             
@@ -763,12 +576,12 @@ $_SUMMARY_FILE
  DSET STREAM MATERIAL BOTTOM BLKSTAT @BLKSTAT (0 0)                             
  DSET STREAM MATERIAL BOTTOM COMPSTAT @L1 (0)                                   
  DSET STREAM MATERIAL BOTTOM STR_MAIN @L_5 (B1 * LIQUID 6.71425631D+00 <3>      
- 5.65145233D-03 <3> 6.71990776D+00 <3> 6.99900000D+02 <3> 1.39235056D+01 <3>    
- 9.29436717D+01 <4> 2.00000000D-01 <5> 0.D0 1.00000000D+00 0.D0 2.77925681D+04  
- <3> 2.66843112D+02 <3> 5.18787483D+04 <3> -6.96326721D+01 <3> -6.68559985D-01  
- <3> 8.04384084D-03 <3> 8.37791887D-01 <3> 1.04153215D+02 1.28327053D+01 <3> )  
- DSET STREAM MATERIAL BOTTOM RES_STR @L_4 (9.29436717D+01 <4> 2.00000000D-01 <5>
- 6.99900000D+02 <3> 1.39235056D+01 <3> 6.71990776D+00 <3> 0.D0 )                
+ 5.65145233D-03 <3> 6.71990776D+00 <3> 6.99900000D+02 <3> 1.49623087D+01 <3>    
+ 1.52015757D+02 <4> 1.20000000D+00 <5> 0.D0 1.00000000D+00 0.D0 3.09363655D+04  
+ <3> 2.97027465D+02 <3> 5.77470896D+04 <3> -6.17695278D+01 <3> -5.93064051D-01  
+ <3> 7.48537306D-03 <3> 7.79625672D-01 <3> 1.04153215D+02 1.28327053D+01 <3> )  
+ DSET STREAM MATERIAL BOTTOM RES_STR @L_4 (1.52015757D+02 <4> 1.20000000D+00 <5>
+ 6.99900000D+02 <3> 1.49623087D+01 <3> 6.71990776D+00 <3> 0.D0 )                
  DSET STREAM MATERIAL FEED BLKSTAT @BLKSTAT (0 0)                               
  DSET STREAM MATERIAL FEED COMPSTAT @L1 (0)                                     
  DSET STREAM MATERIAL FEED STR_MAIN @L_5 (* B1 LIQUID 6.72097728D+00 <3>        
@@ -781,25 +594,24 @@ $_SUMMARY_FILE
  DSET STREAM MATERIAL UP BLKSTAT @BLKSTAT (0 0)                                 
  DSET STREAM MATERIAL UP COMPSTAT @L1 (0)                                       
  DSET STREAM MATERIAL UP STR_MAIN @L_5 (B1 * LIQUID 6.72097728D-03 <3>          
- 2.82007471D+00 <3> 2.82679569D+00 <3> 3.00100000D+02 <3> 6.14734634D+00 <3>    
- 8.18517546D+01 <4> 1.80000000D-01 <5> 0.D0 1.00000000D+00 0.D0 -1.83780766D+02 
- <3> -1.73112522D+00 <3> -1.44308521D+02 <3> -9.75988540D+01 <3>                
- -9.19333621D-01 <3> 7.66399987D-03 <3> 8.13630206D-01 <3> 1.06162607D+02       
- 5.74990003D+00 <3> )                                                           
- DSET STREAM MATERIAL UP RES_STR @L_4 (8.18517546D+01 <4> 1.80000000D-01 <5>    
- 3.00100000D+02 <3> 6.14734634D+00 <3> 2.82679569D+00 <3> 0.D0 )                
+ 2.82007471D+00 <3> 2.82679569D+00 <3> 3.00100000D+02 <3> 6.60308506D+00 <3>    
+ 1.39270076D+02 <4> 1.10000000D+00 <5> 0.D0 1.00000000D+00 0.D0 2.90711886D+03  
+ <3> 2.73836423D+01 <3> 2.28273085D+03 <3> -8.96437137D+01 <3> -8.44400078D-01  
+ <3> 7.13503780D-03 <3> 7.57474214D-01 <3> 1.06162607D+02 5.74990003D+00 <3> )  
+ DSET STREAM MATERIAL UP RES_STR @L_4 (1.39270076D+02 <4> 1.10000000D+00 <5>    
+ 3.00100000D+02 <3> 6.60308506D+00 <3> 2.82679569D+00 <3> 0.D0 )                
  IDSET ID_16 (PROPERTIES) (757 *1)                                              
  IDSET ID_17 (PROPERTIES) (36 *2 37 *2 38 *2 39 *2 8103 *2 <10> )               
  LSET L_6 ( %ID_NCCNS & %ID_17 %ID_16)                                          
  DSET STREAM MATERIAL BOTTOM STRM_XY @L_6 ( 9.99158999D-01 8.41001474D-04       
- 9.99158999D-01 8.41001474D-04 7.04010271D-01 2.95989729D-01 9.98890357D-01     
- 1.10964297D-03 6.99300000D+02 <3> 6.00000000D-01 <3> * )                       
+ 9.99158999D-01 8.41001474D-04 7.04010271D-01 2.95989729D-01 9.98960676D-01     
+ 1.03932449D-03 6.99300000D+02 <3> 6.00000000D-01 <3> * )                       
  DSET STREAM MATERIAL FEED STRM_XY @L_6 ( 7.04010271D-01 2.95989729D-01         
  7.04010271D-01 2.95989729D-01 7.04010271D-01 2.95989729D-01 6.01848295D-01     
  3.98151705D-01 7.00000000D+02 <3> 3.00000000D+02 <3> 0 )                       
  DSET STREAM MATERIAL UP STRM_XY @L_6 ( 2.37759570D-03 9.97622404D-01           
- 2.37759570D-03 9.97622404D-01 7.04010271D-01 2.95989729D-01 1.91466291D-03     
- 9.98085337D-01 7.00000000D-01 <3> 2.99400000D+02 <3> * )                       
+ 2.37759570D-03 9.97622404D-01 7.04010271D-01 2.95989729D-01 2.04329506D-03     
+ 9.97956705D-01 7.00000000D-01 <3> 2.99400000D+02 <3> * )                       
  IDSET ID_18 (PROPERTIES) (64 *2 <11> 63 *2 <11> 94 *2 <11> 95 *2 <11> 88 *2    
  <39> 61 *2 <39> 89 *2 <39> 90 *2 <39> 991 *2 <7> 992 *2 <7> 993 *2 <7> 994 *2  
  <7> 926 *2 <37> 925 *2 <37> 995 *2 <37> 996 *2 <37> 928 *2 927 *2 997 *2 998   
@@ -807,12 +619,12 @@ $_SUMMARY_FILE
  <12> 1249 *2 <12> 8010 *2 <12> 7007 *2 7008 *2 )                               
  LSET L_7 ( %ID_18)                                                             
  DSET STREAM MATERIAL BOTTOM STR_PHAS @L_7 ( 0.D0 <3> 6.71990776D+00 <3>        
- 6.71990776D+00 <3> 0.D0 <3> 3.73607536D+04 <3> 2.77925681D+04 <3> 0.D0 <3> *   
- <3> -4.34799335D+01 <3> -6.96326721D+01 <3> 0.D0 <3> 0.D0 <3> 6.57068301D-06   
- <3> 8.04384084D-03 <3> * <3> * <3> 1.04153757D+02 1.04153215D+02               
+ 6.71990776D+00 <3> 0.D0 <3> 3.95944461D+04 <3> 3.09363655D+04 <3> 0.D0 <3> *   
+ <3> -4.13951520D+01 <3> -6.17695278D+01 <3> 0.D0 <3> 0.D0 <3> 3.39465551D-05   
+ <3> 7.48537306D-03 <3> * <3> * <3> 1.04153615D+02 1.04153215D+02               
  1.04748200D+02 * 0.D0 1.00000000D+00 6.71990776D+00 <3> 1.28327053D+01 <3>     
- 1.04153215D+02 0.D0 <3> 6.99900000D+02 <3> 0.D0 <3> 1.39235056D+01 <3>         
- 1.39235056D+01 <3> 0.D0 0.D0 )                                                 
+ 1.04153215D+02 0.D0 <3> 6.99900000D+02 <3> 0.D0 <3> 1.49623087D+01 <3>         
+ 1.49623087D+01 <3> 0.D0 0.D0 )                                                 
  DSET STREAM MATERIAL FEED STR_PHAS @L_7 ( 0.D0 <3> 9.54670345D+00 <3>          
  9.54670345D+00 <3> 0.D0 <3> * <3> 1.66197306D+04 <3> 1.66197306D+04 <3> * <3>  
  * <3> -8.53837522D+01 <3> -8.53837522D+01 <3> * <3> * <3> 8.43749844D-03 <3>   
@@ -820,12 +632,12 @@ $_SUMMARY_FILE
  9.54670345D+00 <3> 1.85826053D+01 <3> 1.04748200D+02 0.D0 <3> 1.00000000D+03   
  <3> * <3> 1.88576893D+01 <3> 1.88576893D+01 <3> 0.D0 0.D0 )                    
  DSET STREAM MATERIAL UP STR_PHAS @L_7 ( 0.D0 <3> 2.82679569D+00 <3>            
- 2.82679569D+00 <3> 0.D0 <3> 9.09920414D+03 <3> -1.83780766D+02 <3> 0.D0 <3> *  
- <3> -7.14316045D+01 <3> -9.75988540D+01 <3> 0.D0 <3> 0.D0 <3> 6.09838372D-06   
- <3> 7.66399987D-03 <3> * <3> * <3> 1.06163540D+02 1.06162607D+02               
+ 2.82679569D+00 <3> 0.D0 <3> 1.13582980D+04 <3> 2.90711883D+03 <3> 0.D0 <3> *   
+ <3> -6.91425612D+01 <3> -8.96437137D+01 <3> 0.D0 <3> 0.D0 <3> 3.20793552D-05   
+ <3> 7.13503780D-03 <3> * <3> * <3> 1.06163281D+02 1.06162607D+02               
  1.04748200D+02 * 0.D0 1.00000000D+00 2.82679569D+00 <3> 5.74990003D+00 <3>     
- 1.06162607D+02 0.D0 <3> 3.00100000D+02 <3> 0.D0 <3> 6.14734634D+00 <3>         
- 6.14734634D+00 <3> 0.D0 0.D0 )                                                 
+ 1.06162607D+02 0.D0 <3> 3.00100000D+02 <3> 0.D0 <3> 6.60308506D+00 <3>         
+ 6.60308506D+00 <3> 0.D0 0.D0 )                                                 
  IDSET ID_19 (PROPERTIES) (8103 *2 <10> 1265 *2 <10> )                          
  IDSET ID_20 (HIER-ID) ( PLANT )                                                
  IDSET ID_21 (STREAM-ID) ( FEED )                                               

@@ -26,18 +26,26 @@ Module Module1
         Return AxisInterval
     End Function
 
-    '判断最佳塔盘数和回流比
+    '获得DSTWU模型在谷底的塔盘数和回流比
+    '获取新的Accelerate组
     Function MinAcceleratePoint(X As ArrayList, Y As ArrayList) As Integer
+
         Dim MaxAccelerate As Double = 0
         Dim MaxAccelerate_plusONE As Double = 0
         Dim MinAccelerate As Double = 0
         Dim MaxAcceleratePoint As Integer
         Dim i As Integer = 1
+
+        '传递DSTWU模型中回流比与理论板数
+        Call Transfer_DSTWU_NTR(ihApsim_DSTWU)
+
         MaxAcceleratePoint = 0
-        MaxAccelerate = (R(0) + R(2)) - 2 * R(1)
-        Do While (i < Stage.Count - 2)      '(total stage number - 2) = dR.count
-            MaxAccelerate = (R(i - 1) + R(i + 1)) - 2 * R(i)
-            MaxAccelerate_plusONE = (R(i) + R(i + 2)) - 2 * R(i + 1)
+        MaxAccelerate = (DSTWU_R(0) + DSTWU_R(2)) - 2 * DSTWU_R(1)
+
+        '(total stage number - 2) = dR.count
+        Do While (i < DSTWU_Stage.Count - 2)
+            MaxAccelerate = (DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i)
+            MaxAccelerate_plusONE = (DSTWU_R(i) + DSTWU_R(i + 2)) - 2 * DSTWU_R(i + 1)
             If MaxAccelerate_plusONE > MaxAccelerate Then
                 MaxAccelerate = MaxAccelerate_plusONE
                 MaxAcceleratePoint = i
@@ -47,22 +55,50 @@ Module Module1
 
         i = 1
         MinAcceleratePoint = 0
-        MinAccelerate = (R(0) + R(2)) - 2 * R(1)
-        Do While (i < Stage.Count - 1)      '(total stage number - 2) = dR.count
-            'Accelerate.Add((R(i - 1) - R(i + 1)) / 2)
-            Accelerate.Add((R(i - 1) + R(i + 1)) - 2 * R(i))
+
+        '清理之前Accelerate计算痕迹
+        '获取新的Accelerate组
+        Accelerate.Clear()
+        MinAccelerate = (DSTWU_R(0) + DSTWU_R(2)) - 2 * DSTWU_R(1)
+        Do While (i < DSTWU_Stage.Count - 1)      '(total stage number - 2) = dR.count
+            'Accelerate.Add((DSTWU_R(i - 1) - DSTWU_R(i + 1)) / 2)
+            Accelerate.Add((DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i))
             If i < MaxAcceleratePoint Then      '确保波谷在波峰左侧
-                If MinAccelerate > ((R(i - 1) + R(i + 1)) - 2 * R(i)) Then
-                    MinAccelerate = (R(i - 1) + R(i + 1)) - 2 * R(i)
+                If MinAccelerate > ((DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i)) Then
+                    MinAccelerate = (DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i)
                     MinAcceleratePoint = i - 1      'modify
                 End If
             End If
             i = i + 1
         Loop
-        DSTWU_ModifyStage = Stage(MinAcceleratePoint)
-        DSTWU_ModifyR = R(MinAcceleratePoint)
+        ModifyStage_DSTWU = DSTWU_Stage(MinAcceleratePoint)
+        ModifyR_DSTWU = DSTWU_R(MinAcceleratePoint)
         Return MinAcceleratePoint
     End Function
+
+    '传递DSTWU模型中回流比与理论板数
+    Public Sub Transfer_DSTWU_NTR(ByVal ihApsim As IHapp)
+        On Error GoTo ErrorHandler
+        Dim i As Integer
+        Dim ihNStage As IHNodeCol
+        Dim ihStage As IHNode
+        Dim strout As String
+        strout = ""
+        i = 0
+
+        DSTWU_Stage.Clear()
+        DSTWU_R.Clear()
+        ihNStage = ihApsim.Tree.Data.Blocks.B1.Output.RR_OUT.Elements
+        For Each ihStage In ihNStage
+            DSTWU_Stage.Add(ihStage.Name)
+            DSTWU_R.Add(ihStage.Value)
+            i = i + 1
+        Next ihStage
+        Exit Sub
+ErrorHandler:
+        MsgBox("Transfer_DSTWU_NTR raised error " & Err.Description)
+
+    End Sub
 
     Public Function Abs_double(X As Double) As Double       '取double类型变量的绝对值
         If X < 0 Then
