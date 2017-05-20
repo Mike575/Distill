@@ -22,41 +22,48 @@ Partial Class RadFrac1
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ListView2 = New System.Windows.Forms.ListView()
         Me.SuspendLayout()
         '
-        'Label1
+        'ListView1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(40, 39)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 12)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Label1"
+        Me.ListView1.Activation = System.Windows.Forms.ItemActivation.OneClick
+        Me.ListView1.Font = New System.Drawing.Font("宋体", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.ListView1.GridLines = True
+        Me.ListView1.Location = New System.Drawing.Point(21, 95)
+        Me.ListView1.MultiSelect = False
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(124, 127)
+        Me.ListView1.TabIndex = 1
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
         '
-        'Label2
+        'ListView2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(40, 92)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 12)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Label2"
+        Me.ListView2.Activation = System.Windows.Forms.ItemActivation.OneClick
+        Me.ListView2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListView2.GridLines = True
+        Me.ListView2.Location = New System.Drawing.Point(151, 95)
+        Me.ListView2.MultiSelect = False
+        Me.ListView2.Name = "ListView2"
+        Me.ListView2.Size = New System.Drawing.Size(1173, 541)
+        Me.ListView2.TabIndex = 2
+        Me.ListView2.UseCompatibleStateImageBehavior = False
+        Me.ListView2.View = System.Windows.Forms.View.Details
         '
         'RadFrac1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1354, 668)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ListView2)
+        Me.Controls.Add(Me.ListView1)
         Me.Name = "RadFrac1"
         Me.Text = "Form4"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ListView2 As ListView
 End Class

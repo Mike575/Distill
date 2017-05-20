@@ -1,0 +1,1800 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 200 WHEELER ROAD                       EUROPE (44) 1189-226555
+ BURLINGTON, MASSACHUSETTS 01803                             
+ 781/221-6400
+
+ PLATFORM: WINDOWS                                       MAY 10, 2017        
+ VERSION: 30.0   Build 33                                WEDNESDAY   
+ INSTALLATION:                                           6:08:24 P.M.        
+
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 200 WHEELER ROAD,
+      BURLINGTON, MA 01803.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           MAY 10, 2017        
+   6:08:24 P.M.                           WEDNESDAY   
+   INPUT FILE: _2548rdp.inm
+   RUN ID : _2548rdp
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 18:08:24 Wed May 10, 2017
+          3    ;Directory   Runid RADFRAC1
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    SIM-OPTIONS MASS-BAL-CHE=YES OLD-DATABANK=YES
+         16
+         17    MODEL-OPTION
+         18
+         19    DATABANKS PURE28  / AQUEOUS  / SOLIDS  / INORGANIC  /  &
+         20            NOASPENPCD
+         21
+         22    PROP-SOURCES PURE28  / AQUEOUS  / SOLIDS  / INORGANIC
+         23
+         24    COMPONENTS
+         25        BENYIXI C8H8 /
+         26        YIBEN C8H10-4
+         27
+         28    ADA-SETUP
+         29        ADA-SETUP PROCEDURE=REL9
+         30
+         31    SOLVE
+         32        RUN-MODE MODE=SIM
+         33
+         34    FLOWSHEET
+         35        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         36
+         37    PROPERTIES NRTL
+         38
+         39    PROP-DATA NRTL-1
+         40        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         41            INVERSE-PRES='1/bar'
+         42        PROP-LIST NRTL
+         43        BPVAL BENYIXI YIBEN -.9750000000 37.64040000 .3000000000  &
+         44            0.0 0.0 0.0 57.67000000 97.00000000
+         45        BPVAL YIBEN BENYIXI 1.385000000 -56.00440000 .3000000000  &
+         46            0.0 0.0 0.0 57.67000000 97.00000000
+         47
+         48    PROP-SET PS-2 TEMP KVL GAMMA MOLEFRAC SUBSTREAM=MIXED  &
+         49            COMPS=BENYIXI YIBEN PHASE=V L
+         50
+         51    STREAM FEED
+         52        SUBSTREAM MIXED TEMP=30. PRES=1.2 MASS-FLOW=1000.
+         53        MASS-FRAC BENYIXI 0.7 / YIBEN 0.3
+         54
+         55    BLOCK B1 RADFRAC
+         56        PARAM NSTAGE=172 ALGORITHM=STANDARD EFF=MURPHREE  &
+         57            HYDRAULIC=YES MAXOL=25 DAMPING=NONE
+         58        COL-CONFIG CONDENSER=TOTAL
+         59        FEEDS FEED 85
+         60        PRODUCTS UP 1 L / BOTTOM 172 L
+         61        P-SPEC 1 1.1
+         62        COL-SPECS DP-COL=0.1 MASS-D=300. MASS-RR=47.6850677
+         63        SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         64            BASE-STREAMS=FEED
+         65        SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM  &
+         66            BASE-STREAMS=FEED
+         67        VARY 1 MASS-D 280. 320.
+         68        VARY 2 MASS-RR 20. 200.
+         69        TRAY-SIZE 1 2 171 FLOAT
+         70        TRAY-SIZE 2 2 171 FLEXI
+         71        TRAY-RATE 1 2 171 FLOAT DIAM=0.8591731 <meter> P-UPDATE=NO
+         72        REPORT HYDRAULIC
+         73        STEFF-SEC SECNO=1 2 92 0.45 / SECNO=2 93 171 0.55
+         74
+         75    EO-CONV-OPTI
+         76
+         77    SENSITIVITY S-1
+         78        DEFINE RR BLOCK-VAR BLOCK=B1 VARIABLE=RR SENTENCE=RESULTS
+         79        DEFINE DUTY BLOCK-VAR BLOCK=B1 VARIABLE=REB-DUTY  &
+         80            SENTENCE=RESULTS UOM="cal/sec"
+         81        TABULATE 1 "RR"
+         82        TABULATE 2 "DUTY"
+         83        VARY BLOCK-VAR BLOCK=B1 VARIABLE=MASS-RR SENTENCE=COL-SPECS
+         84        RANGE LOWER="17" UPPER="120" INCR="1"
+         85
+         86    STREAM-REPOR MOLEFLOW
+         87
+         88    PROPERTY-REP PCES
+         89
+         90    PROP-TABLE BINRY-1 FLASHCURVE
+         91        IN-UNITS MET TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         92            INVERSE-PRES='1/bar'
+         93        PROPERTIES NRTL FREE-WATER=STEAM-TA SOLU-WATER=3  &
+         94            TRUE-COMPS=YES
+         95        BLOCK-OPTION FREE-WATER=NO
+         96        MOLE-FLOW BENYIXI 1 /  YIBEN  1
+         97        STATE VFRAC=0.0
+         98        VARY PRES
+         99        RANGE LIST=1.013250000
+        100        VARY MOLEFRAC COMP=YIBEN
+        101        RANGE LOWER=0.0 UPPER=1.0 NPOINT= 51
+        102        PARAM NPHASE=2
+        103        TABULATE PROPERTIES=PS-2
+        104    ;
+        105    ;
+        106    ;
+        107    ;
+        108    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+ 
+ SENSITIVITY BLOCK: S-1 WILL BE INTERPRETED 
+ 
+
+ PDF updated                                                                      TIME =      0.18
+
+ *** CALCULATION TRACE ***
+
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   FEED       ----       B1             UP         B1         ----    
+   BOTTOM     B1         ----                                         
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           FEED                           UP BOTTOM                   
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      S-1 B1 
+      (RETURN S-1) 
+
+Calculations begin                                                              time      0.05
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.05
+
+ SENSITIVITY BLOCK S-1      ROW     1 EVALUATION BEGINS                           TIME =      0.05
+      VARY VARIABLES:   17.000    
+
+      ENTHALPY CALCULATION FOR INLET STREAM FEED OF BLOCK B1                      TIME =      0.05
+      KODE = 2  NTRIAL =   2  T = 303.1500  P =  120000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.05
+
+  *** SEVERE ERROR WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL:          
+      "RADFRAC")                                               (UDL03D.11)      
+      MANIPULATED VARIABLE INCORRECTLY BOUNDED.                                 
+      SKW=VARY  VARY-ID= 2                                                      
+
+      FILLING OUTLET STREAMS BASED ON VAPOR/LIQUID SPLIT FROM
+      COMPOSITE FEED FLASH.
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL3II.7200)    
+      REST OF BLOCK BYPASSED DUE TO SEVERE ERROR.                               
+
+ SENSITIVITY BLOCK S-1      ROW     2 EVALUATION BEGINS                           TIME =      0.05
+
+  *   WARNING WHILE EXECUTING SENSITIVITY BLOCK: "S-1"         (APLX2S.3)       
+      SAMPLED VARIABLE "RR" HAS NOT BEEN CALCULATED.                            
+      VALUE IS MISSING.                                                         
+
+  *   WARNING WHILE EXECUTING SENSITIVITY BLOCK: "S-1"         (APLX2S.3)       
+      SAMPLED VARIABLE "DUTY" HAS NOT BEEN CALCULATED.                          
+      VALUE IS MISSING.                                                         
+      VARY VARIABLES:   18.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.05
+
+  *** SEVERE ERROR WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL:          
+      "RADFRAC")                                               (UDL03D.11)      
+      MANIPULATED VARIABLE INCORRECTLY BOUNDED.                                 
+      SKW=VARY  VARY-ID= 2                                                      
+
+      FILLING OUTLET STREAMS BASED ON VAPOR/LIQUID SPLIT FROM
+      COMPOSITE FEED FLASH.
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL3II.7200)    
+      REST OF BLOCK BYPASSED DUE TO SEVERE ERROR.                               
+
+ SENSITIVITY BLOCK S-1      ROW     3 EVALUATION BEGINS                           TIME =      0.05
+
+  *   WARNING WHILE EXECUTING SENSITIVITY BLOCK: "S-1"         (APLX2S.3)       
+      SAMPLED VARIABLE "RR" HAS NOT BEEN CALCULATED.                            
+      VALUE IS MISSING.                                                         
+
+  *   WARNING WHILE EXECUTING SENSITIVITY BLOCK: "S-1"         (APLX2S.3)       
+      SAMPLED VARIABLE "DUTY" HAS NOT BEEN CALCULATED.                          
+      VALUE IS MISSING.                                                         
+      VARY VARIABLES:   19.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.06
+
+  *** SEVERE ERROR WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL:          
+      "RADFRAC")                                               (UDL03D.11)      
+      MANIPULATED VARIABLE INCORRECTLY BOUNDED.                                 
+      SKW=VARY  VARY-ID= 2                                                      
+
+      FILLING OUTLET STREAMS BASED ON VAPOR/LIQUID SPLIT FROM
+      COMPOSITE FEED FLASH.
+
+  *   WARNING WHILE EXECUTING UNIT OPERATIONS BLOCK: "B1" (MODEL: "RADFRAC")    
+                                                               (UDL3II.7200)    
+      REST OF BLOCK BYPASSED DUE TO SEVERE ERROR.                               
+
+ SENSITIVITY BLOCK S-1      ROW     4 EVALUATION BEGINS                           TIME =      0.06
+
+  *   WARNING WHILE EXECUTING SENSITIVITY BLOCK: "S-1"         (APLX2S.3)       
+      SAMPLED VARIABLE "RR" HAS NOT BEEN CALCULATED.                            
+      VALUE IS MISSING.                                                         
+
+  *   WARNING WHILE EXECUTING SENSITIVITY BLOCK: "S-1"         (APLX2S.3)       
+      SAMPLED VARIABLE "DUTY" HAS NOT BEEN CALCULATED.                          
+      VALUE IS MISSING.                                                         
+      VARY VARIABLES:   20.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.06
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    1    4      130.86    
+          2    7   33      66.303    
+          3    4   15      53.860    
+          4    4   15      37.634    
+          5    5   17      22.816    
+          6    3    9      16.336    
+          7    3    7      3.7505    
+          8    3    5     0.93136    
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.241         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW     5 EVALUATION BEGINS                           TIME =      0.11
+      VARY VARIABLES:   21.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.12
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    7   20     0.16317    
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.252         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW     6 EVALUATION BEGINS                           TIME =      0.13
+      VARY VARIABLES:   22.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.13
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    7   26     0.55941E-01
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.302         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW     7 EVALUATION BEGINS                           TIME =      0.17
+      VARY VARIABLES:   23.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.17
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    7   23     0.33095E-01
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.324         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW     8 EVALUATION BEGINS                           TIME =      0.19
+      VARY VARIABLES:   24.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.19
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    7   22     0.17250E-01
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.337         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW     9 EVALUATION BEGINS                           TIME =      0.21
+      VARY VARIABLES:   25.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.21
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    5   14     0.91328E-02
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.344         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    10 EVALUATION BEGINS                           TIME =      0.23
+      VARY VARIABLES:   26.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.23
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    5   14     0.51420E-02
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.347         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    11 EVALUATION BEGINS                           TIME =      0.25
+      VARY VARIABLES:   27.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.25
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    5   14     0.28201E-02
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.349         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    12 EVALUATION BEGINS                           TIME =      0.30
+      VARY VARIABLES:   28.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.30
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    5   14     0.15759E-02
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.351         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    13 EVALUATION BEGINS                           TIME =      0.32
+      VARY VARIABLES:   29.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.32
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.78258E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.351         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    14 EVALUATION BEGINS                           TIME =      0.33
+      VARY VARIABLES:   30.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.33
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.52559E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    15 EVALUATION BEGINS                           TIME =      0.35
+      VARY VARIABLES:   31.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.35
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.29071E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    16 EVALUATION BEGINS                           TIME =      0.37
+      VARY VARIABLES:   32.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.37
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.18775E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    17 EVALUATION BEGINS                           TIME =      0.38
+      VARY VARIABLES:   33.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.38
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.10998E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    18 EVALUATION BEGINS                           TIME =      0.40
+      VARY VARIABLES:   34.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.40
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.68213E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    19 EVALUATION BEGINS                           TIME =      0.42
+      VARY VARIABLES:   35.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.42
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.40809E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    20 EVALUATION BEGINS                           TIME =      0.43
+      VARY VARIABLES:   36.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.43
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.24989E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    21 EVALUATION BEGINS                           TIME =      0.45
+      VARY VARIABLES:   37.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.45
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14821E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    22 EVALUATION BEGINS                           TIME =      0.46
+      VARY VARIABLES:   38.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.46
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96090E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    23 EVALUATION BEGINS                           TIME =      0.48
+      VARY VARIABLES:   39.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.48
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66243E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    24 EVALUATION BEGINS                           TIME =      0.50
+      VARY VARIABLES:   40.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.50
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22137E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    25 EVALUATION BEGINS                           TIME =      0.51
+      VARY VARIABLES:   41.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.51
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.28390E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    26 EVALUATION BEGINS                           TIME =      0.53
+      VARY VARIABLES:   42.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.53
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14857E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    27 EVALUATION BEGINS                           TIME =      0.55
+      VARY VARIABLES:   43.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.55
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96006E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    28 EVALUATION BEGINS                           TIME =      0.56
+      VARY VARIABLES:   44.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.57
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66259E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    29 EVALUATION BEGINS                           TIME =      0.58
+      VARY VARIABLES:   45.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.58
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22075E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    30 EVALUATION BEGINS                           TIME =      0.60
+      VARY VARIABLES:   46.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.60
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27799E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    31 EVALUATION BEGINS                           TIME =      0.61
+      VARY VARIABLES:   47.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.62
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14693E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    32 EVALUATION BEGINS                           TIME =      0.63
+      VARY VARIABLES:   48.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.63
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.28913E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    33 EVALUATION BEGINS                           TIME =      0.65
+      VARY VARIABLES:   49.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.65
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96090E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    34 EVALUATION BEGINS                           TIME =      0.67
+      VARY VARIABLES:   50.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.67
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66326E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    35 EVALUATION BEGINS                           TIME =      0.68
+      VARY VARIABLES:   51.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.68
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22022E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    36 EVALUATION BEGINS                           TIME =      0.70
+      VARY VARIABLES:   52.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.70
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27545E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    37 EVALUATION BEGINS                           TIME =      0.71
+      VARY VARIABLES:   53.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.71
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14564E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    38 EVALUATION BEGINS                           TIME =      0.73
+      VARY VARIABLES:   54.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.73
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27326E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    39 EVALUATION BEGINS                           TIME =      0.74
+      VARY VARIABLES:   55.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.74
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    40 EVALUATION BEGINS                           TIME =      0.76
+      VARY VARIABLES:   56.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.76
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    41 EVALUATION BEGINS                           TIME =      0.78
+      VARY VARIABLES:   57.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.78
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22021E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    42 EVALUATION BEGINS                           TIME =      0.79
+      VARY VARIABLES:   58.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.79
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27532E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    43 EVALUATION BEGINS                           TIME =      0.81
+      VARY VARIABLES:   59.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.81
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14555E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    44 EVALUATION BEGINS                           TIME =      0.82
+      VARY VARIABLES:   60.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.82
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27250E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    45 EVALUATION BEGINS                           TIME =      0.84
+      VARY VARIABLES:   61.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.84
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    46 EVALUATION BEGINS                           TIME =      0.85
+      VARY VARIABLES:   62.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.85
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    47 EVALUATION BEGINS                           TIME =      0.87
+      VARY VARIABLES:   63.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.87
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22020E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    48 EVALUATION BEGINS                           TIME =      0.89
+      VARY VARIABLES:   64.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.89
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27531E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    49 EVALUATION BEGINS                           TIME =      0.91
+      VARY VARIABLES:   65.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.91
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14554E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    50 EVALUATION BEGINS                           TIME =      0.93
+      VARY VARIABLES:   66.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.93
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27246E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    51 EVALUATION BEGINS                           TIME =      0.94
+      VARY VARIABLES:   67.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.94
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    52 EVALUATION BEGINS                           TIME =      0.97
+      VARY VARIABLES:   68.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.97
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    53 EVALUATION BEGINS                           TIME =      0.98
+      VARY VARIABLES:   69.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.98
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22021E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    54 EVALUATION BEGINS                           TIME =      1.01
+      VARY VARIABLES:   70.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.01
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27531E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    55 EVALUATION BEGINS                           TIME =      1.03
+      VARY VARIABLES:   71.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.03
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14555E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    56 EVALUATION BEGINS                           TIME =      1.06
+      VARY VARIABLES:   72.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.06
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27245E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    57 EVALUATION BEGINS                           TIME =      1.08
+      VARY VARIABLES:   73.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.08
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    58 EVALUATION BEGINS                           TIME =      1.10
+      VARY VARIABLES:   74.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.10
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    59 EVALUATION BEGINS                           TIME =      1.12
+      VARY VARIABLES:   75.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.12
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22021E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    60 EVALUATION BEGINS                           TIME =      1.14
+      VARY VARIABLES:   76.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.14
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27531E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    61 EVALUATION BEGINS                           TIME =      1.15
+      VARY VARIABLES:   77.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.16
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14555E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    62 EVALUATION BEGINS                           TIME =      1.18
+      VARY VARIABLES:   78.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.18
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27245E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    63 EVALUATION BEGINS                           TIME =      1.20
+      VARY VARIABLES:   79.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.20
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    64 EVALUATION BEGINS                           TIME =      1.21
+      VARY VARIABLES:   80.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.21
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    65 EVALUATION BEGINS                           TIME =      1.23
+      VARY VARIABLES:   81.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.23
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22020E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    66 EVALUATION BEGINS                           TIME =      1.25
+      VARY VARIABLES:   82.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.25
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27531E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    67 EVALUATION BEGINS                           TIME =      1.27
+      VARY VARIABLES:   83.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.27
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14554E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    68 EVALUATION BEGINS                           TIME =      1.28
+      VARY VARIABLES:   84.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.28
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27246E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    69 EVALUATION BEGINS                           TIME =      1.30
+      VARY VARIABLES:   85.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.30
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    70 EVALUATION BEGINS                           TIME =      1.31
+      VARY VARIABLES:   86.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.31
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    71 EVALUATION BEGINS                           TIME =      1.33
+      VARY VARIABLES:   87.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.33
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22021E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    72 EVALUATION BEGINS                           TIME =      1.34
+      VARY VARIABLES:   88.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.34
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27531E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    73 EVALUATION BEGINS                           TIME =      1.36
+      VARY VARIABLES:   89.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.36
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14554E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    74 EVALUATION BEGINS                           TIME =      1.38
+      VARY VARIABLES:   90.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.38
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27246E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    75 EVALUATION BEGINS                           TIME =      1.39
+      VARY VARIABLES:   91.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.39
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    76 EVALUATION BEGINS                           TIME =      1.41
+      VARY VARIABLES:   92.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.41
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    77 EVALUATION BEGINS                           TIME =      1.42
+      VARY VARIABLES:   93.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.42
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22020E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    78 EVALUATION BEGINS                           TIME =      1.44
+      VARY VARIABLES:   94.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.44
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27532E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    79 EVALUATION BEGINS                           TIME =      1.45
+      VARY VARIABLES:   95.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.45
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14555E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    80 EVALUATION BEGINS                           TIME =      1.47
+      VARY VARIABLES:   96.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.47
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27245E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    81 EVALUATION BEGINS                           TIME =      1.48
+      VARY VARIABLES:   97.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.48
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    82 EVALUATION BEGINS                           TIME =      1.50
+      VARY VARIABLES:   98.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.50
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    83 EVALUATION BEGINS                           TIME =      1.51
+      VARY VARIABLES:   99.000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.51
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22021E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    84 EVALUATION BEGINS                           TIME =      1.53
+      VARY VARIABLES:   100.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.53
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27531E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    85 EVALUATION BEGINS                           TIME =      1.54
+      VARY VARIABLES:   101.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.54
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14554E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    86 EVALUATION BEGINS                           TIME =      1.56
+      VARY VARIABLES:   102.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.56
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27246E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    87 EVALUATION BEGINS                           TIME =      1.58
+      VARY VARIABLES:   103.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.58
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    88 EVALUATION BEGINS                           TIME =      1.60
+      VARY VARIABLES:   104.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.60
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    89 EVALUATION BEGINS                           TIME =      1.61
+      VARY VARIABLES:   105.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.62
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22021E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    90 EVALUATION BEGINS                           TIME =      1.64
+      VARY VARIABLES:   106.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.64
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27531E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    91 EVALUATION BEGINS                           TIME =      1.65
+      VARY VARIABLES:   107.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.65
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14554E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    92 EVALUATION BEGINS                           TIME =      1.67
+      VARY VARIABLES:   108.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.67
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27246E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    93 EVALUATION BEGINS                           TIME =      1.68
+      VARY VARIABLES:   109.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.68
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    94 EVALUATION BEGINS                           TIME =      1.70
+      VARY VARIABLES:   110.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.70
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    95 EVALUATION BEGINS                           TIME =      1.71
+      VARY VARIABLES:   111.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.71
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22020E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    96 EVALUATION BEGINS                           TIME =      1.73
+      VARY VARIABLES:   112.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.73
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27532E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    97 EVALUATION BEGINS                           TIME =      1.74
+      VARY VARIABLES:   113.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.74
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14554E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    98 EVALUATION BEGINS                           TIME =      1.76
+      VARY VARIABLES:   114.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.76
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27245E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW    99 EVALUATION BEGINS                           TIME =      1.77
+      VARY VARIABLES:   115.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.78
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW   100 EVALUATION BEGINS                           TIME =      1.79
+      VARY VARIABLES:   116.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.79
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.66327E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW   101 EVALUATION BEGINS                           TIME =      1.81
+      VARY VARIABLES:   117.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.81
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.22020E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW   102 EVALUATION BEGINS                           TIME =      1.83
+      VARY VARIABLES:   118.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.83
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27532E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW   103 EVALUATION BEGINS                           TIME =      1.85
+      VARY VARIABLES:   119.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.85
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.14554E-04
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW   104 EVALUATION BEGINS                           TIME =      1.86
+      VARY VARIABLES:   120.00    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.86
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.27245E-05
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+ SENSITIVITY BLOCK S-1      ROW   105 (BASE CASE) EVALUATION BEGINS               TIME =      1.89
+      VARY VARIABLES:   47.685    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      1.89
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    4   13     0.96089E-03
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          30.352         20.000         200.00    
+
+  **  ERROR WHILE EXECUTING SENSITIVITY BLOCK: "S-1"           (SNSTVI.4)       
+      SOME ROWS COMPLETED WITH ERRORS.                                          
+
+      INFORMATION WHILE IN SEQUENCE MONITOR                    (TRTWRT.8172)    
+      TPSAR MESSAGE:    87.85%  JET FLOOD IN COLUMN B1      , SECTION   1       
+                       EXCEEDS 80%.                                             
+
+ Report Writer entered                                                            Time =  25844.16
+
+      INFORMATION WHILE GENERATING REPORT FOR UNIT OPERATIONS BLOCK: "B1"       
+      (MODEL: "RADFRAC")                                       (TRTWRT.8172)    
+      TPSAR MESSAGE:    87.85%  JET FLOOD IN COLUMN B1      , SECTION   1       
+                       EXCEEDS 80%.                                             
+
+      BEGIN CALCULATIONS FOR PROP-TABLE BINRY-1 
+      KODE = 3  NTRIAL =   3  T = 419.1046  P =  102668.      V =  0.00000      Q =  0.00000    
+      KODE = 3  NTRIAL =   3  T = 418.9217  P =  102668.      V =  0.00000      Q = -1298.74    
+      KODE = 3  NTRIAL =   2  T = 418.7357  P =  102668.      V =  0.00000      Q = -1298.73    
+      KODE = 3  NTRIAL =   2  T = 418.5470  P =  102668.      V =  0.00000      Q = -1298.69    
+      KODE = 3  NTRIAL =   2  T = 418.3556  P =  102668.      V =  0.00000      Q = -1298.63    
+      KODE = 3  NTRIAL =   2  T = 418.1618  P =  102668.      V =  0.00000      Q = -1298.56    
+      KODE = 3  NTRIAL =   2  T = 417.9656  P =  102668.      V =  0.00000      Q = -1298.47    
+      KODE = 3  NTRIAL =   2  T = 417.7673  P =  102668.      V =  0.00000      Q = -1298.35    
+      KODE = 3  NTRIAL =   2  T = 417.5670  P =  102668.      V =  0.00000      Q = -1298.21    
+      KODE = 3  NTRIAL =   2  T = 417.3649  P =  102668.      V =  0.00000      Q = -1298.06    
+      KODE = 3  NTRIAL =   2  T = 417.1612  P =  102668.      V =  0.00000      Q = -1297.87    
+      KODE = 3  NTRIAL =   2  T = 416.9560  P =  102668.      V =  0.00000      Q = -1297.67    
+      KODE = 3  NTRIAL =   2  T = 416.7497  P =  102668.      V =  0.00000      Q = -1297.43    
+      KODE = 3  NTRIAL =   2  T = 416.5423  P =  102668.      V =  0.00000      Q = -1297.18    
+      KODE = 3  NTRIAL =   2  T = 416.3340  P =  102668.      V =  0.00000      Q = -1296.89    
+      KODE = 3  NTRIAL =   2  T = 416.1252  P =  102668.      V =  0.00000      Q = -1296.59    
+      KODE = 3  NTRIAL =   2  T = 415.9159  P =  102668.      V =  0.00000      Q = -1296.25    
+      KODE = 3  NTRIAL =   2  T = 415.7064  P =  102668.      V =  0.00000      Q = -1295.89    
+      KODE = 3  NTRIAL =   2  T = 415.4969  P =  102668.      V =  0.00000      Q = -1295.50    
+      KODE = 3  NTRIAL =   2  T = 415.2876  P =  102668.      V =  0.00000      Q = -1295.08    
+      KODE = 3  NTRIAL =   2  T = 415.0787  P =  102668.      V =  0.00000      Q = -1294.64    
+      KODE = 3  NTRIAL =   2  T = 414.8704  P =  102668.      V =  0.00000      Q = -1294.17    
+      KODE = 3  NTRIAL =   2  T = 414.6630  P =  102668.      V =  0.00000      Q = -1293.67    
+      KODE = 3  NTRIAL =   2  T = 414.4565  P =  102668.      V =  0.00000      Q = -1293.15    
+      KODE = 3  NTRIAL =   2  T = 414.2512  P =  102668.      V =  0.00000      Q = -1292.60    
+      KODE = 3  NTRIAL =   2  T = 414.0474  P =  102668.      V =  0.00000      Q = -1292.02    
+      KODE = 3  NTRIAL =   1  T = 413.8453  P =  102668.      V =  0.00000      Q = -1291.40    
+      KODE = 3  NTRIAL =   2  T = 413.6448  P =  102668.      V =  0.00000      Q = -1290.80    
+      KODE = 3  NTRIAL =   2  T = 413.4463  P =  102668.      V =  0.00000      Q = -1290.12    
+      KODE = 3  NTRIAL =   2  T = 413.2501  P =  102668.      V =  0.00000      Q = -1289.44    
+      KODE = 3  NTRIAL =   2  T = 413.0562  P =  102668.      V =  0.00000      Q = -1288.73    
+      KODE = 3  NTRIAL =   2  T = 412.8648  P =  102668.      V =  0.00000      Q = -1288.00    
+      KODE = 3  NTRIAL =   2  T = 412.6762  P =  102668.      V =  0.00000      Q = -1287.24    
+      KODE = 3  NTRIAL =   2  T = 412.4904  P =  102668.      V =  0.00000      Q = -1286.46    
+      KODE = 3  NTRIAL =   2  T = 412.3076  P =  102668.      V =  0.00000      Q = -1285.66    
+      KODE = 3  NTRIAL =   2  T = 412.1280  P =  102668.      V =  0.00000      Q = -1284.83    
+      KODE = 3  NTRIAL =   2  T = 411.9517  P =  102668.      V =  0.00000      Q = -1283.98    
+      KODE = 3  NTRIAL =   2  T = 411.7789  P =  102668.      V =  0.00000      Q = -1283.11    
+      KODE = 3  NTRIAL =   2  T = 411.6097  P =  102668.      V =  0.00000      Q = -1282.21    
+      KODE = 3  NTRIAL =   2  T = 411.4443  P =  102668.      V =  0.00000      Q = -1281.30    
+      KODE = 3  NTRIAL =   2  T = 411.2828  P =  102668.      V =  0.00000      Q = -1280.36    
+      KODE = 3  NTRIAL =   2  T = 411.1253  P =  102668.      V =  0.00000      Q = -1279.39    
+      KODE = 3  NTRIAL =   2  T = 410.9720  P =  102668.      V =  0.00000      Q = -1278.41    
+      KODE = 3  NTRIAL =   2  T = 410.8230  P =  102668.      V =  0.00000      Q = -1277.40    
+      KODE = 3  NTRIAL =   2  T = 410.6786  P =  102668.      V =  0.00000      Q = -1276.36    
+      KODE = 3  NTRIAL =   2  T = 410.5387  P =  102668.      V =  0.00000      Q = -1275.30    
+      KODE = 3  NTRIAL =   2  T = 410.4037  P =  102668.      V =  0.00000      Q = -1274.20    
+      KODE = 3  NTRIAL =   2  T = 410.2738  P =  102668.      V =  0.00000      Q = -1273.08    
+      KODE = 3  NTRIAL =   2  T = 410.1492  P =  102668.      V =  0.00000      Q = -1271.91    
+      KODE = 3  NTRIAL =   2  T = 410.0301  P =  102668.      V =  0.00000      Q = -1270.70    
+      KODE = 3  NTRIAL =   2  T = 409.9169  P =  102668.      V =  0.00000      Q = -1269.43    
+      KODE = 3  NTRIAL =   2  T = 409.8100  P =  102668.      V =  0.00000      Q = -1268.11    
+
+ Results generated                                                                Time =  25844.24

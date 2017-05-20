@@ -88,3 +88,18 @@ Reduced F factor        Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FF
 
 
 
+tray sizing
+
+Application.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Sizing\1\Input\TS_STAGE2\1")     2
+Application.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Sizing\1\Input\TS_STAGE2\2")     90
+
+
+
+#DSTWU
+\Data\Blocks\B1\Output\MIN_REFLUX       最小回流比
+\Data\Blocks\B1\Output\ACT_REFLUX       实际回流比
+\Data\Blocks\B1\Output\MIN_STAGES       最小理论塔板数
+\Data\Blocks\B1\Output\ACT_STAGES       实际塔板数
+\Data\Blocks\B1\Output\FEED_LOCATN      进料塔板位置
+
+

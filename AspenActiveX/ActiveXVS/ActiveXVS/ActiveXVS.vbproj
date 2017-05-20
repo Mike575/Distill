@@ -75,6 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.vb" />
+    <Compile Include="DSTWU_Result.Designer.vb">
+      <DependentUpon>DSTWU_Result.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DSTWU_Result.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Find.Designer.vb">
       <DependentUpon>Find.vb</DependentUpon>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="record.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DSTWU_Result.resx">
+      <DependentUpon>DSTWU_Result.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Find.resx">
       <DependentUpon>Find.vb</DependentUpon>
     </EmbeddedResource>

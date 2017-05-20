@@ -1,0 +1,34 @@
+
+ BOTTOM FEED UP                          
+ --------------
+
+ STREAM ID               BOTTOM     FEED       UP      
+ FROM :                  B1         ----       B1      
+ TO   :                  ----       B1         ----    
+
+ SUBSTREAM: MIXED   
+ PHASE:                  LIQUID     LIQUID     LIQUID 
+ COMPONENTS: KMOL/HR         
+   BENYIXI                6.7143     6.7210  6.7204-03
+   YIBEN               5.6509-03     2.8257     2.8201
+ TOTAL FLOW:     
+   KMOL/HR                6.7199     9.5467     2.8268
+   KG/HR                699.9000  1000.0000   300.1000
+   L/MIN                 14.9623    18.8577     6.6031
+ STATE VARIABLES:
+   TEMP   C             152.0158    30.0000   139.2701
+   PRES   BAR             1.2000     1.2000     1.1000
+   VFRAC                  0.0        0.0        0.0   
+   LFRAC                  1.0000     1.0000     1.0000
+   SFRAC                  0.0        0.0        0.0   
+ ENTHALPY:       
+   CAL/MOL             3.0936+04  1.6620+04  2907.1130
+   CAL/GM               297.0275   158.6636    27.3836
+   CAL/SEC             5.7747+04  4.4073+04  2282.7262
+ ENTROPY:        
+   CAL/MOL-K            -61.7695   -85.3838   -89.6437
+   CAL/GM-K              -0.5931    -0.8151    -0.8444
+ DENSITY:        
+   MOL/CC              7.4854-03  8.4375-03  7.1350-03
+   GM/CC                  0.7796     0.8838     0.7575
+ AVG MW                 104.1532   104.7482   106.1626

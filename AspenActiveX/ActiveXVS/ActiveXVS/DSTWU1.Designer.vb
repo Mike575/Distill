@@ -88,7 +88,7 @@ Partial Class DSTWU1
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 21)
         Me.TextBox4.TabIndex = 6
-        Me.TextBox4.Text = "1.2"
+        Me.TextBox4.Text = "1.1"
         '
         'Label4
         '

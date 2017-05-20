@@ -11,7 +11,7 @@ Module AspenActiveX
     Public ModifyR_RadFrac As Double
     Public Modify_DistillRate_RadFrac As Double
     Public RadFrac_ModifyR As Double
-    Public RadFrac_ModifyStage As Double
+    Public RadFrac_Stage As Double
     Public RadFrac_Nstage_feed As Integer       'RadFrac 模型中进料板位置
 
     Public Heavykey_feed_MassFrac As Double     '重组分进料质量分数
@@ -47,9 +47,34 @@ Module AspenActiveX
         Dim Name As String
         Dim value As String
         Dim address As String
-
     End Structure
 
+    Public Structure Binary_Result
+
+        Dim value As String
+        Dim Name As String
+    End Structure
+    Public Structure Multi_Result
+
+        Dim number As Integer       '记录塔板位置
+        Dim HYD_TL As Double
+        Dim HYD_TVTO As Double        'Temperature vapor to
+        Dim HYD_LMF As Double         'Mass flow liquid from:
+        Dim HYD_VMF As Double         'Mass flow vapor to
+        Dim HYD_LVF As Double         'Volume flow liquid from
+        Dim HYD_VVF As Double         'Volume flow vapor to
+        Dim HYD_MWL As Double         'Molecular wt liquid from:
+        Dim HYD_MWV As Double         'Molecular wt vapor to
+        Dim HYD_RHOL As Double        'Density liquid from
+        Dim HYD_RHOV As Double        'Density vapor to
+        Dim HYD_MUL As Double         'Viscosity liquid from
+        Dim HYD_MUV As Double         'Viscosity vapor to
+        Dim HYD_STEN As Double        'Surface tension liquid from
+        Dim HYD_FMIDX As Double       'Foaming Index
+        Dim HYD_PARM As Double        'Flow parameter
+        Dim HYD_QR As Double          'Reduced vapor
+        Dim HYD_FFR As Double         'Reduced F factor 
+    End Structure
 
     Function OpenDistilR() As IHapp
 

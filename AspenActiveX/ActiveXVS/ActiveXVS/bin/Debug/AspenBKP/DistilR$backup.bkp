@@ -1,0 +1,372 @@
+MM "30.0" FLAVOR "NO" VERSION "30.0" DATETIME "Wed May 10 18:39:54 2017" 
+MACHINE "WIN-NT/VC"  ; 
+startlibrary
+version1
+NumLibs = 2
+Built-In
+ACM Built-In
+NumCats = 10
+Mixers/Splitters
+active
+Separators
+active
+Exchangers
+active
+Columns
+active
+Reactors
+active
+Pressure Changers
+active
+Manipulators
+active
+Solids
+active
+Solids Separators
+active
+User Models
+active
+endlibrary
+; 
+1
+>VERSION 0
+B1
+DSTWU
+Built-In
+DSTWU
+? SETUP MAIN ? \ "RUN-CLASS" RUN-CLASS = FLOWSHEET \ \ SIMULATE INTERACTIVE
+ = NO MOLEFLOW = MOLEFLOW VISITED = 1 \ ? SETUP GLOBAL ? \ "IN-UNITS" INSET
+ = METCBAR \ ? SETUP DIAGNOSTICS ? ? SETUP "SIM-OPTIONS" ? ; "METCBAR_MOLE" ; 
+\ "SIM-OPTIONS" \ ? SETUP "MODEL-OPTION" ? ; "METCBAR_MOLE" ; ? SETUP 
+"CUSTOM-UOM" ? ? SETUP "UNITS-SET" METCBAR ? \ DESCRIPTION DESCRIPTION = 
+"User-defined units set" \ \ MMLOCAL \ \ UNITSET BASESET = MET ( 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 5 3 4 3 3 3 3 3 3 3 3 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 5 3 3 3 3 3 3 5 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 ) \ ? SETUP "SYS-OPTIONS" ? ? SETUP "ACCOUNT-INFO" ? ? 
+SETUP "RUN-CONTROL" ? ? SETUP DESCRIPTION ? ? ODATABANKS ? ? DATABANKS ? \ 
+DATABANKS \ ? COMPONENTS MAIN ? \ COMPONENTS CID = BENYIXI ANAME = C8H8 
+OUTNAME = BENYIXI DBNAME1 = "STYRENE" ANAME1 = "C8H8" /  CID = YIBEN ANAME = 
+C8H10-4 OUTNAME = YIBEN DBNAME1 = "ETHYLBENZENE" ANAME1 = "C8H10-4" \ ? 
+COMPONENTS "ADA/PCS" "PC-PROP-DATA" ? ; "METCBAR_MOLE" ; ? COMPONENTS "ADA/PCS" 
+"LE-PROP-DATA" ? ; "METCBAR_MOLE" ; ? COMPONENTS "ADA/PCS" "ADA-SETUP" ? \ 
+"ADA-SETUP" PROCEDURE = REL9 \ ? COMPONENTS "COMP-LIST" GLOBAL ? ? COMPONENTS 
+"MOIST-COMPS" ? ? COMPONENTS "UNIFAC-GROUP" ? ? SOLVE ? \ "RUN-MODE" MODE = 
+SIM \ ? "INIT-VAR-ATT" ? ? "EO-ALIAS" ? ? SPECGROUPS ? ? CONNECTIONS ? ? 
+"EO-OPTIONS" ? ? SCRIPTMETHOD ? ? "DYN-OPTIONS" ? ? FLOWSHEET GLOBAL ? \ 
+BLOCK BLKID = B1 BLKTYPE = DSTWU MDLTYPE = "DSTWU" IN = ( FEED M0-1 ) OUT = ( 
+BOTTOM M1-2 UP M0-1 ) \ ? PROPERTIES MAIN ? \ GPROPERTIES GBASEOPSET = NRTL 
+GOPSETNAME = NRTL PARCON = -2 \ ? PROPERTIES "OPTION-SETS" NRTL ? \ PARAM 
+BASE = NRTL \ ? PROPERTIES "MOLEC-STRUCT" BENYIXI ? ? PROPERTIES "MOLEC-STRUCT" 
+YIBEN ? ? PROPERTIES PARAMETERS SUMMARY ? ? PROPERTIES PARAMETERS BINARY 
+SCALAR "MLQKIJ-1" ? ; "ENG_MOLE" ; \ PROP-LIST PARAMNAME = MLQKIJ SETNO = 1 
+UNITROW = 0 \ ? PROPERTIES PARAMETERS BINARY SCALAR "RKTKIJ-1" ? ; "ENG_MOLE" 
+; \ PROP-LIST PARAMNAME = RKTKIJ SETNO = 1 UNITROW = 0 \ ? PROPERTIES 
+PARAMETERS BINARY "T-DEPENDENT" "ANDKIJ-1" ? ; "ENG_MOLE" ; \ PROP-LIST 
+PARAMNAME = ANDKIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 TUNITLABEL = F NEL = 2 
+\ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "ANDMIJ-1" ? ; "ENG_MOLE" ; \ 
+PROP-LIST PARAMNAME = ANDMIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 TUNITLABEL
+ = F NEL = 2 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "HENRY-1" ? ; 
+"METCBAR_MOLE" ; \ PROP-LIST PARAMNAME = HENRY SETNO = 1 UNITROW = 20 
+UNITLABEL = bar TUNITROW = 22 TUNITLABEL = C BDBANK = ( BINARY HENRY ) NEL = 
+7 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "MUKIJ-1" ? ; "ENG_MOLE" ; \ 
+PROP-LIST PARAMNAME = MUKIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 TUNITLABEL = 
+F NEL = 6 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "MULIJ-1" ? ; 
+"ENG_MOLE" ; \ PROP-LIST PARAMNAME = MULIJ SETNO = 1 UNITROW = 0 TUNITROW = 22 
+TUNITLABEL = F NEL = 11 \ ? PROPERTIES PARAMETERS BINARY "T-DEPENDENT" "NRTL-1" 
+? ; "METCBAR_MOLE" ; \ PROP-LIST PARAMNAME = NRTL SETNO = 1 UNITROW = 0 
+TUNITROW = 22 TUNITLABEL = C BDBANK = ( "VLE-IG" "LLE-ASPEN" "VLE-LIT" ) NEL
+ = 12 \ ? PROPERTIES "ATTR-COMPS" ? ? "ATTR-SCALING" ? ; "METCBAR_MOLE" ; ? 
+"STREAM-CLASS" SUBSTREAMS ? \ DEF-SUBS-CLA SUBSTREAMS = MIXED \ \ 
+DEF-SUBS-CLA SUBSTREAMS = CISOLID \ \ DEF-SUBS-CLA SUBSTREAMS = NC \ \ 
+DEF-SUBS-CLA SUBSTREAMS = NCPSD \ \ DEF-SUBS-CLA SUBSTREAMS = CIPSD \ ? 
+"STREAM-CLASS" "DEF-STREAMS" ? ? "STREAM-NAMES" ? ? STREAM MATERIAL FEED ? ; 
+"METCBAR_MOLE" ; \ SUBSTREAM SSID = MIXED TEMP = 30. <22> <4> PRES = 1.2 <20> 
+<5> BASIS = "MASS-FRAC" FLOWBASE = MASS TOTFLOW = 1000. <-80> <3> TOTAL = 1. 
+<-3> <0> JUNK = 2 \ \ MOLE-FLOW SSID1 = MIXED CID = BENYIXI FLOW = 0.7 <-3> 
+<0> /  SSID1 = MIXED CID = YIBEN FLOW = 0.3 <-3> <0> \ ? BLOCK DSTWU B1 ? ; 
+"METCBAR_MOLE" ; ; ICON1 ; \ PARAM LIGHTKEY = YIBEN RECOVL = 0.998 <0> <0> 
+HEAVYKEY = BENYIXI RECOVH = 0.001 <0> <0> PTOP = 1.1 <20> <5> PBOT = 1.2 <20> 
+<5> NSTAGE = 80 RR = -1.5 <0> <0> PLOT = NO OPT-NTRR = RR OPT-CALHETP = NO \ 
+\ PLOT LOWER = 76 UPPER = 100 INCR = 1 OPT-SZNO = SIZE \ ? COSTING OPTIONS ? 
+; "METCBAR_MOLE" ; ? COSTING "LABOR-COST" ? ; "METCBAR_MOLE" ; ? COSTING 
+"CAPITAL-COST" ? ; "METCBAR_MOLE" ; ? COSTING OPERATING ? ; "METCBAR_MOLE" ; 
+? COSTING PROFIT ? ; "METCBAR_MOLE" ; ? CURRENCY ? ? "STREAM-PRICE" ? ; 
+"METCBAR_MOLE" ; ? "EO-CONV-OPTI" ? \ DMO-PARAMS MODE = DEFAULT \ \ 
+DMO-PARAMS MODE = SIMULATION \ \ DMO-PARAMS MODE = "PARAMETER-ESTIMATION" \ \ 
+DMO-PARAMS MODE = RECONCILIATION \ \ DMO-PARAMS MODE = OPTIMIZATION \ \ 
+LSSQP-PARAMS MODE-L = DEFAULT \ \ LSSQP-PARAMS MODE-L = SIMULATION \ \ 
+LSSQP-PARAMS MODE-L = "PARAMETER-ESTIMATION" \ \ LSSQP-PARAMS MODE-L = 
+RECONCILIATION \ \ LSSQP-PARAMS MODE-L = OPTIMIZATION \ \ NSOLVE-PARAM 
+NSOLVE-MODE = DEFAULT \ \ NSOLVE-PARAM NSOLVE-MODE = SIMULATION \ \ 
+NSOLVE-PARAM NSOLVE-MODE = "PARAMETER-ESTIMATION" \ \ XSLP-PARAMS XSLP-MODE
+ = DEFAULT \ \ XSLP-PARAMS XSLP-MODE = SIMULATION \ \ XSLP-PARAMS XSLP-MODE
+ = "PARAMETER-ESTIMATION" \ \ XSLP-PARAMS XSLP-MODE = RECONCILIATION \ \ 
+XSLP-PARAMS XSLP-MODE = OPTIMIZATION \ ? SENSITIVITY NEWCURE ? ; "METCBAR_MOLE" 
+; \ DEFINE FVN = STAGE FVN-VARTYPE = "BLOCK-VAR" FVN-BLOCK = B1 FVN-VARIABLE
+ = RECOVL FVN-SENTENCE = PARAM OPT-CATEG = ALL \ \ DEFINE FVN = RR 
+FVN-VARTYPE = "BLOCK-VAR" FVN-BLOCK = B1 FVN-VARIABLE = "ACT-REFLUX" 
+FVN-SENTENCE = RESULTS \ \ DEFINE FVN = RECOVL FVN-VARTYPE = "BLOCK-VAR" 
+FVN-BLOCK = B1 FVN-VARIABLE = RECOVL FVN-SENTENCE = PARAM \ \ TABULATE COLNO
+ = 1 EXPR = "STAGE" \ \ TABULATE COLNO = 2 EXPR = "RECOVL" \ \ VARY SCRUD = 1 
+VARY-VARTYPE = "BLOCK-VAR" VARYBLOCK = B1 VARYVARIABLE = NSTAGE VARYSENTENCE
+ = PARAM LOWER = "76" UPPER = "150" NPOINT = "75" INCR = "1" OPT-LIST = RANGE 
+OPT-RANGE = INCR \ \ VARY SCRUD = 2 VARY-VARTYPE = "BLOCK-VAR" VARYBLOCK = B1 
+VARYVARIABLE = RR VARYSENTENCE = PARAM LOWER = "17" UPPER = "100" NPOINT = "84" 
+INCR = "1.000000" OPT-RANGE = NPOINT \ ? "CONV-OPTIONS" ? ? TEAR ? ? 
+"CONV-ORDER" ? ? REPORT REPORT ? ? REPORT "BLOCK-REPORT" ? ? REPORT 
+"STREAM-REPOR" ? \ OPTIONS MOLEFLOW = MOLEFLOW \ ? REPORT "PROPERTY-REP" ? ? 
+REPORT "ADA-REPORT" ? ? "STREAM-LIB" ? ; "METCBAR_MOLE" ; 
+
+ GRAPHICS_BACKUP
+PFS V 5.00
+$CONFIG
+paramdata ENRTL-RK
+paramdata VLE-IG
+paramdata VLE-RK
+paramdata VLE-HOC
+paramdata LLE-LIT
+paramdata LLE-ASPEN
+paramdata VLE-LIT
+paramdata BINARY
+paramdata EOS-LIT
+paramdata HENRY
+paramdata SRK-ASPEN
+paramdata PC-SAFT
+paramdata POLYPCSF
+paramdata HYSYS
+purebank PURE28
+purebank AQUEOUS
+purebank SOLIDS
+purebank INORGANIC
+regdbank 1
+ftn_check 1
+autoblockid 1
+autostreamid 1
+showblockid 1
+showstreamid 1
+autoplacement 1
+grid 2
+gridresolution 0.100000
+scale 0
+streamprefix S
+blockprefix B
+labelscale 1.000000
+3DOn 1
+qwformat %.0f
+tempformat %.0f
+presformat %.0f
+flowformat %.0f
+strmqwformat %.0f
+vflowformat %.0f
+mflowformat %.0f
+vfracformat %.2f
+pseudobatch 0
+partial 1
+animation 1
+runanyway 0
+tooldrawvisible 0
+browserheight 7530
+browserwidth 10725
+browsertreewidth 2450
+polyplusenabled 1
+dynaplusenabled 1
+bfracenabled 1
+rtfenabled 1
+rspenabled 1
+initializeicarus 17
+pinchenabled 0
+linklimit 5000
+material_color 0
+material_style 0
+material_width 1
+material_termid  
+heat_color 0
+heat_style 2
+heat_width 1
+heat_termid Q
+work_color 0
+work_style 1
+work_width 1
+work_termid W
+connections_color 9
+connections_style 3
+connections_width 1
+connections_termid C
+measurements_color 4
+measurements_style 3
+measurements_width 1
+measurements_termid M
+displayeoconn 0
+displaycalcs 0
+displaytransfers 0
+displaymeas 0
+displaydesignspecs 0
+displaycalccons 0
+displaymeascons 0
+displayothercons 0
+displayeomeas 1
+displayeomeastype 2
+displayothermanipconn 0
+showeoviews 0
+eoautosave 1
+allow_system_userprops 0
+copy_estimation 1
+copy_retrieved 1
+purge_incomp_params 0
+set_default_biparams 0
+set_default_dataset1 0
+set_default_dataset0 1
+bestinput 0
+autosmrun 0
+genallpropset 0
+strmresformdefault 0
+roottype 1
+exchangerfile 1
+streamformat 1
+runsettingfile 1
+usermodelfile 1
+fortranfile 0
+allow_system_autoparam 1
+timeout 1000
+auto_evaluate 0
+customglobaldatapropset1 0 | Custom1 | * | %.2f | 0 | 6
+customglobaldatapropset2 0 | Custom2 | * | %.2f | 1 | 7
+customglobaldatapropset3 0 | Custom3 | * | %.2f | 2 | 8
+customglobaldatapropset4 0 | Custom4 | * | %.2f | 4 | 9
+customglobaldatapropset5 0 | Custom5 | * | %.2f | 5 | 10
+customglobaldatapropset6 0 | Custom6 | * | %.2f | 6 | 11
+economics_active 0
+ignoreEOVarNameFixupsOnImport 1
+#
+$_GRID_TEMPLATES
+$_START_TEMPLATE_Model
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedSummaryGridTemplateCol>
+  <TabbedSummaryGridTemplates />
+</TabbedSummaryGridTemplateCol>
+$_END_TEMPLATE_Model
+$_END_GRID_TEMPLATES
+PFSVData
+# of PFS Objects = 5
+SIZE -2.40334 2.69733 0.507127 1.9265
+BLOCK
+ID: B1
+Version: 1
+ICON: "ICON1"
+Flag 0
+Section GLOBAL
+At 0.000000 1.400000
+Label At 0.000000 0.000000
+Scale 1.000000 Modifier 0
+STREAM
+ID: FEED
+Version: 2
+Flag 0
+GLOBAL 117
+TYPE 0 TERMINAL 1
+At -2.403341 1.506682
+Label At 0.539171 0.000000
+ROUTE 0 0
+$ $ 0.0 0.0
+ROUTE 1 0
+r r -2.403341 1.506682 0
+x x -1.325000 1.506682 0
+y y -1.325000 1.400000 0
+x x -0.425938 1.400000 0
+t l -0.225938 1.400000 0
+$ C 1.000000 0.0
+$ $ 0.0 0.0
+At 0.000000 0.000000
+Label At 0.000000 0.000000
+ROUTE 0 1
+$ $ 0.0 0.0
+ROUTE 1 1
+$ $ 0.0 0.0
+At 0.000000 0.000000
+Label At 0.000000 0.000000
+ROUTE 0 2
+$ $ 0.0 0.0
+ROUTE 1 2
+$ $ 0.0 0.0
+STREAM
+ID: BOTTOM
+Version: 2
+Flag 0
+GLOBAL 117
+TYPE 0 TERMINAL 2
+At 2.697327 0.507127
+Label At -0.523664 0.000000
+ROUTE 0 0
+r l 2.697327 0.507127 0
+x y 1.650000 0.507127 0
+y x 1.650000 0.576500 0
+x 0 0.797562 0.576500 0
+t r 0.597562 0.576500 0
+$ C 1.000000 0.0
+$ $ 0.0 0.0
+ROUTE 1 0
+$ $ 0.0 0.0
+At 0.000000 0.000000
+Label At 0.000000 0.000000
+ROUTE 0 1
+$ $ 0.0 0.0
+ROUTE 1 1
+$ $ 0.0 0.0
+At 0.000000 0.000000
+Label At 0.000000 0.000000
+ROUTE 0 2
+$ $ 0.0 0.0
+ROUTE 1 2
+$ $ 0.0 0.0
+STREAM
+ID: UP
+Version: 2
+Flag 0
+GLOBAL 117
+TYPE 0 TERMINAL 2
+At 2.697327 1.903563
+Label At -0.561164 0.000000
+ROUTE 0 0
+r l 2.697327 1.903563 0
+x y 1.575000 1.903563 0
+y x 1.575000 1.926500 0
+x 0 0.649062 1.926500 0
+t r 0.449062 1.926500 0
+$ C 1.000000 0.0
+$ $ 0.0 0.0
+ROUTE 1 0
+$ $ 0.0 0.0
+At 0.000000 0.000000
+Label At 0.000000 0.000000
+ROUTE 0 1
+$ $ 0.0 0.0
+ROUTE 1 1
+$ $ 0.0 0.0
+At 0.000000 0.000000
+Label At 0.000000 0.000000
+ROUTE 0 2
+$ $ 0.0 0.0
+ROUTE 1 2
+$ $ 0.0 0.0
+LEGEND
+Version: 2
+Unfixed
+# of PFS Objects = 0
+VIEWPORT -3.309930 10.499643 3.748579 -1.149688
+LAYOUT
+TableFormat 1
+Pages 1 1 1 1
+PAGESETUP
+PAPERSIZE 
+PAPERSOURCE 
+ORIENTATION -1
+PRINTPAGENO 1 1
+LEFTMARGIN 10mm
+RIGHTMARGIN 10mm
+TOPMARGIN 10mm
+BOTTOMMARGIN 10mm
+VISIBILITY 0.030000
+PFDFLAG 255 255
+PFDMODE 0
+SCALE 0.014754

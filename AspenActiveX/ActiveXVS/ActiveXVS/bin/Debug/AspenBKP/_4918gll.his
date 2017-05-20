@@ -208,3 +208,12 @@ Calculations begin                                                              
       INFORMATION WHILE IN SEQUENCE MONITOR                    (TRTWRT.8172)    
       TPSAR MESSAGE:    87.47%  JET FLOOD IN COLUMN B1      , SECTION   1       
                        EXCEEDS 80%.                                             
+
+ Report Writer entered                                                            Time =  77428.54
+
+      INFORMATION WHILE GENERATING REPORT FOR UNIT OPERATIONS BLOCK: "B1"       
+      (MODEL: "RADFRAC")                                       (TRTWRT.8172)    
+      TPSAR MESSAGE:    87.47%  JET FLOOD IN COLUMN B1      , SECTION   1       
+                       EXCEEDS 80%.                                             
+
+ Results generated                                                                Time =  77428.60

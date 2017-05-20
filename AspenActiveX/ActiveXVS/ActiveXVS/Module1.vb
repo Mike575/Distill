@@ -41,11 +41,12 @@ Module Module1
 
         MaxAcceleratePoint = 0
         MaxAccelerate = (DSTWU_R(0) + DSTWU_R(2)) - 2 * DSTWU_R(1)
-
+        Accelerate.Clear()
         '(total stage number - 2) = dR.count
         Do While (i < DSTWU_Stage.Count - 2)
             MaxAccelerate = (DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i)
             MaxAccelerate_plusONE = (DSTWU_R(i) + DSTWU_R(i + 2)) - 2 * DSTWU_R(i + 1)
+            Accelerate.Add((DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i))
             If MaxAccelerate_plusONE > MaxAccelerate Then
                 MaxAccelerate = MaxAccelerate_plusONE
                 MaxAcceleratePoint = i
@@ -57,17 +58,23 @@ Module Module1
         MinAcceleratePoint = 0
 
         '清理之前Accelerate计算痕迹
-        '获取新的Accelerate组
-        Accelerate.Clear()
+
         MinAccelerate = (DSTWU_R(0) + DSTWU_R(2)) - 2 * DSTWU_R(1)
-        Do While (i < DSTWU_Stage.Count - 1)      '(total stage number - 2) = dR.count
-            'Accelerate.Add((DSTWU_R(i - 1) - DSTWU_R(i + 1)) / 2)
-            Accelerate.Add((DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i))
-            If i < MaxAcceleratePoint Then      '确保波谷在波峰左侧
-                If MinAccelerate > ((DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i)) Then
-                    MinAccelerate = (DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i)
-                    MinAcceleratePoint = i - 1      'modify
+        Do While (i < DSTWU_Stage.Count - 1 - 4)      '(total stage number - 2) = dR.count
+
+            'If i > MaxAcceleratePoint Then      '确保取值在波峰左侧
+            '    If MinAccelerate > ((DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i)) Then
+            '        MinAccelerate = (DSTWU_R(i - 1) + DSTWU_R(i + 1)) - 2 * DSTWU_R(i)
+            '        MinAcceleratePoint = i - 1      'modify
+            '    End If
+            'End If
+            If i > MaxAcceleratePoint + 1 Then      '确保取值在波峰右侧 91
+                If (Accelerate(i) - Accelerate(i + 1)) < 2 * ((Accelerate(i + 1) - Accelerate(i + 2))) Then
+                    MinAccelerate = Accelerate(i)
+                    MinAcceleratePoint = i     'modify
+                    Exit Do
                 End If
+
             End If
             i = i + 1
         Loop

@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _4820aak.inm
+MODNAME: apmain
+RUNID: _4820aak
+NEW_RUNID: _4820aak
+OLD_RUNID: _4820aak
+PDF: _4820aak.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\AspenBKP\DistilR.ads

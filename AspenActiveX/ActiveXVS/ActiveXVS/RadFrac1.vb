@@ -15,8 +15,10 @@ Public Class RadFrac1
         transfer_Variable_from_DSTWU()          '传递DSTWU模型中物流信息，设计规定
         RadFrac_Nstage_feed = Feed_Stage()      '计算最佳进料板
         Call Vary_RadFrac() '传递Vary参数，计算 Modify_DistillRate_RadFrac 和 ModifyR_RadFrac
+        Call ListView_TraySizing_init()
+        Call ListView_TrayRating_init()
 
-        MsgBox(Modify_DistillRate_RadFrac)
+        MsgBox(RadFrac_Nstage_feed)
     End Sub
 
 
@@ -33,7 +35,9 @@ Public Class RadFrac1
         ihAPsim_RadFrac.Tree.Data.Streams.FEED.Input.PRES.MIXED.value = Pressure_feed    '1.2        进料feed压力
         ihAPsim_RadFrac.Tree.Data.Streams.FEED.Input.TEMP.MIXED.value = Temperature_feed   '30          进料feed温度
         ihAPsim_RadFrac.Tree.Data.Streams.FEED.Input.TOTFLOW.MIXED.value = velocity_feed   '1000     进料feed质量流量 kg/h
+
         '塔板数初值，回流比
+        '默弗里板效设置对其有限制
         ihAPsim_RadFrac.Tree.Data.Blocks.B1.Input.NSTAGE.value = ModifyStage_DSTWU
         ihAPsim_RadFrac.Tree.Data.Blocks.B1.Input.BASIS_RR.value = ModifyR_DSTWU
         '进料板塔板数初值
@@ -127,9 +131,9 @@ Public Class RadFrac1
 
         For Each ihStage In ihNStage
             eachStage_MassFrac_StageNumber.Add(ihStage.Name)                           '质量分数对应的塔盘数编号
-            str = "\Data\Blocks\B1\Output\Y_MS\" + ihStage.Name + "\BENYIXI"
+            str = "\Data\Blocks\B1\Output\X_MS\" + ihStage.Name + "\BENYIXI"
             eachStage_HeavyKey_MassFrac.Add(ihAPsim_RadFrac.Tree.FindNode(str).Value)  '重组分苯乙烯在某一塔盘中的质量分数
-            str = "\Data\Blocks\B1\Output\Y_MS\" + ihStage.Name + "\YIBEN"
+            str = "\Data\Blocks\B1\Output\X_MS\" + ihStage.Name + "\YIBEN"
             eachStage_LightKey_MassFrac.Add(ihAPsim_RadFrac.Tree.FindNode(str).Value)  '轻组分乙苯在某一塔盘中的质量分数
 
         Next ihStage
@@ -138,6 +142,331 @@ ErrorHandler:
         MsgBox("Transfer_eachStage_MassFrac " & Err.Description)
 
     End Sub
+
+    Sub ListView_TraySizing_init()
+
+        Dim CellIndex As Integer
+        Dim Results(5) As Binary_Result
+
+        Results(0).value = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Sizing\1\Output\DIAM4\1").Value        '精馏塔内径
+        Results(0).Name = "精馏塔内径"
+        Results(1).value = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Sizing\1\Output\DCAREA\1").Value        '降液管截面积
+        Results(1).Name = "降液管截面积"
+        Results(2).value = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Sizing\1\Output\DCVELOC3\1").Value        '侧降液管流速
+        Results(2).Name = "侧降液管流速"
+        Results(3).value = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Sizing\1\Output\FLOWPATH\1").Value        '流道长
+        Results(3).Name = "流道长"
+        Results(4).value = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Sizing\1\Output\DCWIDTH1\1").Value        '侧降液管宽
+        Results(4).Name = "侧降液管宽"
+        Results(5).value = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Sizing\1\Output\DCLENG1\1").Value        '侧堰长
+        Results(5).Name = "侧堰长"
+
+
+        ListView1.Columns.Clear()
+        ListView1.Items.Clear()
+        ListView1.Columns.Add("名称", 200, HorizontalAlignment.Left)
+        ListView1.Columns.Add("数值", 200, HorizontalAlignment.Left)
+        Dim Newitem As New ListViewItem
+        CellIndex = 0
+        Do While CellIndex < Results.Count - 1
+
+            Newitem = New ListViewItem(Results(CellIndex).Name)
+            Newitem.SubItems.Add(Results(CellIndex).value)
+            ListView1.Items.Add(Newitem)
+            CellIndex = CellIndex + 1
+        Loop
+        ListView1.Refresh()
+    End Sub
+    Sub ListView_TrayRating_init()
+
+        Dim CellIndex As Integer
+        Dim Stage_data(0) As Multi_Result
+        Dim Result_HYD_TL(0) As Binary_Result          'Temperature liquid from
+        Dim Result_HYD_TVTO(0) As Binary_Result        'Temperature vapor to
+        Dim Result_HYD_LMF(0) As Binary_Result         'Mass flow liquid from:
+        Dim Result_HYD_VMF(0) As Binary_Result         'Mass flow vapor to
+        Dim Result_HYD_LVF(0) As Binary_Result         'Volume flow liquid from
+        Dim Result_HYD_VVF(0) As Binary_Result         'Volume flow vapor to
+        Dim Result_HYD_MWL(0) As Binary_Result         'Molecular wt liquid from:
+        Dim Result_HYD_MWV(0) As Binary_Result         'Molecular wt vapor to
+        Dim Result_HYD_RHOL(0) As Binary_Result        'Density liquid from
+        Dim Result_HYD_RHOV(0) As Binary_Result        'Density vapor to
+        Dim Result_HYD_MUL(0) As Binary_Result         'Viscosity liquid from
+        Dim Result_HYD_MUV(0) As Binary_Result         'Viscosity vapor to
+        Dim Result_HYD_STEN(0) As Binary_Result        'Surface tension liquid from
+        Dim Result_HYD_FMIDX(0) As Binary_Result       'Foaming Index
+        Dim Result_HYD_PARM(0) As Binary_Result        'Flow parameter
+        Dim Result_HYD_QR(0) As Binary_Result          'Reduced vapor
+        Dim Result_HYD_FFR(0) As Binary_Result         'Reduced F factor 
+
+
+        'Temperature liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_TL")
+        'Temperature vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_TVTO")
+        'Mass flow liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_LMF")
+        'Mass flow vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_VMF")
+        'Volume flow liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_LVF")
+        'Volume flow vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_VVF")
+        'Molecular wt liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MWL")
+        'Molecular wt vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MWV")
+        'Density liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_RHOL")
+        'Density vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_RHOV")
+        'Viscosity liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MUL")
+        'Viscosity vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MUV")
+        'Surface tension liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_STEN")
+        'Foaming Index: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FMIDX")
+        'Flow parameter: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_PARM")
+        'Reduced vapor: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_QR")
+        'Reduced F factor        Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FFR")
+        Dim ihcolOffspring As IHNodeCol
+        Dim ihOffspring As IHNode
+
+        'Temperature liquid from
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_TL")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_TL(CellIndex).value = ihOffspring.Value
+            Result_HYD_TL(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_TL(CellIndex)
+        Next
+        'Temperature vapor to
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_TVTO")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_TVTO(CellIndex).value = ihOffspring.Value
+            Result_HYD_TVTO(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_TVTO(CellIndex)
+        Next
+        'Mass flow liquid from:
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_LMF")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_LMF(CellIndex).value = ihOffspring.Value
+            Result_HYD_LMF(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_LMF(CellIndex)
+        Next
+        'Mass flow vapor to:
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_VMF")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_VMF(CellIndex).value = ihOffspring.Value
+            Result_HYD_VMF(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_VMF(CellIndex)
+        Next
+        'Volume flow liquid from:
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_LVF")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_LVF(CellIndex).value = ihOffspring.Value
+            Result_HYD_LVF(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_LVF(CellIndex)
+        Next
+        'Volume flow vapor to: 
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_VVF")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_VVF(CellIndex).value = ihOffspring.Value
+            Result_HYD_VVF(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_VVF(CellIndex)
+        Next
+        'Molecular wt liquid from:
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MWL")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_MWL(CellIndex).value = ihOffspring.Value
+            Result_HYD_MWL(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_MWL(CellIndex)
+        Next
+        'Molecular wt vapor to:
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MWV")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_MWV(CellIndex).value = ihOffspring.Value
+            Result_HYD_MWV(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_MWV(CellIndex)
+        Next
+        'Density liquid from: 
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_RHOL")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_RHOL(CellIndex).value = ihOffspring.Value
+            Result_HYD_RHOL(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_RHOL(CellIndex)
+        Next
+        'Density vapor to: 
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_RHOV")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_RHOV(CellIndex).value = ihOffspring.Value
+            Result_HYD_RHOV(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_RHOV(CellIndex)
+        Next
+        'Viscosity liquid from:  
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MUL")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_MUL(CellIndex).value = ihOffspring.Value
+            Result_HYD_MUL(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_MUL(CellIndex)
+        Next
+        'Viscosity vapor to: 
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MUV")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_MUV(CellIndex).value = ihOffspring.Value
+            Result_HYD_MUV(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_MUV(CellIndex)
+        Next
+        'Surface tension liquid from:
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_STEN")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_STEN(CellIndex).value = ihOffspring.Value
+            Result_HYD_STEN(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_STEN(CellIndex)
+        Next
+        'Foaming index: 
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FMIDX")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_FMIDX(CellIndex).value = ihOffspring.Value
+            Result_HYD_FMIDX(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_FMIDX(CellIndex)
+        Next
+        'Flow parameter:  
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_PARM")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_PARM(CellIndex).value = ihOffspring.Value
+            Result_HYD_PARM(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_PARM(CellIndex)
+        Next
+        'Reduced vapor: 
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_QR")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_QR(CellIndex).value = ihOffspring.Value
+            Result_HYD_QR(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_QR(CellIndex)
+        Next
+        'Reduced F factor
+        ihOffspring = ihAPsim_RadFrac.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FFR")
+        ihcolOffspring = ihOffspring.Elements
+        CellIndex = 0
+        For Each ihOffspring In ihcolOffspring
+            Result_HYD_FFR(CellIndex).value = ihOffspring.Value
+            Result_HYD_FFR(CellIndex).Name = ihOffspring.Name
+            CellIndex = CellIndex + 1
+            ReDim Preserve Result_HYD_FFR(CellIndex)
+        Next
+
+        'record each Stage results
+        CellIndex = 0
+        Do While CellIndex < RadFrac_Stage
+            Stage_data（CellIndex）.number = CellIndex + 1
+            Stage_data（CellIndex）.HYD_TL = Result_HYD_TL（CellIndex）.value
+            Stage_data（CellIndex）.HYD_TVTO = Result_HYD_TVTO（CellIndex）.value
+            Stage_data（CellIndex）.HYD_LMF = Result_HYD_LMF（CellIndex）.value
+            Stage_data（CellIndex）.HYD_VMF = Result_HYD_VMF（CellIndex）.value
+            Stage_data（CellIndex）.HYD_LVF = Result_HYD_LVF（CellIndex）.value
+            Stage_data（CellIndex）.HYD_VVF = Result_HYD_VVF（CellIndex）.value
+            Stage_data（CellIndex）.HYD_MWL = Result_HYD_MWL（CellIndex）.value
+            Stage_data（CellIndex）.HYD_MWV = Result_HYD_MWV（CellIndex）.value
+            Stage_data（CellIndex）.HYD_RHOL = Result_HYD_RHOL（CellIndex）.value
+            Stage_data（CellIndex）.HYD_RHOV = Result_HYD_RHOV（CellIndex）.value
+            Stage_data（CellIndex）.HYD_MUL = Result_HYD_MUL（CellIndex）.value
+            Stage_data（CellIndex）.HYD_MUV = Result_HYD_MUV（CellIndex）.value
+            Stage_data（CellIndex）.HYD_STEN = Result_HYD_STEN（CellIndex）.value
+            Stage_data（CellIndex）.HYD_FMIDX = Result_HYD_FMIDX（CellIndex）.value
+            Stage_data（CellIndex）.HYD_PARM = Result_HYD_PARM（CellIndex）.value
+            Stage_data（CellIndex）.HYD_QR = Result_HYD_QR（CellIndex）.value
+            Stage_data（CellIndex）.HYD_FFR = Result_HYD_FFR（CellIndex）.value
+            CellIndex = CellIndex + 1
+            ReDim Preserve Stage_data(CellIndex)
+        Loop
+
+        'Application.Tree.FindNode("\Data\Blocks\B1\Subobjects\Tray Rating\1\Output\FLOOD_FAC5\1")  液泛因子
+        ListView2.Columns.Clear()
+        ListView2.Items.Clear()
+        ListView2.Columns.Add("Stage", 100, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Temperature liquid from", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Temperature vapor to", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Mass flow liquid from", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Mass flow vapor to", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Volume flow liquid from", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Volume flow vapor to", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Molecular wt liquid from", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Molecular wt vapor to", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Density liquid from", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Density vapor to", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Viscosity liquid from", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Viscosity vapor to", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Surface tension liquid from", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Foaming Index", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Flow parameter", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Reduced vapor", 200, HorizontalAlignment.Left)
+        ListView2.Columns.Add("Reduced F factor", 200, HorizontalAlignment.Left)
+
+        Dim Newitem As New ListViewItem
+        CellIndex = 0
+        Do While CellIndex < RadFrac_Stage
+
+            Newitem = New ListViewItem(Stage_data(CellIndex).number)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_TL)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_TVTO)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_LMF)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_VMF)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_LVF)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_VVF)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_MWL)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_MWV)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_RHOL)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_RHOV)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_MUL)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_MUV)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_STEN)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_FMIDX)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_PARM)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_QR)
+            Newitem.SubItems.Add(Stage_data(CellIndex).HYD_FFR)
+            ListView2.Items.Add(Newitem)
+            CellIndex = CellIndex + 1
+        Loop
+        ListView2.Refresh()
+    End Sub
+
+
 End Class
 
 

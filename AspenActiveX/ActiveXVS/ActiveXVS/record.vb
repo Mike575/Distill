@@ -31,14 +31,14 @@
 
     '        Dim i = 0
     '        Dim temp As New Node
-    '        Dim FindTest1() As Node     'RadFrac1
+    '        Dim AllNodes() As Node     'RadFrac1
     '        For Each ihOffspring In ihcolOffspring
 
     '            temp.Row = i
     '            temp.Name = ihOffspring.Name
     '            temp.value = ihOffspring.Value
-    '            ReDim Preserve FindTest1(i)
-    '            FindTest1(i) = temp
+    '            ReDim Preserve AllNodes(i)
+    '            AllNodes(i) = temp
     '            i = i + 1
     '        Next
 
@@ -59,14 +59,14 @@
     '        '    strOut = strOut & vbCrLf & ihOffspring.Name
     '        'End If
     '        i = 0
-    '        Do While i < FindTest1.Count
-    '            'If FindTest_Standard(i).value <> FindTest1(i).value Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
-    '            '    strOut = strOut & vbCrLf & "RradFrac1:" & FindTest1(i).Name & " " & FindTest1(i).value & vbCrLf & "Standard:" & FindTest_Standard(i).Name & " " & FindTest_Standard(i).value
+    '        Do While i < AllNodes.Count
+    '            'If FindTest_Standard(i).value <> AllNodes(i).value Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
+    '            '    strOut = strOut & vbCrLf & "RradFrac1:" & AllNodes(i).Name & " " & AllNodes(i).value & vbCrLf & "Standard:" & FindTest_Standard(i).Name & " " & FindTest_Standard(i).value
 
     '            'End If
 
-    '            If IsNumeric(FindTest1(i).value) AndAlso FindTest1(i).value = TextBox3.Text Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
-    '                strOut = strOut & vbCrLf & "RradFrac1:" & FindTest1(i).Name & " Value:" & FindTest1(i).value
+    '            If IsNumeric(AllNodes(i).value) AndAlso AllNodes(i).value = TextBox3.Text Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
+    '                strOut = strOut & vbCrLf & "RradFrac1:" & AllNodes(i).Name & " Value:" & AllNodes(i).value
 
     '            End If
 
@@ -82,3 +82,27 @@
     '        MsgBox("GetCollectionExample raised error" & Err.Description)
     '    End Sub
 End Module
+
+
+
+
+
+
+
+'Temperature liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_TL")
+'Temperature vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_TVTO")
+'Mass flow liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_LMF")
+'Mass flow vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_VMF")
+'Volume flow liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_LVF")
+'Volume flow vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_VVF")
+'Molecular wt liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MWL")
+'Molecular wt vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MWV")
+'Density liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_RHOL")
+'Density vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_RHOV")
+'Viscosity liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MUL")
+'Viscosity vapor to: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_MUV")
+'Surface tension liquid from: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_STEN")
+'Foaming Index: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FMIDX")
+'Flow parameter: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_PARM")
+'Reduced vapor: Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_QR")
+'Reduced F factor        Application.Tree.FindNode("\Data\Blocks\B1\Output\HYD_FFR")

@@ -41,18 +41,19 @@
         address = ""
         ReDim deepin(0)
         ihRoot = ihAPsim_RadFrac.Tree.FindNode("" & Me.TextBox2.Text)
+
         On Error GoTo ErrorHandler
         Call Get_nodes()
 
-        Do While i < FindTest1.Count
+        Do While i < AllNodes.Count
 
-            If IsNumeric(FindTest1(i).value) And FindTest1(i).value = TextBox3.Text Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
-                For deepin_Count = 1 To FindTest1(i).deepin.Count - 1
-                    address = address & FindTest1(i).deepin(deepin_Count) & "."
+            If IsNumeric(AllNodes(i).value) And AllNodes(i).value = TextBox3.Text Then       '<> ihOffspring.AttributeValue(Happ.HAPAttributeNumber.HAP_VALUEDEFAULT) Then
+                For deepin_Count = 1 To AllNodes(i).deepin.Count - 1
+                    address = address & AllNodes(i).deepin(deepin_Count) & "."
                 Next
-                FindTest1(i).address = address
+                AllNodes(i).address = address
                 address = ""
-                strOut = strOut & vbCrLf & "RradFrac1: " & vbCrLf & "Node_Name: " & FindTest1(i).Name & " Value:" & FindTest1(i).value & vbCrLf & "Node_deep: " & FindTest1(i).deep & vbCrLf & "Address: " & FindTest1(i).address & vbCrLf
+                strOut = strOut & vbCrLf & "RradFrac1: " & vbCrLf & "Node_Name: " & AllNodes(i).Name & " Value:" & AllNodes(i).value & vbCrLf & "Node_deep: " & AllNodes(i).deep & vbCrLf & "Address: " & AllNodes(i).address & vbCrLf
             End If
             i = i + 1
         Loop
@@ -66,7 +67,7 @@ ErrorHandler:
     End Sub
 
     '定义窗体级别变量
-    Dim FindTest1() As Node     'RadFrac1
+    Dim AllNodes() As Node     'RadFrac1 结构体数组
     Dim ihRoot As IHNode
     Dim deepin() As String
 
@@ -97,8 +98,8 @@ ErrorHandler:
                 temp.Name = ihOffspring.Name
                 temp.deep = deep
                 temp.deepin = deepin
-                ReDim Preserve FindTest1(temp_Row_i)
-                FindTest1(temp_Row_i) = temp
+                ReDim Preserve AllNodes(temp_Row_i)
+                AllNodes(temp_Row_i) = temp
                 temp_Row_i = temp_Row_i + 1
             End If
         Next
@@ -107,27 +108,27 @@ ErrorHandler:
         '第一级Get_Node() For循环
         '   ReDim Preserve deepin(deep) #deep=1
         '   deepin(deep) = ihOffspring.Name
-        '   第一个子节点没有child,该节点深度deep=1,节点名称为一级循环第一句deepin(1)=offSpring.Name
-        '   第n个子节点有child时，deep=deep+1=1+1=2,并调用函数               
+        '第一个子节点没有child, 该节点深度deep = 1, 节点名称为一级循环第一句deepin(1) = offSpring.Name
+        '   第n个子节点有child时， deep = deep + 1 = 1 + 1 = 2, 并调用函数               
         '       第二级Get_Node() For循环
         '           ReDim Preserve deepin(deep) #deep=2
         '           deepin(deep) = ihOffspring.Name
-        '           第一个孙节点没有child,该节点深度deep=2,节点名称为二级循环第一句deepin(2)=offSpring.Name
-        '           至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量FindTest1（），完毕。         
-        '           第n个孙节点有child时，deep=deep+1=2+1=3,并调用函数
+        '第一个孙节点没有child, 该节点深度deep = 2, 节点名称为二级循环第一句deepin(2) = offSpring.Name
+        '           至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量AllNodes（），完毕。         
+        '           第n个孙节点有child时， deep = deep + 1 = 2 + 1 = 3, 并调用函数
         '               第三级Get_Node() For循环
         '                   ReDim Preserve deepin(deep) #deep=3
         '                   deepin(deep) = ihOffspring.Name
-        '                   第一个重孙节点没有child,该节点深度deep = 3,redim preserve deepin(deep),节点名称为三级循环第一句deepin(3)=offSpring.Name
-        '                   至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量FindTest1（），完毕。         
-        '                   第二个重孙节点没有child,该节点深度deep = 2 + 1 = 3,redim preserve deepin(deep),节点名称为deepin(3)=offSpring.Name
-        '                   至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量FindTest1（），完毕。         
+        '第一个重孙节点没有child, 该节点深度deep = 3,redim preserve deepin(deep),节点名称为三级循环第一句deepin(3)=offSpring.Name
+        '                   至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量AllNodes（），完毕。         
+        '                   第二个重孙节点没有child, 该节点深度deep = 2 + 1 = 3,redim preserve deepin(deep),节点名称为deepin(3)=offSpring.Name
+        '                   至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量AllNodes（），完毕。         
         '               第三级Get_Node()，结束，deep=deep-1=3-1=2
-        '           第n+1个孙节点没有child,该节点深度deep=2,节点名称为此时deepin(2)=offSpring.Name
-        '           至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量FindTest1（），完毕。         
+        '           第n+1个孙节点没有child, 该节点深度deep = 2, 节点名称为此时deepin(2) = offSpring.Name
+        '           至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量AllNodes（），完毕。         
         '       第二级Get_Node()，结束，deep=deep-1=2-1=1
-        '   第n+1个子节点没有child,该节点深度deep=1,节点名称为此时deepin(1)=offSpring.Name
-        '   至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量FindTest1（），完毕。         
+        '   第n+1个子节点没有child, 该节点深度deep = 1, 节点名称为此时deepin(1) = offSpring.Name
+        '   至今该叶子节点已确定， 将局部静态变量deepin()传递给temp.deepin(),将temp节点传递给全局变量AllNodes（），完毕。         
         '第一级Get_Node()，结束
 
     End Sub

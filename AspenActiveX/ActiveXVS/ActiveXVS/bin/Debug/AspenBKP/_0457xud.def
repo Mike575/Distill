@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0457xud.inm
+MODNAME: apmain
+RUNID: _0457xud
+NEW_RUNID: _0457xud
+OLD_RUNID: _0457xud
+PDF: _0457xud.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+SPONLY:

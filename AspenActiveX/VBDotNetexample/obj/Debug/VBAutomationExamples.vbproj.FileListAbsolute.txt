@@ -1,0 +1,8 @@
+C:\Users\57584\Desktop\VBDotNetexample\bin\VBAutomationExamples.exe
+C:\Users\57584\Desktop\VBDotNetexample\bin\VBAutomationExamples.pdb
+C:\Users\57584\Desktop\VBDotNetexample\bin\Interop.Happ.dll
+C:\Users\57584\Desktop\VBDotNetexample\obj\Debug\VBAutomationExamples.vbprojResolveAssemblyReference.cache
+C:\Users\57584\Desktop\VBDotNetexample\obj\Debug\Interop.Happ.dll
+C:\Users\57584\Desktop\VBDotNetexample\obj\Debug\VBAutomationExamples.vbproj.ResolveComReference.cache
+C:\Users\57584\Desktop\VBDotNetexample\obj\Debug\VBAutomationExamples.exe
+C:\Users\57584\Desktop\VBDotNetexample\obj\Debug\VBAutomationExamples.pdb

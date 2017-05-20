@@ -56,7 +56,7 @@
         ihApsim_DSTWU.Tree.Data.Streams.FEED.Input.FLOW.MIXED.BENYIXI.value = Heavykey_feed_MassFrac '0.7
         ihApsim_DSTWU.Tree.Data.Blocks.B1.Input.RECOVL.value = Lightkey_Up_MassFrac '0.998
         ihApsim_DSTWU.Tree.Data.Blocks.B1.Input.RECOVH.value = Heavykey_Up_MassFrac  '0.001
-        ihApsim_DSTWU.Tree.Data.Streams.FEED.Input.PRES.MIXED.value = Pressure_feed    '1.2
+        ihApsim_DSTWU.Tree.Data.Streams.FEED.Input.PRES.MIXED.value = Pressure_feed    '1.1
         ihApsim_DSTWU.Tree.Data.Streams.FEED.Input.TEMP.MIXED.value = Temperature_feed   '30
         ihApsim_DSTWU.Tree.Data.Streams.FEED.Input.TOTFLOW.MIXED.value = velocity_feed   '1000
     End Sub
@@ -74,6 +74,10 @@
     End Sub
 
     Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
+
+    End Sub
+
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
 
     End Sub
 End Class

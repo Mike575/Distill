@@ -213,19 +213,27 @@ ErrorHandler:
 
                 '获取新的Accelerate组，获得DSTWU模型在谷底的塔盘数和回流比
                 Call MinAcceleratePoint（DSTWU_Stage, DSTWU_R）       'calculate ddR
-
+                RadFrac_Stage = ModifyStage_DSTWU
                 MsgBox("Modify DSTWU_Stage:" & ModifyStage_DSTWU & vbCrLf & "Modify DSTWU_R：" & ModifyR_DSTWU)
             Else
                 MsgBox("error: LowStage > HighStage")
             End If
         End If
         Me.Visible = False
-        RadFrac1.Visible = True
+        DSTWU_Result.Visible = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Visible = False
         DSTWU1.Visible = True
+
+    End Sub
+
+    Private Sub DSTWU2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
 End Class
