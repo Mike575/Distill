@@ -13,6 +13,23 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\57584\Desktop\myAspen_Package\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://localhost/ActiveXVS/</UpdateUrl>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +63,18 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D7520A78BA5614295D2ACDE10923E6CB66E14F6A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ActiveXVS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -75,10 +104,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.vb" />
-    <Compile Include="DSTWU_Result.Designer.vb">
-      <DependentUpon>DSTWU_Result.vb</DependentUpon>
+    <Compile Include="DSTWU.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
-    <Compile Include="DSTWU_Result.vb">
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSchart.vb" />
+    <Compile Include="Result.Designer.vb">
+      <DependentUpon>Result.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Result.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Find.Designer.vb">
@@ -87,11 +124,11 @@
     <Compile Include="Find.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="addressform.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="addressform.Designer.vb">
+      <DependentUpon>addressform.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DSTWU1.Designer.vb">
@@ -106,6 +143,7 @@
     <Compile Include="DSTWU2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RadFrac.vb" />
     <Compile Include="RadFrac1.Designer.vb">
       <DependentUpon>RadFrac1.vb</DependentUpon>
     </Compile>
@@ -130,16 +168,20 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="record.vb" />
+    <Compile Include="SearchNode.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DSTWU_Result.resx">
-      <DependentUpon>DSTWU_Result.vb</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result.resx">
+      <DependentUpon>Result.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Find.resx">
       <DependentUpon>Find.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="addressform.resx">
+      <DependentUpon>addressform.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DSTWU1.resx">
       <DependentUpon>DSTWU1.vb</DependentUpon>
@@ -158,6 +200,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ActiveXVS_TemporaryKey.pfx" />
     <None Include="happ.tlb" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +261,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

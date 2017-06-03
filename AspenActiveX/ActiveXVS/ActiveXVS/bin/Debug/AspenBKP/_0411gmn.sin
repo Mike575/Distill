@@ -1,9 +1,9 @@
- >>ORIGINAL RUN                           MAY 19, 2017        
-   2:19:45 A.M.                           FRIDAY      
+ >>ORIGINAL RUN                           MAY 22, 2017        
+   10:43:52 A.M.                          MONDAY      
    INPUT FILE: _0411gmn.inm
    RUN ID : _0411gmn
           1    ;
-          2    ;Input file created by Aspen Plus Rel. 30.0 at 02:19:44 Fri May 19, 2017
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 10:43:52 Mon May 22, 2017
           3    ;Directory   Runid DISTILR
           4    ;
           5
@@ -55,7 +55,7 @@
          51
          52    BLOCK B1 DSTWU
          53        PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
-         54            RECOVH=0.001 PTOP=1. PBOT=1.1 NSTAGE=91 PLOT=YES
+         54            RECOVH=0.001 PTOP=1. PBOT=1.1 RR=-1.5 PLOT=YES
          55        PLOT LOWER=76 UPPER=120 INCR=1
          56
          57    EO-CONV-OPTI

@@ -28,19 +28,19 @@ Public Class Find
         If (ListView1.CheckedItems.Count = 1) And (ListView2.CheckedItems.Count = 1) Then     '确保只输入两种组分
 
             If Search(TextBox1.Text) * Search(TextBox2.Text) <> 0 Then  'Transfer components
-                Lightkey_Row = 0
-                Heavykey_Row = 0
-                Lightkey_Row = Search(TextBox1.Text)     '以文本框内容为最终选择结果
-                Heavykey_Row = Search(TextBox2.Text)     '以文本框内容为最终选择结果
-                ihApsim_DSTWU.Tree.Data.Components.Specifications.Input.ANAME.YIBEN.value = Database.Compone(Lightkey_Row).ChemicalFormula   '轻组分
-                ihApsim_DSTWU.Tree.Data.Components.Specifications.Input.CASN.YIBEN.value = Database.Compone(Lightkey_Row).Index
-                ihApsim_DSTWU.Tree.Data.Components.Specifications.Input.DBNAME.YIBEN.value = Database.Compone(Lightkey_Row).EnglishName
-                DSTWU1.Label1.Text = "轻组分-" & Database.Compone(Lightkey_Row).ChineseName
+                myDSTWU.Lightkey_Row = 0
+                myDSTWU.Heavykey_Row = 0
+                myDSTWU.Lightkey_Row = Search(TextBox1.Text)     '以文本框内容为最终选择结果
+                myDSTWU.Heavykey_Row = Search(TextBox2.Text)     '以文本框内容为最终选择结果
+                myDSTWU.ihApsim.Tree.Data.Components.Specifications.Input.ANAME.YIBEN.value = Database.Compone(myDSTWU.Lightkey_Row).ChemicalFormula   '轻组分
+                myDSTWU.ihApsim.Tree.Data.Components.Specifications.Input.CASN.YIBEN.value = Database.Compone(myDSTWU.Lightkey_Row).Index
+                myDSTWU.ihApsim.Tree.Data.Components.Specifications.Input.DBNAME.YIBEN.value = Database.Compone(myDSTWU.Lightkey_Row).EnglishName
+                DSTWU1.Label1.Text = "轻组分-" & Database.Compone(myDSTWU.Lightkey_Row).ChineseName
 
-                ihApsim_DSTWU.Tree.Data.Components.Specifications.Input.ANAME.BENYIXI.value = Database.Compone(Heavykey_Row).ChemicalFormula   '重组分
-                ihApsim_DSTWU.Tree.Data.Components.Specifications.Input.CASN.BENYIXI.value = Database.Compone(Heavykey_Row).Index
-                ihApsim_DSTWU.Tree.Data.Components.Specifications.Input.DBNAME.BENYIXI.value = Database.Compone(Heavykey_Row).EnglishName
-                DSTWU1.Label2.Text = "重组分-" & Database.Compone(Heavykey_Row).ChineseName
+                myDSTWU.ihApsim.Tree.Data.Components.Specifications.Input.ANAME.BENYIXI.value = Database.Compone(myDSTWU.Heavykey_Row).ChemicalFormula   '重组分
+                myDSTWU.ihApsim.Tree.Data.Components.Specifications.Input.CASN.BENYIXI.value = Database.Compone(myDSTWU.Heavykey_Row).Index
+                myDSTWU.ihApsim.Tree.Data.Components.Specifications.Input.DBNAME.BENYIXI.value = Database.Compone(myDSTWU.Heavykey_Row).EnglishName
+                DSTWU1.Label2.Text = "重组分-" & Database.Compone(myDSTWU.Heavykey_Row).ChineseName
             Else
                 MsgBox("Please input right information")
             End If
@@ -61,10 +61,10 @@ Public Class Find
         ListView1.Columns.Clear()
         ListView1.Items.Clear()
 
-        ListView1.Columns.Add("分子式", 100, HorizontalAlignment.Left)
-        ListView1.Columns.Add("英文名", 100, HorizontalAlignment.Left)
-        ListView1.Columns.Add("索引", 100, HorizontalAlignment.Left)
-        ListView1.Columns.Add("中文名", 100, HorizontalAlignment.Left)
+        ListView1.Columns.Add("分子式", 180, HorizontalAlignment.Left)
+        ListView1.Columns.Add("英文名", 180, HorizontalAlignment.Left)
+        ListView1.Columns.Add("索引", 180, HorizontalAlignment.Left)
+        ListView1.Columns.Add("中文名", 180, HorizontalAlignment.Left)
 
 
         Dim Newitem As New ListViewItem
@@ -87,10 +87,10 @@ Public Class Find
         ListView2.Columns.Clear()
         ListView2.Items.Clear()
 
-        ListView2.Columns.Add("分子式", 100, HorizontalAlignment.Left)
-        ListView2.Columns.Add("英文名", 100, HorizontalAlignment.Left)
-        ListView2.Columns.Add("索引", 100, HorizontalAlignment.Left)
-        ListView2.Columns.Add("中文名", 100, HorizontalAlignment.Left)
+        ListView2.Columns.Add("分子式", 180, HorizontalAlignment.Left)
+        ListView2.Columns.Add("英文名", 180, HorizontalAlignment.Left)
+        ListView2.Columns.Add("索引", 180, HorizontalAlignment.Left)
+        ListView2.Columns.Add("中文名", 180, HorizontalAlignment.Left)
 
         Dim Newitem As New ListViewItem
         CellIndex = 0

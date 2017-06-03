@@ -39,22 +39,23 @@ Partial Class Find
         '
         Me.ListView1.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView1.CheckBoxes = True
+        Me.ListView1.Font = New System.Drawing.Font("宋体", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(39, 175)
+        Me.ListView1.Location = New System.Drawing.Point(40, 20)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(429, 276)
+        Me.ListView1.Size = New System.Drawing.Size(720, 226)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button1.Location = New System.Drawing.Point(73, 62)
+        Me.Button1.Font = New System.Drawing.Font("宋体", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button1.Location = New System.Drawing.Point(849, 145)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(91, 68)
+        Me.Button1.Size = New System.Drawing.Size(150, 68)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "轻组分" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Find Now"
         Me.Button1.UseVisualStyleBackColor = True
@@ -63,22 +64,23 @@ Partial Class Find
         '
         Me.ListView2.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView2.CheckBoxes = True
+        Me.ListView2.Font = New System.Drawing.Font("宋体", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ListView2.FullRowSelect = True
         Me.ListView2.GridLines = True
-        Me.ListView2.Location = New System.Drawing.Point(46, 175)
+        Me.ListView2.Location = New System.Drawing.Point(40, 20)
         Me.ListView2.MultiSelect = False
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(429, 276)
+        Me.ListView2.Size = New System.Drawing.Size(720, 226)
         Me.ListView2.TabIndex = 2
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
         '
         'Button2
         '
-        Me.Button2.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button2.Location = New System.Drawing.Point(94, 62)
+        Me.Button2.Font = New System.Drawing.Font("宋体", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button2.Location = New System.Drawing.Point(850, 147)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(91, 68)
+        Me.Button2.Size = New System.Drawing.Size(149, 68)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "重组分" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Find Now"
         Me.Button2.UseVisualStyleBackColor = True
@@ -88,18 +90,19 @@ Partial Class Find
         Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.ListView2)
         Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Location = New System.Drawing.Point(711, 77)
+        Me.GroupBox1.Location = New System.Drawing.Point(111, 330)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(511, 487)
+        Me.GroupBox1.Size = New System.Drawing.Size(1062, 252)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "重组分"
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(297, 89)
+        Me.TextBox2.Font = New System.Drawing.Font("宋体", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(850, 65)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 21)
+        Me.TextBox2.Size = New System.Drawing.Size(149, 30)
         Me.TextBox2.TabIndex = 4
         Me.TextBox2.Text = "苯乙烯"
         '
@@ -108,25 +111,26 @@ Partial Class Find
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.ListView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(111, 77)
+        Me.GroupBox2.Location = New System.Drawing.Point(111, 28)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(511, 487)
+        Me.GroupBox2.Size = New System.Drawing.Size(1062, 252)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "轻组分"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(258, 89)
+        Me.TextBox1.Font = New System.Drawing.Font("宋体", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(849, 43)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 21)
+        Me.TextBox1.Size = New System.Drawing.Size(150, 30)
         Me.TextBox1.TabIndex = 2
         Me.TextBox1.Text = "乙苯"
         '
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button3.Location = New System.Drawing.Point(1095, 583)
+        Me.Button3.Location = New System.Drawing.Point(991, 620)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(91, 68)
         Me.Button3.TabIndex = 6

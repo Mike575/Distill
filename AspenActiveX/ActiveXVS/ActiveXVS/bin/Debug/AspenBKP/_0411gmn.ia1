@@ -1,0 +1,149 @@
+
+ BLOCK:  B1       MODEL: DSTWU           
+ -----------------------------
+   INLET STREAM:          FEED    
+   CONDENSER OUTLET:      UP      
+   REBOILER OUTLET:       BOTTOM  
+   PROPERTY OPTION SET:   NRTL      RENON (NRTL) / IDEAL GAS                    
+
+                      ***  MASS AND ENERGY BALANCE  ***
+                                    IN              OUT        RELATIVE DIFF.
+    TOTAL BALANCE
+       MOLE(KMOL/HR )            9.54670         9.54670         0.00000    
+       MASS(KG/HR   )            1000.00         1000.00         0.00000    
+       ENTHALPY(CAL/SEC )        44073.2         59514.0       -0.259447    
+
+                      ***  CO2 EQUIVALENT SUMMARY ***
+    FEED STREAMS CO2E             0.00000      KG/HR           
+    PRODUCT STREAMS CO2E          0.00000      KG/HR           
+    NET STREAMS CO2E PRODUCTION   0.00000      KG/HR           
+    UTILITIES CO2E PRODUCTION     0.00000      KG/HR           
+    TOTAL CO2E PRODUCTION         0.00000      KG/HR           
+
+                          ***  INPUT DATA  ***
+    HEAVY KEY COMPONENT                                         BENYIXI 
+    RECOVERY FOR HEAVY KEY                                   0.00100000 
+    LIGHT KEY COMPONENT                                         YIBEN   
+    RECOVERY FOR LIGHT KEY                                   0.99800    
+    TOP STAGE PRESSURE (BAR     )                            1.00000    
+    BOTTOM STAGE PRESSURE (BAR     )                         1.10000    
+    REFLUX RATIO                                            -1.50000    
+    DISTILLATE VAPOR FRACTION                                0.0        
+
+                           ***  RESULTS  ***
+    DISTILLATE TEMP.  (C       )                           135.691      
+    BOTTOM TEMP.  (C       )                               148.605      
+    MINIMUM REFLUX RATIO                                    15.1698     
+    ACTUAL REFLUX RATIO                                     22.7547     
+    MINIMUM STAGES                                          72.0207     
+    ACTUAL EQUILIBRIUM STAGES                              108.378      
+    NUMBER OF ACTUAL STAGES ABOVE FEED                      63.8860     
+    DIST. VS FEED                                            0.29610    
+    CONDENSER COOLING REQUIRED (CAL/SEC )              158,926.         
+    NET CONDENSER DUTY (CAL/SEC )                     -158,926.         
+    REBOILER HEATING REQUIRED (CAL/SEC )               174,367.         
+    NET REBOILER DUTY (CAL/SEC )                       174,367.         
+
+  ++++++++++++++++++++++++++++++++++
+  + REFLUX RATIO VS. NO. OF STAGES +                                          
+  ++++++++++++++++++++++++++++++++++
+
+ ---------------------------
+ !  NSTAGE    !  RR        !
+ !============!============!
+ !     76     !    92.3620 !
+ !     77     !    80.5747 !
+ !     78     !    72.8766 !
+ !     79     !    67.0724 !
+ !     80     !    62.3946 !
+ !     81     !    58.4227 !
+ !     82     !    54.9258 !
+ !     83     !    51.7546 !
+ !     84     !    48.8033 !
+ !     85     !    45.9909 !
+ !     86     !    43.2473 !
+ !     87     !    40.5305 !
+ !     88     !    37.8390 !
+ !     89     !    35.3215 !
+ !     90     !    33.1639 !
+ !     91     !    31.4660 !
+ !     92     !    30.1567 !
+ !     93     !    29.1222 !
+ !     94     !    28.2810 !
+ !     95     !    27.5760 !
+ !     96     !    26.9707 !
+ !     97     !    26.4406 !
+ !     98     !    25.9708 !
+ !     99     !    25.5443 !
+ !     100    !    25.1557 !
+ !     101    !    24.7983 !
+ !     102    !    24.4669 !
+ !     103    !    24.1573 !
+ !     104    !    23.8663 !
+ !     105    !    23.5913 !
+ !     106    !    23.3300 !
+ !     107    !    23.0806 !
+ !     108    !    22.8416 !
+ !     109    !    22.6115 !
+ !     110    !    22.3892 !
+ !     111    !    22.1737 !
+ !     112    !    21.9639 !
+ !     113    !    21.7591 !
+ !     114    !    21.5585 !
+ !     115    !    21.3612 !
+ !     116    !    21.1665 !
+ !     117    !    20.9739 !
+ !     118    !    20.7826 !
+ !     119    !    20.5918 !
+ !     120    !    20.4011 !
+ ---------------------------
+
+             ********************************************************        
+             ACTUAL REFLUX RATIO VS. ACTUAL NO. OF EQUILIBRIUM STAGES        
+             ********************************************************        
+ 
+        100.0+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+             !           !           !           !           !           !
+             !           !           !           !           !           !
+             !           !           !           !           !           !
+             !      A    !           !           !           !           !
+             +      *    !           !           !           !           +
+             !      *    !           !           !           !           !
+             !      *    !           !           !           !           !
+             !      *    !           !           !           !           !
+             !      *    !           !           !           !           !
+        80.00+-------A---+-----------+-----------+-----------+-----------+
+             !       *   !           !           !           !           !
+             !        *  !           !           !           !           !
+             !        *  !           !           !           !           !
+             !         A !           !           !           !           !
+             +         * !           !           !           !           +
+             !          A!           !           !           !           !
+             !          *!           !           !           !           !
+             !          *!           !           !           !           !
+ R           !           A           !           !           !           !
+ R      60.00+-----------*-----------+-----------+-----------+-----------+
+             !           !A          !           !           !           !
+             !           !*          !           !           !           !
+             !           ! A         !           !           !           !
+             !           !  *A       !           !           !           !
+             +           !   *       !           !           !           +
+             !           !    A      !           !           !           !
+             !           !     A     !           !           !           !
+             !           !      A    !           !           !           !
+             !           !      *    !           !           !           !
+        40.00+-----------+-------A---+-----------+-----------+-----------+
+             !           !        *A !           !           !           !
+             !           !          A!           !           !           !
+             !           !           A           !           !           !
+             !           !           !A          !           !           !
+             +           !           ! A*A       !           !           +
+             !           !           !    AA     !           !           !
+             !           !           !      AA*AAA           !           !
+             !           !           !           !AA*AAAAA   !           !
+             !           !           !           !        *AAAAA*AAAA    !
+        20.00+-----+-----+-----+-----+-----+-----+-----+-----+-----+-A*AAA
+             70          80          90         100         110         120   
+                                         NSTAGE                              
+ 
+                                                                             

@@ -20,7 +20,7 @@
 
     '        On Error GoTo ErrorHandler
     '        'get the root of the tree
-    '        'ihAPsim_RadFrac = AspenPlusDistilR.Application
+    '        'myRadFrac.ihAPsim = AspenPlusDistilR.Application
 
     '        ihRoot = RadFrac_Standard.Tree.FindNode("" & TextBox2.Text)
     '        ihRoot_Standard = RadFrac_Standard.Tree.FindNode("" & TextBox2.Text)

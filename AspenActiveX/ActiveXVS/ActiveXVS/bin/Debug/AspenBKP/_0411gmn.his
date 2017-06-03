@@ -50,9 +50,9 @@
  BURLINGTON, MASSACHUSETTS 01803                             
  781/221-6400
 
- PLATFORM: WINDOWS                                       MAY 19, 2017        
- VERSION: 30.0   Build 33                                FRIDAY      
- INSTALLATION:                                           2:19:45 A.M.        
+ PLATFORM: WINDOWS                                       MAY 22, 2017        
+ VERSION: 30.0   Build 33                                MONDAY      
+ INSTALLATION:                                           10:43:52 A.M.       
 
  THIS COPY OF ASPEN PLUS LICENSED TO                                 
 
@@ -71,12 +71,12 @@
 
  >>CURRENT RUN
 
-   ORIGINAL RUN                           MAY 19, 2017        
-   2:19:45 A.M.                           FRIDAY      
+   ORIGINAL RUN                           MAY 22, 2017        
+   10:43:52 A.M.                          MONDAY      
    INPUT FILE: _0411gmn.inm
    RUN ID : _0411gmn
           1    ;
-          2    ;Input file created by Aspen Plus Rel. 30.0 at 02:19:44 Fri May 19, 2017
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 10:43:52 Mon May 22, 2017
           3    ;Directory   Runid DISTILR
           4    ;
           5
@@ -128,7 +128,7 @@
          51
          52    BLOCK B1 DSTWU
          53        PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
-         54            RECOVH=0.001 PTOP=1. PBOT=1.1 NSTAGE=91 PLOT=YES
+         54            RECOVH=0.001 PTOP=1. PBOT=1.1 RR=-1.5 PLOT=YES
          55        PLOT LOWER=76 UPPER=120 INCR=1
          56
          57    EO-CONV-OPTI
@@ -144,7 +144,7 @@
  
  
 
- PDF updated                                                                      TIME =      0.04
+ PDF updated                                                                      TIME =      0.05
 
  *** CALCULATION TRACE ***
 
@@ -165,25 +165,17 @@
       COMPUTATION ORDER FOR THE FLOWSHEET IS:
       B1 
 
-Calculations begin                                                              time      0.04
+Calculations begin                                                              time      0.14
 
 
- SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.04
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.14
 
-      ENTHALPY CALCULATION FOR INLET STREAM FEED OF BLOCK B1                      TIME =      0.04
+      ENTHALPY CALCULATION FOR INLET STREAM FEED OF BLOCK B1                      TIME =      0.14
       KODE = 2  NTRIAL =   2  T = 303.1500  P =  110000.      V =  0.00000      Q =  0.00000    
 
-      UOS BLOCK B1       MODEL: DSTWU                                             TIME =      0.04
-       TD =   408.8    ,  TB =   421.8    ,  RMIN =   15.17    ,  RACT =   31.46    
-       MIN STAGES =   72.02    , ACT STAGES =   91.00    
-       ACT. # OF RECT. STAGES =   53.64    
-       REBOILER DUTY =  0.9740E+06
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =      0.14
+       TD =   408.8    ,  TB =   421.8    ,  RMIN =   15.17    ,  RACT =   22.75    
+       MIN STAGES =   72.02    , ACT STAGES =   108.4    
+       ACT. # OF RECT. STAGES =   63.89    
+       REBOILER DUTY =  0.7300E+06
        FEED QUALITY =  -0.6651    
-
- Report Writer entered                                                            Time = 128681.41
-      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
-      KODE = 3  NTRIAL =   3  T = 421.7548  P =  110000.      V =  0.00000      Q =-3.983320E-04
-      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
-      KODE = 3  NTRIAL =   3  T = 408.8414  P =  100000.      V =  0.00000      Q =-3.184064E-05
-
- Results generated                                                                Time = 128681.42
