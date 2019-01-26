@@ -1,0 +1,70 @@
+ >>ORIGINAL RUN                           OCTOBER 17, 2018    
+   10:41:42 P.M.                          WEDNESDAY   
+   INPUT FILE: _4026tez.inm
+   RUN ID : _4026tez
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 22:41:42 Wed Oct 17, 2018
+          3    ;Directory F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_2  Runid DISTILR
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    MODEL-OPTION
+         16
+         17    DATABANKS 'APV84 PURE28' / 'APV84 AQUEOUS' / 'APV84 SOLIDS' /  &
+         18            'APV84 INORGANIC' / NOASPENPCD
+         19
+         20    PROP-SOURCES 'APV84 PURE28' / 'APV84 AQUEOUS' / 'APV84 SOLIDS' &
+         21             / 'APV84 INORGANIC'
+         22
+         23    COMPONENTS
+         24        BENYIXI C8H8 /
+         25        YIBEN C8H10-4
+         26
+         27    ADA-SETUP
+         28        ADA-SETUP PROCEDURE=REL9
+         29
+         30    SOLVE
+         31        RUN-MODE MODE=SIM
+         32
+         33    FLOWSHEET
+         34        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         35
+         36    PROPERTIES NRTL
+         37
+         38    PROP-DATA NRTL-1
+         39        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         40            INVERSE-PRES='1/bar'
+         41        PROP-LIST NRTL
+         42        BPVAL BENYIXI YIBEN -.9750000000 37.64040000 .3000000000  &
+         43            0.0 0.0 0.0 57.67000000 97.00000000
+         44        BPVAL YIBEN BENYIXI 1.385000000 -56.00440000 .3000000000  &
+         45            0.0 0.0 0.0 57.67000000 97.00000000
+         46
+         47    STREAM FEED
+         48        SUBSTREAM MIXED TEMP=30. PRES=1.1 MASS-FLOW=1000.
+         49        MASS-FRAC BENYIXI 0.7 / YIBEN 0.3
+         50
+         51    BLOCK B1 DSTWU
+         52        PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         53            RECOVH=0.001 PTOP=1. PBOT=1.1 RR=-1.5 PLOT=YES
+         54        PLOT LOWER=76 UPPER=120 INCR=1
+         55
+         56    EO-CONV-OPTI
+         57
+         58    STREAM-REPOR MOLEFLOW
+         59    ;
+         60    ;
+         61    ;
+         62    ;
+         63    ;
+
+   SIMULATION STARTED     MODULE USED: apmain  
+   LOCATED IN:C:\Program Files (x86)\ASPENT~1\ASPENP~1.4\Engine\\xeq

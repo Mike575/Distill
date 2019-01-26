@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0052juk.inm
+MODNAME: apmain
+RUNID: _0052juk
+NEW_RUNID: _0052juk
+OLD_RUNID: _0052juk
+PDF: _0052juk.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\RadFrac1_2\RadFrac1.ads

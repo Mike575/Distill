@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0439gek.inm
+MODNAME: apmain
+RUNID: _0439gek
+NEW_RUNID: _0439gek
+OLD_RUNID: _0439gek
+PDF: _0439gek.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_11\_7F97.ads

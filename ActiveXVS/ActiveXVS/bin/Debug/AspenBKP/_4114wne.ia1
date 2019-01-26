@@ -1,0 +1,163 @@
+
+ BLOCK:  B1       MODEL: RADFRAC         
+ -------------------------------
+    INLETS   - FEED     STAGE  85
+    OUTLETS  - UP       STAGE   1
+               BOTTOM   STAGE  86
+   PROPERTY OPTION SET:   NRTL      RENON (NRTL) / IDEAL GAS                    
+
+                      ***  MASS AND ENERGY BALANCE  ***
+                                    IN              OUT        RELATIVE DIFF.
+    TOTAL BALANCE
+       MOLE(KMOL/HR )            9.47378         9.47378         0.00000    
+       MASS(KG/HR   )            1000.00         1000.00        0.210321E-13
+       ENTHALPY(CAL/SEC )        14812.3         29622.9       -0.499973    
+
+                      ***  CO2 EQUIVALENT SUMMARY ***
+    FEED STREAMS CO2E             0.00000      KG/HR           
+    PRODUCT STREAMS CO2E          0.00000      KG/HR           
+    NET STREAMS CO2E PRODUCTION   0.00000      KG/HR           
+    UTILITIES CO2E PRODUCTION     0.00000      KG/HR           
+    TOTAL CO2E PRODUCTION         0.00000      KG/HR           
+
+
+
+                         **********************
+                         ****  INPUT DATA  ****
+                         **********************
+
+   ****   INPUT PARAMETERS   ****
+
+    NUMBER OF STAGES                                        86
+    ALGORITHM OPTION                                      STANDARD    
+    ABSORBER OPTION                                       NO      
+    INITIALIZATION OPTION                                 STANDARD    
+    HYDRAULIC PARAMETER CALCULATIONS                      NO      
+    INSIDE LOOP CONVERGENCE METHOD                        BROYDEN 
+    DESIGN SPECIFICATION METHOD                           NESTED  
+    MAXIMUM NO. OF OUTSIDE LOOP ITERATIONS                  25
+    MAXIMUM NO. OF INSIDE LOOP ITERATIONS                   10
+    MAXIMUM NUMBER OF FLASH ITERATIONS                      30
+    FLASH TOLERANCE                                          0.000100000
+    OUTSIDE LOOP CONVERGENCE TOLERANCE                       0.000100000
+
+   ****   COL-SPECS   ****
+
+    MOLAR VAPOR DIST / TOTAL DIST                            0.0        
+    MASS REFLUX RATIO                                       43.2473     
+    MASS DISTILLATE RATE           KG/HR                   300.000      
+
+   ****    PROFILES   ****
+
+    P-SPEC          STAGE   1  PRES, BAR                     1.00000    
+
+                          *******************
+                          ****  RESULTS  ****
+                          *******************
+
+
+   ***   COMPONENT SPLIT FRACTIONS   ***
+
+                             OUTLET STREAMS 
+                             --------------
+                  UP           BOTTOM  
+    COMPONENT:
+    BENYIXI     .33135E-05   1.0000    
+    YIBEN       .42857       .57143    
+
+ 
+   ***    SUMMARY OF KEY RESULTS    ***
+
+    TOP STAGE TEMPERATURE          C                       135.679      
+    BOTTOM STAGE TEMPERATURE       C                       142.740      
+    TOP STAGE LIQUID FLOW          KMOL/HR                 122.205      
+    BOTTOM STAGE LIQUID FLOW       KMOL/HR                   6.64805    
+    TOP STAGE VAPOR FLOW           KMOL/HR                   0.0        
+    BOILUP VAPOR FLOW              KMOL/HR                 130.199      
+    MOLAR REFLUX RATIO                                      43.2473     
+    MOLAR BOILUP RATIO                                      19.5845     
+    CONDENSER DUTY (W/O SUBCOOL)   CAL/SEC            -295,779.         
+    REBOILER DUTY                  CAL/SEC             310,590.         
+
+   ****   MAXIMUM FINAL RELATIVE ERRORS   ****
+
+    DEW POINT                       0.72003E-05  STAGE= 61
+    BUBBLE POINT                    0.72495E-05  STAGE= 61
+    COMPONENT MASS BALANCE          0.19337E-07  STAGE= 65 COMP=BENYIXI 
+    ENERGY BALANCE                  0.18465E-05  STAGE= 78
+
+
+   ****    PROFILES   ****
+
+   **NOTE** REPORTED VALUES FOR STAGE LIQUID AND VAPOR RATES ARE THE FLOWS
+            FROM THE STAGE INCLUDING ANY SIDE PRODUCT.
+
+                                          ENTHALPY
+ STAGE TEMPERATURE   PRESSURE             CAL/MOL            HEAT DUTY
+       C             BAR            LIQUID       VAPOR        CAL/SEC 
+
+   1   135.68        1.0000        2636.6       11151.      -.29578+06
+   2   135.72        1.0012        2639.1       11153.                
+  84   141.55        1.0976        11706.       18753.                
+  85   142.09        1.0988        13185.       20074.                
+  86   142.74        1.1000        14920.       21684.       .31059+06
+
+ STAGE     FLOW RATE                  FEED RATE               PRODUCT RATE
+            KMOL/HR                    KMOL/HR                  KMOL/HR 
+       LIQUID     VAPOR       LIQUID    VAPOR    MIXED      LIQUID    VAPOR
+   1  125.0      0.000                                        2.8257          
+   2  122.2      125.0                                                        
+  84  121.3      124.4                                                        
+  85  136.8      124.2         9.4737                                         
+  86  6.648      130.2                                        6.6480          
+
+    ****  MASS FLOW PROFILES  ****
+
+ STAGE     FLOW RATE                  FEED RATE               PRODUCT RATE
+            KG/HR                      KG/HR                    KG/HR   
+       LIQUID     VAPOR       LIQUID    VAPOR    MIXED      LIQUID    VAPOR
+   1 0.1327E+05  0.000                                      300.0000          
+   2 0.1298E+05 0.1327E+05                                                    
+  84 0.1281E+05 0.1314E+05                                                    
+  85 0.1443E+05 0.1311E+05  1000.0000                                         
+  86  700.0     0.1373E+05                                  700.0000          
+
+                         ****   MOLE-X-PROFILE     ****
+   STAGE     BENYIXI       YIBEN   
+      1    0.33776E-05    1.0000    
+      2    0.39369E-05    1.0000    
+     84    0.31846       0.68154    
+     85    0.37131       0.62869    
+     86    0.43327       0.56673    
+
+                         ****   MOLE-Y-PROFILE     ****
+   STAGE     BENYIXI       YIBEN   
+      1    0.28976E-05    1.0000    
+      2    0.33776E-05    1.0000    
+     84    0.26449       0.73551    
+     85    0.31122       0.68878    
+     86    0.36815       0.63185    
+
+                         ****   K-VALUES           ****
+   STAGE     BENYIXI       YIBEN   
+      1    0.85790        1.0000    
+      2    0.85793        1.0000    
+     84    0.83052        1.0792    
+     85    0.83816        1.0956    
+     86    0.84969        1.1149    
+
+                         ****   MASS-X-PROFILE     ****
+   STAGE     BENYIXI       YIBEN   
+      1    0.33135E-05    1.0000    
+      2    0.38622E-05    1.0000    
+     84    0.31432       0.68568    
+     85    0.36685       0.63315    
+     86    0.42857       0.57143    
+
+                         ****   MASS-Y-PROFILE     ****
+   STAGE     BENYIXI       YIBEN   
+      1    0.28426E-05    1.0000    
+      2    0.33135E-05    1.0000    
+     84    0.26078       0.73922    
+     85    0.30712       0.69288    
+     86    0.36370       0.63630    

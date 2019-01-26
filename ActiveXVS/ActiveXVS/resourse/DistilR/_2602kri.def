@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _2602kri.inm
+MODNAME: apmain
+RUNID: _2602kri
+NEW_RUNID: _2602kri
+OLD_RUNID: _2602kri
+PDF: _2602kri.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR\DistilR.ads

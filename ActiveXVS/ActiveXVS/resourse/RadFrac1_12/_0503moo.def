@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0503moo.inm
+MODNAME: apmain
+RUNID: _0503moo
+NEW_RUNID: _0503moo
+OLD_RUNID: _0503moo
+PDF: _0503moo.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\RadFrac1_12\_8E25.ads

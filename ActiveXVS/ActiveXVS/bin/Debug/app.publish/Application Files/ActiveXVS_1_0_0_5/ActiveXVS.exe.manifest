@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ActiveXVS.exe" version="1.0.0.5" publicKeyToken="f760afd2a73d2cf0" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ActiveXVS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ActiveXVS.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+         若想要更改 Windows 用户帐户控制级别，请
+         将 requestedExecutionLevel 节点替换为下述某项。
+
+       <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+       <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+       <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+        若想要使用文件和注册表虚拟化以实现向后
+        兼容，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ActiveXVS.exe" size="511440">
+      <assemblyIdentity name="ActiveXVS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tPF0fKe84ok3vX29YRNNu21yNp0r1UcvIKaud7tel2M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ActiveXVS.exe.config" size="188">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>j5XMowm9qYcyNWR87Ke1KpLLXBlaYAR38CaZywZFE9o=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=THINKPADE540\57584" issuerKeyHash="9bcc112935965b1321331a1c8545f945abed8a8f" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>icBPPlAD6wxlODm/6SLW67ZaxyIG8jGpejR5UZTvHR8=</DigestValue></Reference></SignedInfo><SignatureValue>JMjc8uinV/vb5CY9sQGZLrDaQcjFI2DaxNzGxZEddacyFCAYbRN36B6uUzjnQ/Ufx3ZBNiJDTsq0KNTz3i0XFXaH2asLjd/0PCg4d2Kc1lv9fuXPjYuBeyywXh3FSnomeJvcUIodYYVE+M7/4noz6YTXnmHKdam5w89cc5E2y+A=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>m2c/UaQgaD/XmJF+h0U6VmzXwnNXAEq7o0p2kfjYbHMFCXOKsg6QZBrsxkD71HAORQjo5SRAIOSbb8PNWuDkyW00PqvqkcZgwLfh0llOCAJ5rbDD+mI4N6Ud2XMpITnfw07QW0AmRdBvz6EZ2chn1+Wg9CJyCIbL06Jy0CIN14E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="1f1def945179347aa931f20622c75ab6ebd622e9bf3938650ceb03503e4fc089" Description="" Url=""><as:assemblyIdentity name="ActiveXVS.exe" version="1.0.0.5" publicKeyToken="f760afd2a73d2cf0" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=THINKPADE540\57584</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>JFi6nje9n4wZN0jPwB8QKAK3kTJ5fw6XjnFYlo6AkOg=</DigestValue></Reference></SignedInfo><SignatureValue>RJnoFe2mapxsB/nb5dSG+Qvs8PlkC5Ku0LLa3C7ygFcL2MTCAXQUPzslWBv1FYjznJirIMm87pOtYjhQ3deuaej4ZPi67UK56KTrLOgKAEVkxeiGj19Ol8InsO/EM2wjEb3u0G1gxTl1URg1FJIrnXGPRnHFL84P/J+2isiaZIU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>m2c/UaQgaD/XmJF+h0U6VmzXwnNXAEq7o0p2kfjYbHMFCXOKsg6QZBrsxkD71HAORQjo5SRAIOSbb8PNWuDkyW00PqvqkcZgwLfh0llOCAJ5rbDD+mI4N6Ud2XMpITnfw07QW0AmRdBvz6EZ2chn1+Wg9CJyCIbL06Jy0CIN14E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQa15G0wG4249Nf564v+n6TjANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDHiQAVABIAEkATgBLAFAAQQBEAEUANQA0ADAAXAA1ADcANQA4ADQwHhcNMTcwNTIxMTUzNDE0WhcNMTgwNTIxMjEzNDE0WjAvMS0wKwYDVQQDHiQAVABIAEkATgBLAFAAQQBEAEUANQA0ADAAXAA1ADcANQA4ADQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAJtnP1GkIGg/15iRfodFOlZs18JzVwBKu6NKdpH42GxzBQlzirIOkGQa7MZA+9RwDkUI6OUkQCDkm2/DzVrg5MltND6r6pHGYMC34dJZTggCea2ww/piODelHdlzKSE538NO0FtAJkXQb8+hGdnIZ9floPQicgiGy9OictAiDdeBAgMBAAEwDQYJKoZIhvcNAQELBQADgYEACVySc6m3EJ1Bne/Zx33SXStSyGztXscO8TqDipzs8jwQwkRw0jX+JNifKG6hjcuYqNP2tDrIhJZ0yWyTAITzkfbwlzGH1xaNOpjZG/c/T7z/WGbx3Q3NzGDDZosLw+o8qLMNxrbOvNL1arL7ulJZ9K91/g2f93zF0M7AWIzIkXw=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

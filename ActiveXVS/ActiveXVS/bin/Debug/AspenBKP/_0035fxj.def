@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0035fxj.inm
+MODNAME: apmain
+RUNID: _0035fxj
+NEW_RUNID: _0035fxj
+OLD_RUNID: _0035fxj
+PDF: _0035fxj.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+SPONLY:

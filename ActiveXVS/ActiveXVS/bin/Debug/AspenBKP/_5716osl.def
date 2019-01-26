@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _5716osl.inm
+MODNAME: apmain
+RUNID: _5716osl
+NEW_RUNID: _5716osl
+OLD_RUNID: _5716osl
+PDF: _5716osl.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+SPONLY:

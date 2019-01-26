@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _4026tez.inm
+MODNAME: apmain
+RUNID: _4026tez
+NEW_RUNID: _4026tez
+OLD_RUNID: _4026tez
+PDF: _4026tez.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_2\DistilR.ads

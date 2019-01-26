@@ -1,0 +1,184 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 200 WHEELER ROAD                       EUROPE (44) 1189-226555
+ BURLINGTON, MASSACHUSETTS 01803                             
+ 781/221-6400
+
+ PLATFORM: WINDOWS                                       OCTOBER 17, 2018    
+ VERSION: 30.0   Build 33                                WEDNESDAY   
+ INSTALLATION:                                           10:09:19 P.M.       
+
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 200 WHEELER ROAD,
+      BURLINGTON, MA 01803.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           OCTOBER 17, 2018    
+   10:09:19 P.M.                          WEDNESDAY   
+   INPUT FILE: _0324mfk.inm
+   RUN ID : _0324mfk
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 22:09:18 Wed Oct 17, 2018
+          3    ;Directory F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_1  Runid DISTILR
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    MODEL-OPTION
+         16
+         17    DATABANKS 'APV84 PURE28' / 'APV84 AQUEOUS' / 'APV84 SOLIDS' /  &
+         18            'APV84 INORGANIC' / NOASPENPCD
+         19
+         20    PROP-SOURCES 'APV84 PURE28' / 'APV84 AQUEOUS' / 'APV84 SOLIDS' &
+         21             / 'APV84 INORGANIC'
+         22
+         23    COMPONENTS
+         24        BENYIXI C8H8 /
+         25        YIBEN C8H10-4
+         26
+         27    ADA-SETUP
+         28        ADA-SETUP PROCEDURE=REL9
+         29
+         30    SOLVE
+         31        RUN-MODE MODE=SIM
+         32
+         33    FLOWSHEET
+         34        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         35
+         36    PROPERTIES NRTL
+         37
+         38    PROP-DATA NRTL-1
+         39        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         40            INVERSE-PRES='1/bar'
+         41        PROP-LIST NRTL
+         42        BPVAL BENYIXI YIBEN -.9750000000 37.64040000 .3000000000  &
+         43            0.0 0.0 0.0 57.67000000 97.00000000
+         44        BPVAL YIBEN BENYIXI 1.385000000 -56.00440000 .3000000000  &
+         45            0.0 0.0 0.0 57.67000000 97.00000000
+         46
+         47    STREAM FEED
+         48        SUBSTREAM MIXED TEMP=30. PRES=1.1 MASS-FLOW=1000.
+         49        MASS-FRAC BENYIXI 0.7 / YIBEN 0.3
+         50
+         51    BLOCK B1 DSTWU
+         52        PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         53            RECOVH=0.001 PTOP=1. PBOT=1.1 RR=-1.5 PLOT=YES
+         54        PLOT LOWER=76 UPPER=120 INCR=1
+         55
+         56    EO-CONV-OPTI
+         57
+         58    STREAM-REPOR MOLEFLOW
+         59    ;
+         60    ;
+         61    ;
+         62    ;
+         63    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+  *** THIS RUN USES THE PROPERTIES ENTERPRISE DATABASE ***
+      SQLLOCALDB.APV84 : (DATAVERSION - 30.0.0.12)                            
+      SQLLOCALDB.FACTV84 : (DATAVERSION - 30.0.0.2)                           
+      SQLLOCALDB.NISTV84 : (DATAVERSION - 30.0.0.2)                           
+ 
+ 
+
+ PDF updated                                                                      TIME =      1.51
+
+ *** CALCULATION TRACE ***
+
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   FEED       ----       B1             UP         B1         ----    
+   BOTTOM     B1         ----                                         
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           FEED                           UP BOTTOM                   
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      B1 
+
+Calculations begin                                                              time      0.32
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.32
+
+      ENTHALPY CALCULATION FOR INLET STREAM FEED OF BLOCK B1                      TIME =      0.32
+      KODE = 2  NTRIAL =   2  T = 303.1500  P =  110000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =      0.32
+       TD =   408.8    ,  TB =   421.8    ,  RMIN =   15.17    ,  RACT =   22.75    
+       MIN STAGES =   72.02    , ACT STAGES =   108.4    
+       ACT. # OF RECT. STAGES =   63.89    
+       REBOILER DUTY =  0.7300E+06
+       FEED QUALITY =  -0.6651    

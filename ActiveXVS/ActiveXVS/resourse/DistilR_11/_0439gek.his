@@ -1,0 +1,785 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 200 WHEELER ROAD                       EUROPE (44) 1189-226555
+ BURLINGTON, MASSACHUSETTS 01803                             
+ 781/221-6400
+
+ PLATFORM: WINDOWS                                       OCTOBER 21, 2018    
+ VERSION: 30.0   Build 33                                SUNDAY      
+ INSTALLATION:                                           3:39:14 P.M.        
+
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 200 WHEELER ROAD,
+      BURLINGTON, MA 01803.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           OCTOBER 21, 2018    
+   3:39:14 P.M.                           SUNDAY      
+   INPUT FILE: _0439gek.inm
+   RUN ID : _0439gek
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 15:39:12 Sun Oct 21, 2018
+          3    ;Directory F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_11  Runid DISTILR
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    MODEL-OPTION
+         16
+         17    DATABANKS 'APV84 PURE28' / 'APV84 AQUEOUS' / 'APV84 SOLIDS' /  &
+         18            'APV84 INORGANIC' / NOASPENPCD
+         19
+         20    PROP-SOURCES 'APV84 PURE28' / 'APV84 AQUEOUS' / 'APV84 SOLIDS' &
+         21             / 'APV84 INORGANIC'
+         22
+         23    COMPONENTS
+         24        BENYIXI C8H8 /
+         25        YIBEN C8H10-4
+         26
+         27    ADA-SETUP
+         28        ADA-SETUP PROCEDURE=REL9
+         29
+         30    SOLVE
+         31        RUN-MODE MODE=SIM
+         32
+         33    FLOWSHEET
+         34        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         35
+         36    PROPERTIES NRTL
+         37        PROPERTIES PENG-ROB
+         38
+         39    PROP-DATA NRTL-1
+         40        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         41            INVERSE-PRES='1/bar'
+         42        PROP-LIST NRTL
+         43        BPVAL BENYIXI YIBEN -.9750000000 37.64040000 .3000000000  &
+         44            0.0 0.0 0.0 57.67000000 97.00000000
+         45        BPVAL YIBEN BENYIXI 1.385000000 -56.00440000 .3000000000  &
+         46            0.0 0.0 0.0 57.67000000 97.00000000
+         47
+         48    STREAM FEED
+         49        SUBSTREAM MIXED TEMP=30. PRES=1.1 MASS-FLOW=1000.
+         50        MASS-FRAC BENYIXI 0.7 / YIBEN 0.3
+         51
+         52    BLOCK B1 DSTWU
+         53        PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         54            RECOVH=0.001 PTOP=1. PBOT=1.1 RR=-1.5 PLOT=YES
+         55        PLOT LOWER=76 UPPER=110 INCR=1
+         56
+         57    EO-CONV-OPTI
+         58
+         59    STREAM-REPOR MOLEFLOW
+         60    ;
+         61    ;
+         62    ;
+         63    ;
+         64    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+  *** THIS RUN USES THE PROPERTIES ENTERPRISE DATABASE ***
+      SQLLOCALDB.APV84 : (DATAVERSION - 30.0.0.12)                            
+      SQLLOCALDB.FACTV84 : (DATAVERSION - 30.0.0.2)                           
+      SQLLOCALDB.NISTV84 : (DATAVERSION - 30.0.0.2)                           
+ 
+ 
+
+ PDF updated                                                                      TIME =      1.31
+
+ *** CALCULATION TRACE ***
+
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   FEED       ----       B1             UP         B1         ----    
+   BOTTOM     B1         ----                                         
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           FEED                           UP BOTTOM                   
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      B1 
+
+Calculations begin                                                              time      0.13
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.13
+
+      ENTHALPY CALCULATION FOR INLET STREAM FEED OF BLOCK B1                      TIME =      0.13
+      KODE = 2  NTRIAL =   2  T = 303.1500  P =  110000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =      0.13
+       TD =   408.8    ,  TB =   421.8    ,  RMIN =   15.17    ,  RACT =   22.75    
+       MIN STAGES =   72.02    , ACT STAGES =   108.4    
+       ACT. # OF RECT. STAGES =   63.89    
+       REBOILER DUTY =  0.7300E+06
+       FEED QUALITY =  -0.6651    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 421.7548  P =  110000.      V =  0.00000      Q =-3.983316E-04
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 408.8414  P =  100000.      V =  0.00000      Q =-3.184073E-05
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ BLOCK        B1       IS GENERATED BECAUSE OF OTHER CHANGES 10/21/2018   15:39:27:46 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=1. PBOT=1.1 RR=-1.5 PLOT=YES
+     PLOT LOWER=76 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     11.64
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     11.66
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     11.66
+       TD =   408.8    ,  TB =   421.8    ,  RMIN =   15.17    ,  RACT =   22.75    
+       MIN STAGES =   72.02    , ACT STAGES =   108.4    
+       ACT. # OF RECT. STAGES =   63.89    
+       REBOILER DUTY =  0.7300E+06
+       FEED QUALITY =  -0.6651    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 421.7548  P =  110000.      V =  0.00000      Q =-3.983316E-04
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 408.8414  P =  100000.      V =  0.00000      Q =-3.184073E-05
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:39:37:89 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=1.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=76 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     22.07
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     22.10
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     22.10
+       TD =   369.2    ,  TB =   434.2    ,  RMIN =   13.82    ,  RACT =   20.73    
+       MIN STAGES =   65.27    , ACT STAGES =   98.44    
+       ACT. # OF RECT. STAGES =   52.63    
+       REBOILER DUTY =  0.7146E+06
+       FEED QUALITY =  -0.6216    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   4  T = 434.2228  P =  150000.      V =  0.00000      Q =-1.483937E-07
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.734211E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:39:42:78 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=76 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     26.96
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     26.97
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     26.97
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:39:50:09 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=1.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=76 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     34.27
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     34.29
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     34.29
+       TD =   369.2    ,  TB =   434.2    ,  RMIN =   13.82    ,  RACT =   20.73    
+       MIN STAGES =   65.27    , ACT STAGES =   98.44    
+       ACT. # OF RECT. STAGES =   52.63    
+       REBOILER DUTY =  0.7146E+06
+       FEED QUALITY =  -0.6216    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   4  T = 434.2228  P =  150000.      V =  0.00000      Q =-1.483937E-07
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.734211E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:39:59:46 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=76 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     43.64
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     43.65
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     43.65
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:03:05 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=50 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     47.23
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     47.25
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     47.25
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   50, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:06:77 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=55 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     50.96
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     50.97
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     50.97
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   55, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:17:90 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=56 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     62.08
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     62.09
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     62.09
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   56, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:35:14 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=56 UPPER=111 INCR=1
+
+ PDF updated                                                                      TIME =     79.33
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     79.34
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     79.34
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   56, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:38:48 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=56 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     82.67
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     82.69
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     82.69
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   56, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:44:86 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=58 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     89.05
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     89.07
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     89.07
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   58, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:53:36 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=60 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =     97.55
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time     97.57
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =     97.57
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   60, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:56:64 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=60 UPPER=111 INCR=1
+
+ PDF updated                                                                      TIME =    100.83
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time    100.84
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =    100.84
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   60, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:40:59:67 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=60 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =    103.86
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time    103.87
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =    103.87
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+
+  *   WARNING WHILE IN SEQUENCE MONITOR                        (DSWPLO.1)       
+      LOWER LIMIT OF STAGE NO.,   60, IN RR VS. NSTAGE PLOT IS LESS THAN        
+      THE MINIMUM NO. OF STAGES COMPUTED.                                       
+      RR VS. NSTAGE PLOT WILL START AT STAGE NO.,   61                          
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:41:18:14 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=62 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =    122.33
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time    122.35
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =    122.35
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ BLOCK        B1       IS GENERATED BECAUSE OF OTHER CHANGES 10/21/2018   15:55:42:60 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=62 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =    986.78
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time    986.81
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =    986.81
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ BLOCK        B1       IS GENERATED BECAUSE OF OTHER CHANGES 10/21/2018   15:55:59:40 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.3 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=62 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =   1003.58
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time   1003.61
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =   1003.61
+       TD =   369.2    ,  TB =   393.6    ,  RMIN =   12.82    ,  RACT =   19.24    
+       MIN STAGES =   60.05    , ACT STAGES =   90.75    
+       ACT. # OF RECT. STAGES =   51.39    
+       REBOILER DUTY =  0.6514E+06
+       FEED QUALITY =  -0.4317    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 369.2105  P =  30000.0      V =  0.00000      Q =-8.769678E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:56:02:23 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.2 PBOT=0.5 RR=-1.5 PLOT=YES
+     PLOT LOWER=62 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =   1006.42
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time   1006.43
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =   1006.43
+       TD =   357.8    ,  TB =   393.6    ,  RMIN =   12.34    ,  RACT =   18.50    
+       MIN STAGES =   57.71    , ACT STAGES =   87.31    
+       ACT. # OF RECT. STAGES =   48.11    
+       REBOILER DUTY =  0.6382E+06
+       FEED QUALITY =  -0.4055    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 393.6035  P =  50000.0      V =  0.00000      Q =-1.924806E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 357.8244  P =  20000.0      V =  0.00000      Q =-7.564506E-09
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       10/21/2018   15:56:06:59 
+ BLOCK B1 DSTWU
+     PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         RECOVH=0.001 PTOP=0.2 PBOT=0.25 RR=-1.5 PLOT=YES
+     PLOT LOWER=62 UPPER=110 INCR=1
+
+ PDF updated                                                                      TIME =   1010.78
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ 
+
+
+Calculations begin                                                              time   1010.80
+
+
+      UOS BLOCK B1       MODEL: DSTWU                                             TIME =   1010.80
+       TD =   357.8    ,  TB =   372.4    ,  RMIN =   11.69    ,  RACT =   17.53    
+       MIN STAGES =   54.80    , ACT STAGES =   83.04    
+       ACT. # OF RECT. STAGES =   47.43    
+       REBOILER DUTY =  0.5993E+06
+       FEED QUALITY =  -0.3267    
+      STREAM BOTTOM WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   2  T = 372.3512  P =  25000.0      V =  0.00000      Q =-1.607714E-08
+      STREAM UP WILL BE FLASHED FOR PROPERTY CALCULATIONS.
+      KODE = 3  NTRIAL =   3  T = 357.8244  P =  20000.0      V =  0.00000      Q =-7.564506E-09

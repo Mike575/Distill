@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0324mfk.inm
+MODNAME: apmain
+RUNID: _0324mfk
+NEW_RUNID: _0324mfk
+OLD_RUNID: _0324mfk
+PDF: _0324mfk.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_1\DistilR.ads

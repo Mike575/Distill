@@ -1,0 +1,266 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 200 WHEELER ROAD                       EUROPE (44) 1189-226555
+ BURLINGTON, MASSACHUSETTS 01803                             
+ 781/221-6400
+
+ PLATFORM: WINDOWS                                       MAY 18, 2017        
+ VERSION: 30.0   Build 33                                THURSDAY    
+ INSTALLATION:                                           11:01:20 P.M.       
+
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 200 WHEELER ROAD,
+      BURLINGTON, MA 01803.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           MAY 18, 2017        
+   11:01:20 P.M.                          THURSDAY    
+   INPUT FILE: _5227oxq.inm
+   RUN ID : _5227oxq
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 23:01:19 Thu May 18, 2017
+          3    ;Directory   Runid RADFRAC1
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    SIM-OPTIONS MASS-BAL-CHE=YES OLD-DATABANK=YES
+         16
+         17    MODEL-OPTION
+         18
+         19    DATABANKS PURE28  / AQUEOUS  / SOLIDS  / INORGANIC  /  &
+         20            NOASPENPCD
+         21
+         22    PROP-SOURCES PURE28  / AQUEOUS  / SOLIDS  / INORGANIC
+         23
+         24    COMPONENTS
+         25        BENYIXI C8H8 /
+         26        YIBEN C8H10-4
+         27
+         28    ADA-SETUP
+         29        ADA-SETUP PROCEDURE=REL9
+         30
+         31    SOLVE
+         32        RUN-MODE MODE=SIM
+         33
+         34    FLOWSHEET
+         35        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         36
+         37    PROPERTIES NRTL
+         38
+         39    PROP-DATA NRTL-1
+         40        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         41            INVERSE-PRES='1/bar'
+         42        PROP-LIST NRTL
+         43        BPVAL BENYIXI YIBEN -.9750000000 37.64040000 .3000000000  &
+         44            0.0 0.0 0.0 57.67000000 97.00000000
+         45        BPVAL YIBEN BENYIXI 1.385000000 -56.00440000 .3000000000  &
+         46            0.0 0.0 0.0 57.67000000 97.00000000
+         47
+         48    STREAM FEED
+         49        SUBSTREAM MIXED TEMP=30. PRES=1.1 MASS-FLOW=1000.
+         50        MASS-FRAC BENYIXI 0.7 / YIBEN 0.3
+         51
+         52    BLOCK B1 RADFRAC
+         53        PARAM NSTAGE=91 ALGORITHM=STANDARD EFF=MURPHREE  &
+         54            HYDRAULIC=YES MAXOL=25 DAMPING=NONE
+         55        COL-CONFIG CONDENSER=TOTAL
+         56        FEEDS FEED 45
+         57        PRODUCTS UP 1 L / BOTTOM 91 L
+         58        P-SPEC 1 1.
+         59        COL-SPECS DP-COL=0.1 MASS-D=300. MASS-RR=31.4660293
+         60        SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         61            BASE-STREAMS=FEED
+         62        SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM  &
+         63            BASE-STREAMS=FEED
+         64        VARY 1 MASS-D 280. 320.
+         65        VARY 2 MASS-RR 20. 200.
+         66        TRAY-SIZE 1 2 90 FLOAT
+         67        TRAY-RATE 1 2 90 FLOAT DIAM=0.8 <meter> P-UPDATE=NO
+         68        REPORT HYDRAULIC
+         69
+         70    EO-CONV-OPTI
+         71
+         72    SENSITIVITY S-1
+         73        DEFINE RR BLOCK-VAR BLOCK=B1 VARIABLE=MASS-BR  &
+         74            SENTENCE=COL-RESULTS
+         75        DEFINE DUTY BLOCK-VAR BLOCK=B1 VARIABLE=REB-DUTY  &
+         76            SENTENCE=RESULTS UOM="cal/sec"
+         77        TABULATE 1 "RR"
+         78        TABULATE 2 "DUTY"
+         79        VARY BLOCK-VAR BLOCK=B1 VARIABLE=MASS-RR SENTENCE=COL-SPECS
+         80        RANGE LOWER="17" UPPER="120" INCR="1"
+         81
+         82    STREAM-REPOR MOLEFLOW
+         83
+         84    PROPERTY-REP PCES
+         85
+         86    DISABLE
+         87        SENSITIVITY S-1
+         88    ;
+         89    ;
+         90    ;
+         91    ;
+         92    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+
+
+ 
+ SENSITIVITY BLOCK: S-1 WILL BE INTERPRETED 
+ 
+
+ PDF updated                                                                      TIME =      0.13
+
+ *** CALCULATION TRACE ***
+
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   FEED       ----       B1             UP         B1         ----    
+   BOTTOM     B1         ----                                         
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           FEED                           UP BOTTOM                   
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      B1 
+
+Calculations begin                                                              time      0.06
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.06
+
+      ENTHALPY CALCULATION FOR INLET STREAM FEED OF BLOCK B1                      TIME =      0.06
+      KODE = 2  NTRIAL =   2  T = 303.1500  P =  110000.      V =  0.00000      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: RADFRAC                                           TIME =      0.06
+
+       Convergence iterations:
+         OL   ML   IL     Err/Tol
+          1    1    4      93.381    
+          2    9   54      38.137    
+          3    6   27      14.143    
+          4    4   12      6.2753    
+          5    4    8      1.2130    
+          6    3    5     0.53057    
+
+      RESULTS FOR MANIPULATED VARIABLES:
+      VARIABLE     FINAL VALUE    LOWER BOUND    UPPER BOUND
+         1         0.83361E-01    0.77778E-01    0.88889E-01
+         2          22.567         20.000         200.00    
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO BLOCK        B1       05/18/2017   23:01:23:68 
+ BLOCK B1 RADFRAC
+     PARAM NSTAGE=91 ALGORITHM=STANDARD EFF=MURPHREE  &
+         HYDRAULIC=YES MAXOL=25 DAMPING=NONE
+     COL-CONFIG CONDENSER=TOTAL
+     FEEDS FEED 46
+     PRODUCTS UP 1 L / BOTTOM 91 L
+     P-SPEC 1 1.
+     COL-SPECS DP-COL=0.1 MASS-D=300. MASS-RR=31.4660293
+     SPEC 1 MASS-RECOV 0.998 COMPS=YIBEN STREAMS=UP  &
+         BASE-STREAMS=FEED
+     SPEC 2 MASS-RECOV 0.999 COMPS=BENYIXI STREAMS=BOTTOM  &
+         BASE-STREAMS=FEED
+     VARY 1 MASS-D 280. 320.
+     VARY 2 MASS-RR 20. 200.
+     TRAY-SIZE 1 2 90 FLOAT
+     TRAY-RATE 1 2 90 FLOAT DIAM=0.8 <meter> P-UPDATE=NO
+     REPORT HYDRAULIC
+
+ SENSITIVITY  S-1      IS GENERATED BECAUSE OF OTHER CHANGES 05/18/2017   23:01:23:68 
+ SENSITIVITY S-1
+     DEFINE RR BLOCK-VAR BLOCK=B1 VARIABLE=MASS-BR  &
+         SENTENCE=COL-RESULTS
+     DEFINE DUTY BLOCK-VAR BLOCK=B1 VARIABLE=REB-DUTY  &
+         SENTENCE=RESULTS UOM="CAL/SEC"
+     TABULATE 1 "RR"
+     TABULATE 2 "DUTY"
+     VARY BLOCK-VAR BLOCK=B1 VARIABLE=MASS-RR SENTENCE=COL-SPECS
+     RANGE LOWER="17" UPPER="120" INCR="1"
+
+ DISABLE      IS  NEW 05/18/2017   23:01:23:68 
+ DISABLE
+     SENSITIVITY S-1
+
+ PDF updated                                                                      TIME =      3.01
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+ 
+ SENSITIVITY BLOCK: S-1 WILL BE INTERPRETED 
+ 

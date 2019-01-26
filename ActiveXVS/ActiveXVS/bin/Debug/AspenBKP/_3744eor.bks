@@ -1,0 +1,17 @@
+ ? SETUP UNITS-SET SET1 ? \ UNITSET BASESET = MET (3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 5 3 4 3 3 3 3 3 3 3 3 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 5 3 3 3 3 3 3 5 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3) \                                                                       
+ ? BLOCK RADFRAC B1 ? ; SET1 ; \ PARAM NSTAGE = 86 MAXOL = 25 ALGORITHM =       
+ STANDARD DAMPING = NONE \ \ COL-SPECS DP-COL = .10 <75> <5> RR-BASIS = MASS    
+ BASIS-RR = 43.2473250 <0> <0> D-BASIS = MASS BASIS-D = 300.0 <-80> <3> \ \     
+ FEEDS FEED-SID = FEED FEED-STAGE = 85 \ \ P-SPEC2 PRES1 = 1.0 <20> <5> \ \     
+ PRODUCTS PROD-STREAM = UP PROD-STAGE = 1 PROD-PHASE = L / PROD-STREAM = BOTTOM 
+ PROD-STAGE = 86 PROD-PHASE = L \ \ COL-CONFIG CONDENSER = TOTAL \ \ SPEC       
+ SPEC-NO = 1 SPEC-TYPE = MASS-RECOV VALUE = .9980 <0> <0> SPEC-COMPS = (YIBEN)  
+ SPEC-STREAMS = (UP) BASE-STREAMS = (FEED) / SPEC-NO = 2 SPEC-TYPE = MASS-RECOV 
+ VALUE = .9990 <0> <0> SPEC-COMPS = (BENYIXI) SPEC-STREAMS = (BOTTOM)           
+ BASE-STREAMS = (FEED) \ \ VARY VARY-NO = 1 VARTYPE = D LB = 280.0 <0> <0> UB = 
+ 320.0 <0> <0> / VARY-NO = 2 VARTYPE = RR LB = 20.0 <0> <0> UB = 200.0 <0> <0>  
+ \ "\@"                                                                         

@@ -1,0 +1,4 @@
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\x86\Release\Interop.Happ.dll
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\x86\Release\Interop.MOLESTRUCTLib.dll
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\x86\Release\Interop.Office.dll
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\x86\Release\ActiveXVS.vbprojResolveAssemblyReference.cache

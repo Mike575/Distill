@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0546dsh.inm
+MODNAME: apmain
+RUNID: _0546dsh
+NEW_RUNID: _0546dsh
+OLD_RUNID: _0546dsh
+PDF: _0546dsh.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\RadFrac1_8\RadFrac1.ads

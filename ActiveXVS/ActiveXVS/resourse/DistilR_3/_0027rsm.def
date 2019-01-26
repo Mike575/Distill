@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0027rsm.inm
+MODNAME: apmain
+RUNID: _0027rsm
+NEW_RUNID: _0027rsm
+OLD_RUNID: _0027rsm
+PDF: _0027rsm.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_3\DistilR.ads

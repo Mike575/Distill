@@ -1,0 +1,18 @@
+;
+;Input file created by Aspen Plus Rel. 30.0 at 08:41:20 Fri Oct 19, 2018
+;Directory F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_8  Runid DISTILR
+;
+
+
+DYNAMICS
+    DYNAMICS RESULTS=ON
+
+BLOCK B1 DSTWU 
+    PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+        RECOVH=0.001 PTOP=1. PBOT=1.1 RR=-1.5 PLOT=YES 
+    PLOT LOWER=76 UPPER=175 INCR=1 
+;
+;
+;
+;
+;

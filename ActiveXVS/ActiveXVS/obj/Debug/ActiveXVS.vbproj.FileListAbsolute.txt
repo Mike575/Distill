@@ -1,0 +1,51 @@
+C:\Users\57584\Desktop\新建文件夹\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.exe.config
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.exe.config
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbprojResolveAssemblyReference.cache
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\Interop.Happ.dll
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbproj.ResolveComReference.cache
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Form1.resources
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Resources.resources
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbproj.GenerateResource.Cache
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.xml
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.exe
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.pdb
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.xml
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.exe
+C:\Users\57584\Desktop\新建文件夹\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.pdb
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.exe.config
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\Interop.Happ.dll
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbproj.ResolveComReference.cache
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.exe
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.xml
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.pdb
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.exe
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.pdb
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.xml
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbprojResolveAssemblyReference.cache
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Form1.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Resources.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbproj.GenerateResource.Cache
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Find.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\Interop.Office.dll
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.DSTWU1.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.DSTWU2.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.RadFrac1.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.Result.resources
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.exe.manifest
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\ActiveXVS.application
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.exe.manifest
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.application
+C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.addressform.resources
+H:\wood and winds\文档\Aspen二次开发\赖自成毕设提交材料\程序\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbprojResolveAssemblyReference.cache
+H:\wood and winds\文档\Aspen二次开发\赖自成毕设提交材料\程序\ActiveXVS\ActiveXVS\obj\Debug\Interop.Happ.dll
+H:\wood and winds\文档\Aspen二次开发\赖自成毕设提交材料\程序\ActiveXVS\ActiveXVS\obj\Debug\Interop.Office.dll
+H:\wood and winds\文档\Aspen二次开发\赖自成毕设提交材料\程序\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.exe
+H:\wood and winds\文档\Aspen二次开发\赖自成毕设提交材料\程序\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.xml
+H:\wood and winds\文档\Aspen二次开发\赖自成毕设提交材料\程序\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.pdb
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.vbprojResolveAssemblyReference.cache
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\Debug\Interop.Happ.dll
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\Debug\Interop.Office.dll
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.exe
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.xml
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\Debug\ActiveXVS.pdb
+F:\MyGit\Distill\ActiveXVS\ActiveXVS\obj\Debug\Interop.MOLESTRUCTLib.dll

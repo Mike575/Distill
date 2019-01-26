@@ -1,0 +1,161 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 200 WHEELER ROAD                       EUROPE (44) 1189-226555
+ BURLINGTON, MASSACHUSETTS 01803                             
+ 781/221-6400
+
+ PLATFORM: WINDOWS                                       MAY 10, 2017        
+ VERSION: 30.0   Build 33                                WEDNESDAY   
+ INSTALLATION:                                           6:39:55 P.M.        
+
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 200 WHEELER ROAD,
+      BURLINGTON, MA 01803.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           MAY 10, 2017        
+   6:39:55 P.M.                           WEDNESDAY   
+   INPUT FILE: _2525kvj.inm
+   RUN ID : _2525kvj
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 30.0 at 18:39:54 Wed May 10, 2017
+          3    ;Directory   Runid DISTILR
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar'
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    SIM-OPTIONS MASS-BAL-CHE=YES OLD-DATABANK=YES
+         16
+         17    MODEL-OPTION
+         18
+         19    DATABANKS PURE28  / AQUEOUS  / SOLIDS  / INORGANIC  /  &
+         20            NOASPENPCD
+         21
+         22    PROP-SOURCES PURE28  / AQUEOUS  / SOLIDS  / INORGANIC
+         23
+         24    COMPONENTS
+         25        BENYIXI C8H8 /
+         26        YIBEN C8H10-4
+         27
+         28    ADA-SETUP
+         29        ADA-SETUP PROCEDURE=REL9
+         30
+         31    SOLVE
+         32        RUN-MODE MODE=SIM
+         33
+         34    FLOWSHEET
+         35        BLOCK B1 IN=FEED OUT=UP BOTTOM
+         36
+         37    PROPERTIES NRTL
+         38
+         39    STREAM FEED
+         40        SUBSTREAM MIXED TEMP=30. PRES=1.2 MASS-FLOW=1000.
+         41        MASS-FRAC BENYIXI 0.7 / YIBEN 0.3
+         42
+         43    BLOCK B1 DSTWU
+         44        PARAM LIGHTKEY=YIBEN RECOVL=0.998 HEAVYKEY=BENYIXI  &
+         45            RECOVH=0.001 PTOP=1.1 PBOT=1.2 RR=-1.5 PLOT=NO
+         46
+         47    EO-CONV-OPTI
+         48
+         49    SENSITIVITY NEWCURE
+         50        DEFINE STAGE BLOCK-VAR BLOCK=B1 VARIABLE=RECOVL  &
+         51            SENTENCE=PARAM
+         52        DEFINE RR BLOCK-VAR BLOCK=B1 VARIABLE=ACT-REFLUX  &
+         53            SENTENCE=RESULTS
+         54        DEFINE RECOVL BLOCK-VAR BLOCK=B1 VARIABLE=RECOVL  &
+         55            SENTENCE=PARAM
+         56        TABULATE 1 "STAGE"
+         57        TABULATE 2 "RECOVL"
+         58        VARY BLOCK-VAR BLOCK=B1 VARIABLE=NSTAGE SENTENCE=PARAM
+         59        RANGE LOWER="76" UPPER="150" INCR="1"
+         60        VARY BLOCK-VAR BLOCK=B1 VARIABLE=RR SENTENCE=PARAM
+         61        RANGE LOWER="17" UPPER="100" NPOINT="84"
+         62
+         63    STREAM-REPOR MOLEFLOW
+         64    ;
+         65    ;
+         66    ;
+         67    ;
+         68    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+
+  **  ERROR WHILE CHECKING INPUT SPECIFICATIONS FOR VARIED VARIABLE IN          
+      SENSITIVITY BLOCK: "NEWCURE"                             (AVARY.4)        
+      THIS VARIABLE IS NOT SPECIFIED IN THE BLOCK.                              
+      YOU CAN PROVIDE AN INITIAL ESTIMATE IN THE BLOCK                          
+      OR VARY ANOTHER VARIABLE.                                                 
+      VARY SENTENCE NUMBER 1                                                    
+
+  ****DUE TO PREVIOUS SEVERE ERROR(S), FLOWSHEET ANALYSIS
+      AND PROGRAM GENERATION WILL NOT TAKE PLACE.
+
+
+ SIMULATION PROGRAM CANNOT BE EXECUTED BECAUSE OF
+ ERRORS IN INPUT TRANSLATION, PLEASE CHECK HISTORY FILE

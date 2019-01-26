@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _2645wnp.inm
+MODNAME: apmain
+RUNID: _2645wnp
+NEW_RUNID: _2645wnp
+OLD_RUNID: _2645wnp
+PDF: _2645wnp.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\RadFrac1_6\RadFrac1.ads

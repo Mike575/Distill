@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _2144phr.inm
+MODNAME: apmain
+RUNID: _2144phr
+NEW_RUNID: _2144phr
+OLD_RUNID: _2144phr
+PDF: _2144phr.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+SPONLY:

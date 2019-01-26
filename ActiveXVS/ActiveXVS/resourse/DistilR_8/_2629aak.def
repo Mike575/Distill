@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _2629aak.inm
+MODNAME: apmain
+RUNID: _2629aak
+NEW_RUNID: _2629aak
+OLD_RUNID: _2629aak
+PDF: _2629aak.appdf
+USERNAME: Administrator
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: F:\MyGit\Distill\ActiveXVS\ActiveXVS\resourse\DistilR_8\DistilR.ads

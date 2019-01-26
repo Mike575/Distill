@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _5222jrt.inm
+MODNAME: apmain
+RUNID: _5222jrt
+NEW_RUNID: _5222jrt
+OLD_RUNID: _5222jrt
+PDF: _5222jrt.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+SPONLY:

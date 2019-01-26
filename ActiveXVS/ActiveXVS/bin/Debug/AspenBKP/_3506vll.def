@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _3506vll.inm
+MODNAME: apmain
+RUNID: _3506vll
+NEW_RUNID: _3506vll
+OLD_RUNID: _3506vll
+PDF: _3506vll.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\AspenBKP\RadFrac1.ads

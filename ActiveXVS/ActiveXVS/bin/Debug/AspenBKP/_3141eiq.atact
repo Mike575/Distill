@@ -1,0 +1,290 @@
+********************************************************************************
+*                                                                              *
+*                                                                              *
+*                           DMO OPTIMIZATION SOLVER                            *
+*                                                                              *
+*       O P T I M I Z A T I O N   A C T I V E   B O U N D S   R E P O R T      *
+*                                                                              *
+*                    Copyright (c)   Aspen Technology, Inc.,                   *
+*                                                                              *
+********************************************************************************
+                                                                                
+                                                                                
+               Model or plant name                        _3141EIQ              
+               Solution case                              SIMULATE              
+               Number of variables                            1103              
+               Number of equality constraints                 1093              
+               Number of fixed variables                        10              
+               Actual degrees of freedom                         0              
+               Number of lower bounded variables              1103              
+               Number of upper bounded variables              1103              
+               Total number of constraints                    3299              
+               Maximum number of iterations                     50              
+               Printing frequency                               -1              
+               Objective function tolerance                1.0D-06              
+               Residual convergence tolerance              1.0D-06              
+               Derivative perturbation size                1.0D-06              
+               Solution mode                              ADVANCED              
+               Maximum number of models                       6500              
+               Maximum number of soft bounds                  1500              
+               Time of run                                16:22:36              
+               Date of run                              3-MAY-2017              
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                               +----------------+                               
+                               | Iteration    0 |                               
+                               +----------------+                               
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                       Change       Change from 
+                    Current Value    Base Value      from Base    Last Iteration
+                    =============  =============   ============   ==============
+Objective Function    0.0000         0.0000            ----           ----      
+                                                                                
+                                                                                
+                                                                                
+                I N I T I A L   B O U N D E D   V A R I A B L E S               
+                                                                                
+                                                                                
+   Note: Bounds larger than 9E+19 or less than -9E+19 are ignored in the        
+         following list.                                                        
+                                                                                
+         Bounds in { } indicate the bound is derived from the step bound        
+                                                                                
+         Bounds in [ ] indicate the bound is derived from a relaxed bound       
+                                                                                
+                                        Lower      Current       Upper          
+ Index     Variable Description         Bound       Value        Bound    Active
+====== ============================= =========== ============ =========== ======
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated SCALED   Residuals            Residual         Price     
+====== ========================================    ============    ============ 
+   302 B1.BLKEQN_CMASSBL_44_BENYIXI                 9.15015D-09    -3.68858D+02 
+   246 B1.BLKEQN_CMASSBL_36_BENYIXI                -8.20643D-09    -3.68578D+02 
+   303 B1.BLKEQN_CMASSBL_44_YIBEN                  -9.15015D-09    -3.13990D+02 
+   253 B1.BLKEQN_CMASSBL_37_BENYIXI                -7.72189D-09    -3.68631D+02 
+   239 B1.BLKEQN_CMASSBL_35_BENYIXI                -7.29338D-09    -3.68515D+02 
+   247 B1.BLKEQN_CMASSBL_36_YIBEN                   8.20643D-09    -3.14299D+02 
+   254 B1.BLKEQN_CMASSBL_37_YIBEN                   7.72189D-09    -3.14273D+02 
+   309 B1.BLKEQN_CMASSBL_45_BENYIXI                 6.53331D-09    -3.68877D+02 
+   240 B1.BLKEQN_CMASSBL_35_YIBEN                   7.29338D-09    -3.14323D+02 
+   260 B1.BLKEQN_CMASSBL_38_BENYIXI                -5.75915D-09    -3.68675D+02 
+                                                                                
+                                                                                
+ Iteration status                        =>       Normal                        
+ Degrees of freedom                      =>            0                        
+ Constrained variables                   =>            0                        
+ Current degrees of freedom              =>            0                        
+ Number of function evaluations          =>            0                        
+ Number of Jacobian evaluations          =>            1                        
+ Objective function convergence function =>  0.00000D+00                        
+ Residual  function convergence function =>  3.37510D-06                        
+ LU decomposition time (seconds)         =>     0.00D+00                        
+ Search direction time (seconds)         =>     0.00D+00                        
+                                                                                
+                                                                                
+                               +----------------+                               
+                               | Iteration    1 |                               
+                               +----------------+                               
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                      Change       Change from  
+                    Current Value    Base Value     from Base    Last Iteration 
+                    =============  =============   ============   ==============
+Objective Function    0.0000         0.0000          0.0000         0.0000      
+Merit Function       2.47691E-09    2.47691E-09      0.0000         0.0000      
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated SCALED   Residuals            Residual         Price     
+====== ========================================    ============    ============ 
+     2 B1.BLKEQN_CMASSBL_1_YIBEN                    5.17894D-10     3.41959D-01 
+   791 B1.BLKEQN_DS_1_RECV                         -5.49834D-08     3.22014D-03 
+     1 B1.BLKEQN_CMASSBL_1_BENYIXI                  1.19501D-12     3.06804D-01 
+   780 B1.BLKEQN_REFLRAT_MASS                      -2.38071D-08     6.16272D-06 
+   208 B1.BLKEQN_PHSEQBL_30_BENYIXI                 2.73811D-08    -5.05996D-06 
+   201 B1.BLKEQN_PHSEQBL_29_BENYIXI                 2.16667D-08    -6.09495D-06 
+   215 B1.BLKEQN_PHSEQBL_31_BENYIXI                 3.15897D-08    -4.18021D-06 
+   779 B1.BLKEQN_REFLRAT_MOLE                      -2.18689D-08     5.78990D-06 
+   781 B1.BLKEQN_REFLRAT_STDV                      -2.18689D-08     5.78989D-06 
+   194 B1.BLKEQN_PHSEQBL_28_BENYIXI                 1.57098D-08    -7.30171D-06 
+                                                                                
+                                                                                
+ Iteration status                        =>       Solved                        
+ Degrees of freedom                      =>            0                        
+ Constrained variables                   =>            0                        
+ Current degrees of freedom              =>            0                        
+ Number of function evaluations          =>            1                        
+ Number of Jacobian evaluations          =>            2                        
+ Objective function convergence function =>  0.00000D+00                        
+ Residual  function convergence function =>  1.77098D-10                        
+ LU decomposition time (seconds)         =>     0.00D+00                        
+ Search direction time (seconds)         =>     0.00D+00                        
+                                                                                
+                                                                                
+                  F I N A L   B O U N D E D   V A R I A B L E S                 
+                                                                                
+                                                                                
+   Note: Bounds larger than 9E+19 or less than -9E+19 are ignored in the        
+         following list.                                                        
+                                                                                
+         Bounds in { } indicate the bound is derived from the step bound        
+                                                                                
+         Bounds in [ ] indicate the bound is derived from a relaxed bound       
+                                                                                
+                                        Lower      Current       Upper          
+ Index     Variable Description         Bound       Value        Bound    Active
+====== ============================= =========== ============ =========== ======
+********************************************************************************
+*                                                                              *
+*                                                                              *
+*                           DMO OPTIMIZATION SOLVER                            *
+*                                                                              *
+*       O P T I M I Z A T I O N   A C T I V E   B O U N D S   R E P O R T      *
+*                                                                              *
+*                    Copyright (c)   Aspen Technology, Inc.,                   *
+*                                                                              *
+********************************************************************************
+                                                                                
+                                                                                
+               Model or plant name                        _3141EIQ              
+               Solution case                              SIMULATE              
+               Number of variables                            1103              
+               Number of equality constraints                 1093              
+               Number of fixed variables                        10              
+               Actual degrees of freedom                         0              
+               Number of lower bounded variables              1103              
+               Number of upper bounded variables              1103              
+               Total number of constraints                    3299              
+               Maximum number of iterations                     50              
+               Printing frequency                               -1              
+               Objective function tolerance                1.0D-06              
+               Residual convergence tolerance              1.0D-06              
+               Derivative perturbation size                1.0D-06              
+               Solution mode                              ADVANCED              
+               Maximum number of models                       6500              
+               Maximum number of soft bounds                  1500              
+               Time of run                                16:22:39              
+               Date of run                              3-MAY-2017              
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                               +----------------+                               
+                               | Iteration    0 |                               
+                               +----------------+                               
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                       Change       Change from 
+                    Current Value    Base Value      from Base    Last Iteration
+                    =============  =============   ============   ==============
+Objective Function    0.0000         0.0000            ----           ----      
+                                                                                
+                                                                                
+                                                                                
+                I N I T I A L   B O U N D E D   V A R I A B L E S               
+                                                                                
+                                                                                
+   Note: Bounds larger than 9E+19 or less than -9E+19 are ignored in the        
+         following list.                                                        
+                                                                                
+         Bounds in { } indicate the bound is derived from the step bound        
+                                                                                
+         Bounds in [ ] indicate the bound is derived from a relaxed bound       
+                                                                                
+                                        Lower      Current       Upper          
+ Index     Variable Description         Bound       Value        Bound    Active
+====== ============================= =========== ============ =========== ======
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated SCALED   Residuals            Residual         Price     
+====== ========================================    ============    ============ 
+   261 B1.BLKEQN_CMASSBL_38_YIBEN                  -9.41967D-08     1.59366D+02 
+   289 B1.BLKEQN_CMASSBL_42_YIBEN                  -8.52440D-08     1.59312D+02 
+   260 B1.BLKEQN_CMASSBL_38_BENYIXI                 9.41967D-08     1.33633D+02 
+   288 B1.BLKEQN_CMASSBL_42_BENYIXI                 8.52440D-08     1.33682D+02 
+   303 B1.BLKEQN_CMASSBL_44_YIBEN                   4.96025D-08     1.59269D+02 
+   296 B1.BLKEQN_CMASSBL_43_YIBEN                   4.77271D-08     1.59292D+02 
+   310 B1.BLKEQN_CMASSBL_45_YIBEN                   4.44568D-08     1.59240D+02 
+   317 B1.BLKEQN_CMASSBL_46_YIBEN                   4.19107D-08     1.59205D+02 
+   302 B1.BLKEQN_CMASSBL_44_BENYIXI                -4.96025D-08     1.33702D+02 
+   295 B1.BLKEQN_CMASSBL_43_BENYIXI                -4.77271D-08     1.33692D+02 
+                                                                                
+                                                                                
+ Iteration status                        =>       Normal                        
+ Degrees of freedom                      =>            0                        
+ Constrained variables                   =>            0                        
+ Current degrees of freedom              =>            0                        
+ Number of function evaluations          =>            0                        
+ Number of Jacobian evaluations          =>            1                        
+ Objective function convergence function =>  0.00000D+00                        
+ Residual  function convergence function =>  1.50117D-05                        
+ LU decomposition time (seconds)         =>     0.00D+00                        
+ Search direction time (seconds)         =>     0.00D+00                        
+                                                                                
+                                                                                
+                               +----------------+                               
+                               | Iteration    1 |                               
+                               +----------------+                               
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                      Change       Change from  
+                    Current Value    Base Value     from Base    Last Iteration 
+                    =============  =============   ============   ==============
+Objective Function    0.0000         0.0000          0.0000         0.0000      
+Merit Function       2.28487E-10    2.28487E-10      0.0000         0.0000      
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated SCALED   Residuals            Residual         Price     
+====== ========================================    ============    ============ 
+     2 B1.BLKEQN_CMASSBL_1_YIBEN                    1.00542D-10     8.56882D-02 
+   791 B1.BLKEQN_DS_1_RECV                         -1.06743D-08     8.06471D-04 
+     1 B1.BLKEQN_CMASSBL_1_BENYIXI                  2.32274D-13     5.52252D-02 
+   781 B1.BLKEQN_REFLRAT_STDV                      -5.53657D-09     1.49959D-06 
+   779 B1.BLKEQN_REFLRAT_MOLE                      -5.53656D-09     1.49959D-06 
+   780 B1.BLKEQN_REFLRAT_MASS                      -4.62401D-09     1.32395D-06 
+   293 B1.BLKEQN_PHSEQBL_42_YIBEN                  -3.04531D-08     1.89320D-07 
+   286 B1.BLKEQN_PHSEQBL_41_YIBEN                  -3.53377D-08     1.62454D-07 
+   300 B1.BLKEQN_PHSEQBL_43_YIBEN                  -2.46018D-08     2.24226D-07 
+   279 B1.BLKEQN_PHSEQBL_40_YIBEN                  -3.70709D-08     1.42131D-07 
+                                                                                
+                                                                                
+ Iteration status                        =>       Solved                        
+ Degrees of freedom                      =>            0                        
+ Constrained variables                   =>            0                        
+ Current degrees of freedom              =>            0                        
+ Number of function evaluations          =>            1                        
+ Number of Jacobian evaluations          =>            2                        
+ Objective function convergence function =>  0.00000D+00                        
+ Residual  function convergence function =>  8.61527D-12                        
+ LU decomposition time (seconds)         =>     0.00D+00                        
+ Search direction time (seconds)         =>     0.00D+00                        
+                                                                                
+                                                                                
+                  F I N A L   B O U N D E D   V A R I A B L E S                 
+                                                                                
+                                                                                
+   Note: Bounds larger than 9E+19 or less than -9E+19 are ignored in the        
+         following list.                                                        
+                                                                                
+         Bounds in { } indicate the bound is derived from the step bound        
+                                                                                
+         Bounds in [ ] indicate the bound is derived from a relaxed bound       
+                                                                                
+                                        Lower      Current       Upper          
+ Index     Variable Description         Bound       Value        Bound    Active
+====== ============================= =========== ============ =========== ======

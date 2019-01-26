@@ -1,0 +1,394 @@
+********************************************************************************
+*                                                                              *
+*                           DMO OPTIMIZATION SOLVER                            *
+*                                                                              *
+*    O P T I M I Z A T I O N   P R O B L E M   S O L U T I O N   R E P O R T   *
+*                                                                              *
+*                    Copyright (c)   Aspen Technology, Inc.                    *
+*                                                                              *
+********************************************************************************
+                                                                                
+ Information : No degrees of freedom detected in this case.                     
+ The bounds on variables that are NOT fixed in this problem have been relaxed.  
+                                                                                
+                                                                                
+               Model or plant name                        _3141EIQ              
+               Solution case                              SIMULATE              
+               Number of variables                            1103              
+               Number of equality constraints                 1093              
+               Number of fixed variables                        10              
+               Actual degrees of freedom                         0              
+               Number of lower bounded variables              1103              
+               Number of upper bounded variables              1103              
+               Total number of constraints                    3299              
+               Maximum number of iterations                     50              
+               Printing frequency                               -1              
+               Objective function tolerance                1.0D-06              
+               Residual convergence tolerance              1.0D-06              
+               Derivative perturbation size                1.0D-06              
+               Solution mode                              ADVANCED              
+               Maximum number of models                       6500              
+               Maximum number of soft bounds                  1500              
+               Time of run                                16:22:36              
+               Date of run                              3-MAY-2017              
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                               Inactive Models                                  
+                               ===============                                  
+                                                                                
+          All models are active.                                                
+                                                                                
+                                                                                
+                                                                                
+                               +----------------+                               
+                               | Iteration    0 |                               
+                               +----------------+                               
+                                                                                
+                                                                                
+Objective Function                       =>    0.000                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated UNSCALED Residuals            Residual         Price     
+====== =======================================    ============    ============= 
+   223 B1.BLKEQN_PHSEQBL_32_YIBEN                   4.89805D-05    -5.26578D-04 
+   216 B1.BLKEQN_PHSEQBL_31_YIBEN                   4.80057D-05    -5.35442D-04 
+   306 B1.BLKEQN_PHSEQBL_44_BENYIXI                -4.47535D-05     7.23810D-04 
+   299 B1.BLKEQN_PHSEQBL_43_BENYIXI                -4.32028D-05     7.87839D-04 
+   209 B1.BLKEQN_PHSEQBL_30_YIBEN                   4.12500D-05    -5.46011D-04 
+   230 B1.BLKEQN_PHSEQBL_33_YIBEN                   4.10635D-05    -5.20506D-04 
+   215 B1.BLKEQN_PHSEQBL_31_BENYIXI                -3.88018D-05     3.84974D-03 
+   222 B1.BLKEQN_PHSEQBL_32_BENYIXI                -3.84959D-05     3.16844D-03 
+   208 B1.BLKEQN_PHSEQBL_30_BENYIXI                -3.39874D-05     4.65986D-03 
+   202 B1.BLKEQN_PHSEQBL_29_YIBEN                   3.21292D-05    -5.57466D-04 
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated SCALED   Residuals            Residual         Price     
+====== =======================================    ============    ============= 
+   302 B1.BLKEQN_CMASSBL_44_BENYIXI                 9.15015D-09    -3.68858D+02 
+   246 B1.BLKEQN_CMASSBL_36_BENYIXI                -8.20643D-09    -3.68578D+02 
+   303 B1.BLKEQN_CMASSBL_44_YIBEN                  -9.15015D-09    -3.13990D+02 
+   253 B1.BLKEQN_CMASSBL_37_BENYIXI                -7.72189D-09    -3.68631D+02 
+   239 B1.BLKEQN_CMASSBL_35_BENYIXI                -7.29338D-09    -3.68515D+02 
+   247 B1.BLKEQN_CMASSBL_36_YIBEN                   8.20643D-09    -3.14299D+02 
+   254 B1.BLKEQN_CMASSBL_37_YIBEN                   7.72189D-09    -3.14273D+02 
+   309 B1.BLKEQN_CMASSBL_45_BENYIXI                 6.53331D-09    -3.68877D+02 
+   240 B1.BLKEQN_CMASSBL_35_YIBEN                   7.29338D-09    -3.14323D+02 
+   260 B1.BLKEQN_CMASSBL_38_BENYIXI                -5.75915D-09    -3.68675D+02 
+                                                                                
+                                                                                
+ Iteration status                        =>       Normal                        
+ Degrees of freedom                      =>            0                        
+ Constrained variables                   =>            0                        
+ Current degrees of freedom              =>            0                        
+ Number of function evaluations          =>            0                        
+ Number of Jacobian evaluations          =>            1                        
+ Objective function convergence function =>  0.00000D+00                        
+ Residual  function convergence function =>  3.37510D-06                        
+ LU decomposition time (seconds)         =>     0.00D+00                        
+ Search direction time (seconds)         =>     0.00D+00                        
+                                                                                
+                                                                                
+Non-Linearity Report for Iteration   0 : Step Fraction =  1.00000D+00           
+                                                                                
+Index   Worst Equation Non-Linearity Ratios           Ratio         Deviation   
+===== ========================================    ============    ============  
+   779 B1.BLKEQN_REFLRAT_MOLE                       9.82004D-01     1.79957D-02 
+   781 B1.BLKEQN_REFLRAT_STDV                       9.82005D-01     1.79952D-02 
+   314 B1.BLKEQN_PHSEQBL_45_YIBEN                   1.01276D+00     1.27567D-02 
+   286 B1.BLKEQN_PHSEQBL_41_YIBEN                   1.00962D+00     9.62216D-03 
+   272 B1.BLKEQN_PHSEQBL_39_YIBEN                   9.91050D-01     8.94981D-03 
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                               +----------------+                               
+                               | Iteration    1 |                               
+                               +----------------+                               
+                                                                                
+                                                                                
+Objective Function                       =>    0.000                            
+Merit Function                           =>   2.4769E-09                        
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated UNSCALED Residuals            Residual         Price     
+====== =======================================    ============    ============= 
+   251 B1.BLKEQN_PHSEQBL_36_YIBEN                  -1.26221D-07     5.82575D-07 
+   244 B1.BLKEQN_PHSEQBL_35_YIBEN                  -1.25293D-07     5.69087D-07 
+   258 B1.BLKEQN_PHSEQBL_37_YIBEN                  -1.22595D-07     6.07854D-07 
+   265 B1.BLKEQN_PHSEQBL_38_YIBEN                  -1.18691D-07     6.48386D-07 
+   237 B1.BLKEQN_PHSEQBL_34_YIBEN                  -1.16561D-07     5.64480D-07 
+   272 B1.BLKEQN_PHSEQBL_39_YIBEN                  -1.15542D-07     7.08230D-07 
+   279 B1.BLKEQN_PHSEQBL_40_YIBEN                  -1.10642D-07     7.92161D-07 
+   286 B1.BLKEQN_PHSEQBL_41_YIBEN                  -1.01266D-07     9.05850D-07 
+   230 B1.BLKEQN_PHSEQBL_33_YIBEN                  -1.00809D-07     5.66347D-07 
+   293 B1.BLKEQN_PHSEQBL_42_YIBEN                  -9.09619D-08     1.05614D-06 
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated SCALED   Residuals            Residual         Price     
+====== =======================================    ============    ============= 
+     2 B1.BLKEQN_CMASSBL_1_YIBEN                    5.17894D-10     3.41959D-01 
+   791 B1.BLKEQN_DS_1_RECV                         -5.49834D-08     3.22014D-03 
+     1 B1.BLKEQN_CMASSBL_1_BENYIXI                  1.19501D-12     3.06804D-01 
+   780 B1.BLKEQN_REFLRAT_MASS                      -2.38071D-08     6.16272D-06 
+   208 B1.BLKEQN_PHSEQBL_30_BENYIXI                 2.73811D-08    -5.05996D-06 
+   201 B1.BLKEQN_PHSEQBL_29_BENYIXI                 2.16667D-08    -6.09495D-06 
+   215 B1.BLKEQN_PHSEQBL_31_BENYIXI                 3.15897D-08    -4.18021D-06 
+   779 B1.BLKEQN_REFLRAT_MOLE                      -2.18689D-08     5.78990D-06 
+   781 B1.BLKEQN_REFLRAT_STDV                      -2.18689D-08     5.78989D-06 
+   194 B1.BLKEQN_PHSEQBL_28_BENYIXI                 1.57098D-08    -7.30171D-06 
+                                                                                
+                                                                                
+ Iteration status                        =>       Solved                        
+ Degrees of freedom                      =>            0                        
+ Constrained variables                   =>            0                        
+ Current degrees of freedom              =>            0                        
+ Number of function evaluations          =>            1                        
+ Number of Jacobian evaluations          =>            2                        
+ Objective function convergence function =>  0.00000D+00                        
+ Residual  function convergence function =>  1.77098D-10                        
+ LU decomposition time (seconds)         =>     0.00D+00                        
+ Search direction time (seconds)         =>     0.00D+00                        
+                                                                                
+                                                                                
+ Model nonlinearity ratios =>                                                   
+ ----------------------------                                                   
+                                                                                
+                                                                                
+ Model nonlinearity ratios of     3 model(s) between   0.99 and   1.01          
+                                                                                
+ Objective function nonlinearity ratio    =>   1.0000                           
+                                                                                
+                                                                                
+                                                                                
+ Sparsity and Sizing Statistics                                                 
+ ===================================                                            
+ Number of variables              1103                                          
+ Number of model nonzeros         5465                                          
+ Number of problem nonzeros       6558                                          
+ Average no. nonzeros/row         5.00                                          
+ Minimum variables in row            1                                          
+ Maximum variables in row           19                                          
+ Number of fcn calls/Jac             0                                          
+ Density of matrix                0.45 %                                        
+ Minimum length of LW           129431                                          
+ Minimum length of LIW          207801                                          
+ Minimum length of LCW           14353                                          
+                                                                                
+                                                                                
+ Optimization Timing Statistics         Time      Percent                       
+ ================================      ========   =======                       
+                                                                                
+ MODEL computations                    0.04 secs    66.67 %                     
+ DMO computations                      0.00 secs     0.00 %                     
+ Miscellaneous                         0.02 secs    33.33 %                     
+ --------------------------------     ---------    -------                      
+ Total Optimization Time               0.06 secs   100.00 %                     
+                                                                                
+********************************************************************************
+*                                                                              *
+*                           DMO OPTIMIZATION SOLVER                            *
+*                                                                              *
+*    O P T I M I Z A T I O N   P R O B L E M   S O L U T I O N   R E P O R T   *
+*                                                                              *
+*                    Copyright (c)   Aspen Technology, Inc.                    *
+*                                                                              *
+********************************************************************************
+                                                                                
+ Information : No degrees of freedom detected in this case.                     
+ The bounds on variables that are NOT fixed in this problem have been relaxed.  
+                                                                                
+                                                                                
+               Model or plant name                        _3141EIQ              
+               Solution case                              SIMULATE              
+               Number of variables                            1103              
+               Number of equality constraints                 1093              
+               Number of fixed variables                        10              
+               Actual degrees of freedom                         0              
+               Number of lower bounded variables              1103              
+               Number of upper bounded variables              1103              
+               Total number of constraints                    3299              
+               Maximum number of iterations                     50              
+               Printing frequency                               -1              
+               Objective function tolerance                1.0D-06              
+               Residual convergence tolerance              1.0D-06              
+               Derivative perturbation size                1.0D-06              
+               Solution mode                              ADVANCED              
+               Maximum number of models                       6500              
+               Maximum number of soft bounds                  1500              
+               Time of run                                16:22:39              
+               Date of run                              3-MAY-2017              
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                               Inactive Models                                  
+                               ===============                                  
+                                                                                
+          All models are active.                                                
+                                                                                
+                                                                                
+                                                                                
+                               +----------------+                               
+                               | Iteration    0 |                               
+                               +----------------+                               
+                                                                                
+                                                                                
+Objective Function                       =>    0.000                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated UNSCALED Residuals            Residual         Price     
+====== =======================================    ============    ============= 
+   251 B1.BLKEQN_PHSEQBL_36_YIBEN                   1.71881D-05     1.94291D-04 
+   286 B1.BLKEQN_PHSEQBL_41_YIBEN                  -1.57945D-05     3.02101D-04 
+   279 B1.BLKEQN_PHSEQBL_40_YIBEN                  -1.45359D-05     2.64169D-04 
+   258 B1.BLKEQN_PHSEQBL_37_YIBEN                   1.37666D-05     2.02694D-04 
+   244 B1.BLKEQN_PHSEQBL_35_YIBEN                   1.34488D-05     1.89836D-04 
+   293 B1.BLKEQN_PHSEQBL_42_YIBEN                  -1.23826D-05     3.52242D-04 
+   209 B1.BLKEQN_PHSEQBL_30_YIBEN                  -1.20584D-05     1.98132D-04 
+   216 B1.BLKEQN_PHSEQBL_31_YIBEN                  -1.16178D-05     1.94362D-04 
+   278 B1.BLKEQN_PHSEQBL_40_BENYIXI                 1.13944D-05    -3.16050D-04 
+   202 B1.BLKEQN_PHSEQBL_29_YIBEN                  -1.09623D-05     2.02215D-04 
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated SCALED   Residuals            Residual         Price     
+====== =======================================    ============    ============= 
+   261 B1.BLKEQN_CMASSBL_38_YIBEN                  -9.41967D-08     1.59366D+02 
+   289 B1.BLKEQN_CMASSBL_42_YIBEN                  -8.52440D-08     1.59312D+02 
+   260 B1.BLKEQN_CMASSBL_38_BENYIXI                 9.41967D-08     1.33633D+02 
+   288 B1.BLKEQN_CMASSBL_42_BENYIXI                 8.52440D-08     1.33682D+02 
+   303 B1.BLKEQN_CMASSBL_44_YIBEN                   4.96025D-08     1.59269D+02 
+   296 B1.BLKEQN_CMASSBL_43_YIBEN                   4.77271D-08     1.59292D+02 
+   310 B1.BLKEQN_CMASSBL_45_YIBEN                   4.44568D-08     1.59240D+02 
+   317 B1.BLKEQN_CMASSBL_46_YIBEN                   4.19107D-08     1.59205D+02 
+   302 B1.BLKEQN_CMASSBL_44_BENYIXI                -4.96025D-08     1.33702D+02 
+   295 B1.BLKEQN_CMASSBL_43_BENYIXI                -4.77271D-08     1.33692D+02 
+                                                                                
+                                                                                
+ Iteration status                        =>       Normal                        
+ Degrees of freedom                      =>            0                        
+ Constrained variables                   =>            0                        
+ Current degrees of freedom              =>            0                        
+ Number of function evaluations          =>            0                        
+ Number of Jacobian evaluations          =>            1                        
+ Objective function convergence function =>  0.00000D+00                        
+ Residual  function convergence function =>  1.50117D-05                        
+ LU decomposition time (seconds)         =>     0.00D+00                        
+ Search direction time (seconds)         =>     0.00D+00                        
+                                                                                
+                                                                                
+Non-Linearity Report for Iteration   0 : Step Fraction =  1.00000D+00           
+                                                                                
+Index   Worst Equation Non-Linearity Ratios           Ratio         Deviation   
+===== ========================================    ============    ============  
+   265 B1.BLKEQN_PHSEQBL_38_YIBEN                   1.00771D+00     7.71251D-03 
+   230 B1.BLKEQN_PHSEQBL_33_YIBEN                   9.92945D-01     7.05486D-03 
+   307 B1.BLKEQN_PHSEQBL_44_YIBEN                   9.93789D-01     6.21079D-03 
+   320 B1.BLKEQN_PHSEQBL_46_BENYIXI                 9.94863D-01     5.13702D-03 
+   272 B1.BLKEQN_PHSEQBL_39_YIBEN                   9.95074D-01     4.92596D-03 
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                               +----------------+                               
+                               | Iteration    1 |                               
+                               +----------------+                               
+                                                                                
+                                                                                
+Objective Function                       =>    0.000                            
+Merit Function                           =>   2.2849E-10                        
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated UNSCALED Residuals            Residual         Price     
+====== =======================================    ============    ============= 
+   279 B1.BLKEQN_PHSEQBL_40_YIBEN                  -3.70709D-08     1.42131D-07 
+   286 B1.BLKEQN_PHSEQBL_41_YIBEN                  -3.53377D-08     1.62454D-07 
+   272 B1.BLKEQN_PHSEQBL_39_YIBEN                  -3.52329D-08     1.27126D-07 
+   265 B1.BLKEQN_PHSEQBL_38_YIBEN                  -3.12528D-08     1.16427D-07 
+   293 B1.BLKEQN_PHSEQBL_42_YIBEN                  -3.04531D-08     1.89320D-07 
+   258 B1.BLKEQN_PHSEQBL_37_YIBEN                  -2.79492D-08     1.09182D-07 
+   251 B1.BLKEQN_PHSEQBL_36_YIBEN                  -2.56944D-08     1.04668D-07 
+   300 B1.BLKEQN_PHSEQBL_43_YIBEN                  -2.46018D-08     2.24226D-07 
+   244 B1.BLKEQN_PHSEQBL_35_YIBEN                  -2.41056D-08     1.02267D-07 
+   237 B1.BLKEQN_PHSEQBL_34_YIBEN                  -2.21643D-08     1.01455D-07 
+                                                                                
+                                                                                
+                                                                      Shadow    
+ Index   Most Violated SCALED   Residuals            Residual         Price     
+====== =======================================    ============    ============= 
+     2 B1.BLKEQN_CMASSBL_1_YIBEN                    1.00542D-10     8.56882D-02 
+   791 B1.BLKEQN_DS_1_RECV                         -1.06743D-08     8.06471D-04 
+     1 B1.BLKEQN_CMASSBL_1_BENYIXI                  2.32274D-13     5.52252D-02 
+   781 B1.BLKEQN_REFLRAT_STDV                      -5.53657D-09     1.49959D-06 
+   779 B1.BLKEQN_REFLRAT_MOLE                      -5.53656D-09     1.49959D-06 
+   780 B1.BLKEQN_REFLRAT_MASS                      -4.62401D-09     1.32395D-06 
+   293 B1.BLKEQN_PHSEQBL_42_YIBEN                  -3.04531D-08     1.89320D-07 
+   286 B1.BLKEQN_PHSEQBL_41_YIBEN                  -3.53377D-08     1.62454D-07 
+   300 B1.BLKEQN_PHSEQBL_43_YIBEN                  -2.46018D-08     2.24226D-07 
+   279 B1.BLKEQN_PHSEQBL_40_YIBEN                  -3.70709D-08     1.42131D-07 
+                                                                                
+                                                                                
+ Iteration status                        =>       Solved                        
+ Degrees of freedom                      =>            0                        
+ Constrained variables                   =>            0                        
+ Current degrees of freedom              =>            0                        
+ Number of function evaluations          =>            1                        
+ Number of Jacobian evaluations          =>            2                        
+ Objective function convergence function =>  0.00000D+00                        
+ Residual  function convergence function =>  8.61527D-12                        
+ LU decomposition time (seconds)         =>     0.00D+00                        
+ Search direction time (seconds)         =>     0.00D+00                        
+                                                                                
+                                                                                
+ Model nonlinearity ratios =>                                                   
+ ----------------------------                                                   
+                                                                                
+                                                                                
+ Model nonlinearity ratios of     3 model(s) between   0.99 and   1.01          
+                                                                                
+ Objective function nonlinearity ratio    =>   1.0000                           
+                                                                                
+                                                                                
+                                                                                
+ Sparsity and Sizing Statistics                                                 
+ ===================================                                            
+ Number of variables              1103                                          
+ Number of model nonzeros         5465                                          
+ Number of problem nonzeros       6558                                          
+ Average no. nonzeros/row         5.00                                          
+ Minimum variables in row            1                                          
+ Maximum variables in row           19                                          
+ Number of fcn calls/Jac             0                                          
+ Density of matrix                0.45 %                                        
+ Minimum length of LW           129431                                          
+ Minimum length of LIW          207801                                          
+ Minimum length of LCW           14353                                          
+                                                                                
+                                                                                
+ Optimization Timing Statistics         Time      Percent                       
+ ================================      ========   =======                       
+                                                                                
+ MODEL computations                    0.00 secs     0.00 %                     
+ DMO computations                      0.00 secs     0.00 %                     
+ Miscellaneous                         0.03 secs   100.00 %                     
+ --------------------------------     ---------    -------                      
+ Total Optimization Time               0.03 secs   100.00 %                     
+                                                                                

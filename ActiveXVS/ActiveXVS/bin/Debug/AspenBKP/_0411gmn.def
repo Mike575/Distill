@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _0411gmn.inm
+MODNAME: apmain
+RUNID: _0411gmn
+NEW_RUNID: _0411gmn
+OLD_RUNID: _0411gmn
+PDF: _0411gmn.appdf
+USERNAME: 57584
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.4\Engine\xeq\apmain
+DBCONN: C:\Users\57584\Documents\GitHub\Ditill\Distill\AspenActiveX\ActiveXVS\ActiveXVS\bin\Debug\AspenBKP\_F395.ads
